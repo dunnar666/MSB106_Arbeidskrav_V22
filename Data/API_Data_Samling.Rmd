@@ -17,3 +17,43 @@ library(lubridate)
 load("knr.Rdata")
 ```
 
+```{r Moenster}
+# Legger inn regex mønster
+moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
+```
+
+# 1. Sysselsatte Etter Arbeidssted
+
+```{r}
+syssel_raw <- ApiData(
+  urlToData = "07984",
+  Region = knr,
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = TRUE,
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+syssel_raw <- syssel_raw$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid)
+```
+
+```{r}
+syssel_raw <- syssel_raw %>% 
+  pivot_wider(
+    names_from = naering,
+    values_from = value)
+```
+
+```{r}
+syssel <- syssel %>% 
+  mutate(
+    knavn = str_replace(knavn, moenster, ""))
+```
+
