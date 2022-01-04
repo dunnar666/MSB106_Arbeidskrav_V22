@@ -20,7 +20,7 @@ load("knr.Rdata")
 
 
 
-# 1a. Sysselsatte Etter Arbeidssted
+# 1a. Sysselsatte Etter Arbeidssted (Kevin & Ola A.)
 
 ```{r}
 syssel_arb <- ApiData(
@@ -105,7 +105,7 @@ names(syssel_arb)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
-# 1b. Sysselsatte Etter Bosted
+# 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
 ```{r}
 syssel_bos <- ApiData(
