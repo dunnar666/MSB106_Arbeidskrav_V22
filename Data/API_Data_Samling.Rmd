@@ -3,3 +3,17 @@ title: "Datasamling"
 output: html_notebook
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include = FALSE)
+suppressPackageStartupMessages({
+library(PxWebApiData)
+library(tidyverse)
+library(lubridate)
+})
+```
+
+```{r knr}
+# Vector med relevante kommunenummer
+load("knr.Rdata")
+```
+
