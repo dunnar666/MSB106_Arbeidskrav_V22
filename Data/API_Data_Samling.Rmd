@@ -47,9 +47,15 @@ syssel_raw <- syssel_raw$dataset %>%
 ```{r}
 syssel_raw <- syssel_raw %>% 
   pivot_wider(
-    names_from = naering,
+    names_from = NACE2007,
     values_from = value)
 ```
+
+```{r}
+syssel <- syssel_raw %>% 
+  select(1106, 1135, 1145, 1146, 1149, 1151, 1160, 1216, 4612, 1219, 4613, 1221, 4614, 1222, 4615, 1223, 4616, 1224, 4617, )
+```
+
 
 ```{r}
 syssel <- syssel %>% 
