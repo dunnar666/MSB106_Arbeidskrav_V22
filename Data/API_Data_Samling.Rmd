@@ -54,7 +54,12 @@ syssel_raw <- syssel_raw %>%
 prøv: coltype
 
 ```{r}
-syssel <- syssel_raw %>% 
+syssel_raw$knr <- as.numeric(syssel_raw$knr)
+```
+
+
+```{r}
+syssel_raw <- syssel_raw %>% 
   filter(knr == 1106, 1135, 1145, 1146, 1149, 1151, 1160, 1211, 4611, 1216, 4612, 1219, 4613, 1221, 4614, 1222, 4615, 1223, 4616, 1224, 4617, 1228, 1231, 4618)
 ```
 
