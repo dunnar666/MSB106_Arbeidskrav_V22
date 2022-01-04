@@ -25,7 +25,7 @@ moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
 # 1. Sysselsatte Etter Arbeidssted
 
 ```{r}
-syssel_raw <- ApiData(
+syssel_arb <- ApiData(
   urlToData = "07984",
   Region = knr,
   ContentsCode = "SysselsatteArb",
@@ -37,7 +37,7 @@ syssel_raw <- ApiData(
 ```
 
 ```{r}
-syssel_raw <- syssel_raw$dataset %>% 
+syssel_arb <- syssel_arb$dataset %>% 
   tibble() %>% 
   rename(
     knr = Region,
@@ -45,18 +45,18 @@ syssel_raw <- syssel_raw$dataset %>%
 ```
 
 ```{r}
-syssel_raw <- syssel_raw %>% 
+syssel_arb <- syssel_arb %>% 
   pivot_wider(
     names_from = NACE2007,
     values_from = value)
 ```
 
 ```{r}
-names(syssel_raw)[[1]] <- "knr"
+names(syssel_arb)[[1]] <- "knr"
 ```
 
 ```{r}
-syssel_raw <- syssel_raw %>%
+syssel_arb <- syssel_arb %>%
   filter(
     knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 1211, 4611, 1216, 4612, 1219, 4613, 1221, 4614, 1222, 4615, 1223, 4616, 1224, 4617, 1228, 1231, 4618))
 ```
@@ -64,8 +64,11 @@ syssel_raw <- syssel_raw %>%
 **Problem Her** Skal endre knr til navn, 1106 til Haugesund, osv.
 
 ```{r}
-syssel <- syssel_raw %>% 
+syssel_arb <- syssel_arb %>% 
   mutate(
+    knr = fct_recode(knr,
+                     "1106" = "Haugesund")
+  )
 ```
 
 
