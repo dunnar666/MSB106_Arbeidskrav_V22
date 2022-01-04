@@ -17,10 +17,8 @@ library(lubridate)
 load("knr.Rdata")
 ```
 
-```{r Moenster}
-# Legger inn regex mønster
-moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
-```
+
+
 
 # 1a. Sysselsatte Etter Arbeidssted
 
@@ -41,7 +39,9 @@ syssel_arb <- syssel_arb$dataset %>%
   tibble() %>% 
   rename(
     knr = Region,
-    aar = Tid)
+    aar = Tid
+) %>% 
+    mutate(knavn = syssel_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
 ```
 
 ```{r}
@@ -66,14 +66,43 @@ syssel_arb <- syssel_arb %>%
     knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 1211, 4611, 1216, 4612, 1219, 4613, 1221, 4614, 1222, 4615, 1223, 4616, 1224, 4617, 1228, 1231, 4618))
 ```
 
-**Problem Her** Skal endre knr til navn, 1106 til Haugesund, osv.
+```{r Moenster}
+# Legger inn regex mønster
+moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
+```
+
+```{r}
+syssel_arb <- syssel_arb %>% 
+  mutate(
+    knavn = str_replace(knavn, moenster, ""))
+```
 
 ```{r}
 syssel_arb <- syssel_arb %>% 
   mutate(
     Kjonn = fct_recode(Kjonn,
-                     "0" = "Begge Kjønn")
-  )
+                     "Begge Kjønn" = "0"))
+```
+
+```{r}
+names(syssel_arb)[[7]] <- "Alle Næringer"
+names(syssel_arb)[[8]] <- "Jordbruk, Skogbrug og Fiske"
+names(syssel_arb)[[9]] <- "Bergverksdrift og Utvinning"
+names(syssel_arb)[[10]] <- "Industri"
+names(syssel_arb)[[11]] <- "Elektrisitet, Vann og Renovasjon"
+names(syssel_arb)[[12]] <- "Bygge- og Anleggsvirksomhet"
+names(syssel_arb)[[13]] <- "Varehandel, Reperasjon av Motorvogner"
+names(syssel_arb)[[14]] <- "Transport og Lagring"
+names(syssel_arb)[[15]] <- "Overnattings- og Servicevirksomhet"
+names(syssel_arb)[[16]] <- "Informasjon og Kommunikasjon"
+names(syssel_arb)[[17]] <- "Finansiering og Forsikring"
+names(syssel_arb)[[18]] <- "Teknisk Tjenesteyting, Eiendomsdrift"
+names(syssel_arb)[[19]] <- "Forretningsmessig Tjenesteyting"
+names(syssel_arb)[[20]] <- "Off.Adm, Forsvar, Sosialforsikring"
+names(syssel_arb)[[21]] <- "Undervisning"
+names(syssel_arb)[[22]] <- "Helse- og Sosialtjenester"
+names(syssel_arb)[[23]] <- "Personlig Tjenesteyting"
+names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
 # 1b. Sysselsatte Etter Bosted
@@ -95,7 +124,9 @@ syssel_bos <- syssel_bos$dataset %>%
   tibble() %>% 
   rename(
     knr = Region,
-    aar = Tid)
+    aar = Tid
+) %>% 
+    mutate(knavn = syssel_bos$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
 ```
 
 ```{r}
@@ -118,13 +149,32 @@ syssel_bos <- syssel_bos %>%
 ```{r}
 syssel_bos <- syssel_bos %>% 
   mutate(
-    knr = fct_recode(knr,
-                     "1106" = "Haugesund")
-  )
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
 ```
 
+```{r}
+names(syssel_bos)[[7]] <- "Alle Næringer"
+names(syssel_bos)[[8]] <- "Jordbruk, Skogbrug og Fiske"
+names(syssel_bos)[[9]] <- "Bergverksdrift og Utvinning"
+names(syssel_bos)[[10]] <- "Industri"
+names(syssel_bos)[[11]] <- "Elektrisitet, Vann og Renovasjon"
+names(syssel_bos)[[12]] <- "Bygge- og Anleggsvirksomhet"
+names(syssel_bos)[[13]] <- "Varehandel, Reperasjon av Motorvogner"
+names(syssel_bos)[[14]] <- "Transport og Lagring"
+names(syssel_bos)[[15]] <- "Overnattings- og Servicevirksomhet"
+names(syssel_bos)[[16]] <- "Informasjon og Kommunikasjon"
+names(syssel_bos)[[17]] <- "Finansiering og Forsikring"
+names(syssel_bos)[[18]] <- "Teknisk Tjenesteyting, Eiendomsdrift"
+names(syssel_bos)[[19]] <- "Forretningsmessig Tjenesteyting"
+names(syssel_bos)[[20]] <- "Off.Adm, Forsvar, Sosialforsikring"
+names(syssel_bos)[[21]] <- "Undervisning"
+names(syssel_bos)[[22]] <- "Helse- og Sosialtjenester"
+names(syssel_bos)[[23]] <- "Personlig Tjenesteyting"
+names(syssel_bos)[[24]] <- "Uoppgitt"
+```
 
-
+# 2. Mål for Beskrivelse av Næringsstrukturen
 
 
 
