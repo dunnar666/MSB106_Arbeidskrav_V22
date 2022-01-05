@@ -181,6 +181,75 @@ names(syssel_bos)[[24]] <- "Uoppgitt"
 
 
 
+# 3. Sysselsetting i ulike næringer, etter arbeidsstedskommune
+
+# 4. Pendling mellom de ulike kommunene i regionen (Heidi og Ann Elisabeth jobber videre med denne)
+
+```{r}
+Pendling <- ApiData(
+  urlToData = "03321",
+  ArbstedKomm = "Sauda",
+  ContentsCode = "Sysselsatte",
+  Bokommuen = "Sauda",
+  Tid = c(
+    as.character(2020:2020)))
+```
+
+```{r}
+Pendling <- Pendling %>% 
+  pivot_wider(
+    names_from = "Bokommuen"
+    values_from = value)
+```
+
+```{r}
+names(Pendling)[[1]] <- " ArbstedKomm"
+```
+
+
+
+```{r}
+Pendling <- Pendling %>%
+  filter(
+    ArbstedKomm %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618))
+```
+
+
+```{r}
+Pendling <- Pendling %>%
+  filter(
+    Bokommuen %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618))
+```
+
+```{r}
+names(Pendling)[[1]] <- "Haugesund"
+names(Pendling)[[2]] <- "Sauda"
+names(Pendling)[[3]] <- "Bokn"
+names(Pendling)[[4]] <- "Tysvær"
+names(Pendling)[[5]] <- "Karmøy"
+names(Pendling)[[6]] <- "Utsira"
+names(Pendling)[[7]] <- "Vindafjord"
+names(Pendling)[[8]] <- "Etne"
+names(Pendling)[[9]] <- "Sveio"
+names(Pendling)[[10]] <- "Bømlo"
+names(Pendling)[[11]] <- "Stord"
+names(Pendling)[[12]] <- "Fitjar"
+names(Pendling)[[13]] <- "Tysnes"
+names(Pendling)[[14]] <- "Kvinnherad"
+names(Pendling)[[15]] <- "Ullensvang"
+
+```
+
+
+```{r}
+Pendling <- matrix(03321, nrow = 15, ncol = 15)
+row.names(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
+
+colnames(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
+```
+
+
+
 
 
 
