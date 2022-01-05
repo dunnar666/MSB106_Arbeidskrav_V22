@@ -177,7 +177,7 @@ names(syssel_bos)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_bos)[[24]] <- "Uoppgitt"
 ```
 
-# 2. Mål for Beskrivelse av Næringsstrukturen
+# 2. Mål for Beskrivelse av Næringsstrukturen 
 
 # 3. Sysselsetting i ulike næringer, etter arbeidsstedskommune
 
