@@ -241,6 +241,8 @@ names(Pendling)[[15]] <- "Ullensvang"
 ```
 
 
+
+
 ```{r}
 Pendling <- matrix(03321, nrow = 15, ncol = 15)
 row.names(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
