@@ -1,6 +1,6 @@
 ---
 title: "Datasamling"
-output: html_notebook
+output: html_notebook 
 ---
 
 ```{r setup, include=FALSE}
