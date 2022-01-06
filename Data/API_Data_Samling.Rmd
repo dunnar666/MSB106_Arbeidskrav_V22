@@ -141,8 +141,28 @@ syssel_arb[1][(syssel_arb)[1] == "1221"] <- "4614"
 syssel_arb[1][(syssel_arb)[1] == "1222"] <- "4615"
 syssel_arb[1][(syssel_arb)[1] == "1223"] <- "4616"
 syssel_arb[1][(syssel_arb)[1] == "1224"] <- "4617"
+syssel_arb[1][(syssel_arb)[1] == "1231"] <- "4618"
 ```
 
+## SKiller mellom Haugalandet, Sunhordland & Hardanger
+
+```{r}
+haugalandet_arb <- syssel_arb %>% 
+  filter(
+    knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160))
+```
+
+```{r}
+sunhordland_arb <- syssel_arb %>% 
+  filter(
+    knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617))
+```
+
+```{r}
+hardanger_arb <- syssel_arb %>% 
+  filter(
+    knr %in% c(1228, 4618))
+```
 
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
@@ -246,9 +266,39 @@ names(syssel_bos)[[24]] <- "Uoppgitt"
 ```
 
 ```{r}
-syssel_bos <- syssel_arb[syssel_arb$`Alle Næringer` !=0, ]
+syssel_bos <- syssel_bos[syssel_bos$`Alle Næringer` !=0, ]
 ```
 
+```{r}
+syssel_bos[1][(syssel_bos)[1] == "1211"] <- "4611"
+syssel_bos[1][(syssel_bos)[1] == "1216"] <- "4612"
+syssel_bos[1][(syssel_bos)[1] == "1219"] <- "4613"
+syssel_bos[1][(syssel_bos)[1] == "1221"] <- "4614"
+syssel_bos[1][(syssel_bos)[1] == "1222"] <- "4615"
+syssel_bos[1][(syssel_bos)[1] == "1223"] <- "4616"
+syssel_bos[1][(syssel_bos)[1] == "1224"] <- "4617"
+syssel_bos[1][(syssel_bos)[1] == "1231"] <- "4618"
+```
+
+## SKiller mellom Haugalandet, Sunhordland & Hardanger
+
+```{r}
+haugalandet_bos <- syssel_bos %>% 
+  filter(
+    knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160))
+```
+
+```{r}
+sunhordland_bos <- syssel_bos %>% 
+  filter(
+    knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617))
+```
+
+```{r}
+hardanger_bos <- syssel_bos %>% 
+  filter(
+    knr %in% c(1228, 4618))
+```
 
 # 2. Mål for Beskrivelse av Næringsstrukturen
 
@@ -258,7 +308,7 @@ syssel_bos <- syssel_arb[syssel_arb$`Alle Næringer` !=0, ]
 # 4. Pendling mellom de ulike kommunene i regionen (Heidi og Ann Elisabeth jobber videre med denne)
 
 ```{r}
-Pendling <- ApiData(
+pendling <- ApiData(
   urlToData = "03321",
   ArbstedKomm = "Sauda",
   ContentsCode = "Sysselsatte",
@@ -268,9 +318,9 @@ Pendling <- ApiData(
 ```
 
 ```{r}
-Pendling <- Pendling %>% 
+pendling <- pendling %>% 
   pivot_wider(
-    names_from = "Bokommuen"
+    names_from = Bokommuen,
     values_from = value)
 ```
 
