@@ -28,10 +28,6 @@ har_bos <- read_csv("Data/har_bos.csv")
 
 # 1.
 
-```{r}
-
-```
-
 
 ```{r ggplot_For_Arbeidssted_Haugalandet}
 syssel_arb %>% 
@@ -238,5 +234,10 @@ syssel_arb %>%
   coord_cartesian(ylim = c(1235, 5291), xlim = c())
 ```
 
+
+-
+```{r siste}
+# Siste
+```
 
 -
