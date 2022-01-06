@@ -3,6 +3,9 @@
 .Rapp.history
 .Rproj
 .DS_Store
+.html
+.pdf
+.docx
 
 # Session Data files
 .RData
