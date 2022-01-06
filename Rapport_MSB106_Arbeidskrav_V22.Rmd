@@ -27,7 +27,7 @@ hardanger_bos <- read_csv("Data/hardanger_bos.csv")
 haugalandet_arb %>% 
 ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  geom_line(aes(group = knavn, colour = knavn, size = knavn)) +
+  geom_line(aes(group = knavn, colour = knavn)) +
   scale_size_manual(values = c(seq(2.0, 0.5, by = -0.1))) +
   geom_hline(yintercept = 0) +
   theme(legend.position = 'bottom')
