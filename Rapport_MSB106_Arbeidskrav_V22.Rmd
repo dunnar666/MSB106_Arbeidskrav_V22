@@ -8,6 +8,8 @@ library(readr)
 library(ggplot2)
 library(knitr)
 library(viridis)
+library(tidyverse)
+library(lubridate)
 ```
 
 # Innlesing av .csv filer
@@ -25,11 +27,41 @@ hardanger_bos <- read_csv("Data/hardanger_bos.csv")
 
 ```{r ggplot_For_Arbeidssted_Haugalandet}
 haugalandet_arb %>% 
-ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  # gjør om aar til Date object for å få finere verdier på x-aksen
+ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = `Alle Næringer`)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  geom_line(aes(group = knavn, colour = knavn)) +
-  scale_size_manual(values = c(seq(2.0, 0.5, by = -0.1))) +
-  geom_hline(yintercept = 0) +
+  labs(x = "År", y = "Totalt antall ansatte") +
+  geom_line(mapping = aes(group = knavn, colour = knavn)) +
   theme(legend.position = 'bottom')
 ```
 
+```{r}
+# we have to go long first
+haugalandet_arb_long <- haugalandet_arb %>%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = "Næring",
+    values_to = "Ansatte"
+  )
+```
+
+```{r}
+haugalandet_arb_long %>% 
+  filter(knavn %in% c("Bokn", "Haugesund", "Karmøy", "Sauda")) %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
+  theme(legend.position = 'right')
+```
+
+Tilsvarende for de tre andre kommunene.
+
+Merk at hver kommune har sin vertikale skala. Gjør det vanskelig å sammenligne. 
+
+Dere bør tenke litt på informasjonsinnholdet. Jeg tror at her ville det være en fordel å ta de 4-5 viktigste næringen og så gruppere resten i en "Andre" kategori. Dere burde også vurdere om andel av totalt ansatte ville gi et bedre bilde. Da er det lettere å sammenligne.
+
+En annen ting å vurdere er om det er smart å dele næringene inn i ulike grupper, "primærnæringer", "tjenesteyting", "industri" etc. og så lage en serie med plot for hver gruppe.
+
+Mye å tenke på ;-)
