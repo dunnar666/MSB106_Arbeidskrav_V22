@@ -25,9 +25,35 @@ moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
 # 1a. Sysselsatte Etter Arbeidssted (Kevin & Ola A.)
 
 ```{r}
+# Henter her inn data via API og inkluderer alle kommunenumre
 syssel_arb <- ApiData(
   urlToData = "07984",
-  Region = knr,
+  Region = list("vs:KommunerS", c(
+          "1106",
+          "1135",
+          "1145",
+          "1146",
+          "1149",
+          "1151",
+          "1160",
+          "4611",
+          "4612",
+          "4613",
+          "4614",
+          "4615",
+          "4616",
+          "4617",
+          "4618",
+          "1211",
+          "1216",
+          "1219",
+          "1221",
+          "1222",
+          "1223",
+          "1224",
+          "1227",
+          "1228",
+          "1231")),
   ContentsCode = "SysselsatteArb",
   NACE2007 = TRUE,
   Alder = "15-74",
@@ -47,6 +73,7 @@ syssel_arb <- syssel_arb$dataset %>%
 ```
 
 ```{r}
+# Fjerne irrelevant kolonne som heter NAstatus
 syssel_arb <- syssel_arb %>% 
   select(-NAstatus)
 ```
@@ -102,12 +129,44 @@ names(syssel_arb)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
+```{r removing rows with zero values}
+row_sub = apply(syssel_arb, 1, function(row) all(row !=0 ))
+syssel_arb[row_sub,]
+```
+
+
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
 ```{r}
+# Henter her inn data via API og inkluderer alle kommunenumre
 syssel_bos <- ApiData(
   urlToData = "07984",
-  Region = knr,
+  Region = list("vs:KommunerS", c(
+          "1106",
+          "1135",
+          "1145",
+          "1146",
+          "1149",
+          "1151",
+          "1160",
+          "4611",
+          "4612",
+          "4613",
+          "4614",
+          "4615",
+          "4616",
+          "4617",
+          "4618",
+          "1211",
+          "1216",
+          "1219",
+          "1221",
+          "1222",
+          "1223",
+          "1224",
+          "1227",
+          "1228",
+          "1231")),
   ContentsCode = "Sysselsatte",
   NACE2007 = TRUE,
   Alder = "15-74",
@@ -177,7 +236,90 @@ names(syssel_bos)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_bos)[[24]] <- "Uoppgitt"
 ```
 
-# 2. Mål for Beskrivelse av Næringsstrukturen 
+
+# 2. Mål for Beskrivelse av Næringsstrukturen
+
+
+# 3. Sysselsetting i ulike næringer, etter arbeidsstedskommune
+
+# 4. Pendling mellom de ulike kommunene i regionen (Heidi og Ann Elisabeth jobber videre med denne)
+
+```{r}
+Pendling <- ApiData(
+  urlToData = "03321",
+  ArbstedKomm = "Sauda",
+  ContentsCode = "Sysselsatte",
+  Bokommuen = "Sauda",
+  Tid = c(
+    as.character(2020:2020)))
+```
+
+```{r}
+Pendling <- Pendling %>% 
+  pivot_wider(
+    names_from = "Bokommuen"
+    values_from = value)
+```
+
+```{r}
+names(Pendling)[[1]] <- " ArbstedKomm"
+```
+
+
+
+```{r}
+Pendling <- Pendling %>%
+  filter(
+    ArbstedKomm %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618))
+```
+
+
+```{r}
+Pendling <- Pendling %>%
+  filter(
+    Bokommuen %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618))
+```
+
+```{r}
+names(Pendling)[[1]] <- "Haugesund"
+names(Pendling)[[2]] <- "Sauda"
+names(Pendling)[[3]] <- "Bokn"
+names(Pendling)[[4]] <- "Tysvær"
+names(Pendling)[[5]] <- "Karmøy"
+names(Pendling)[[6]] <- "Utsira"
+names(Pendling)[[7]] <- "Vindafjord"
+names(Pendling)[[8]] <- "Etne"
+names(Pendling)[[9]] <- "Sveio"
+names(Pendling)[[10]] <- "Bømlo"
+names(Pendling)[[11]] <- "Stord"
+names(Pendling)[[12]] <- "Fitjar"
+names(Pendling)[[13]] <- "Tysnes"
+names(Pendling)[[14]] <- "Kvinnherad"
+names(Pendling)[[15]] <- "Ullensvang"
+
+```
+
+
+
+
+```{r}
+Pendling <- matrix(03321, nrow = 15, ncol = 15)
+row.names(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
+
+colnames(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
+```
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 7da91362097d8fa513ff590918845f9c16370119
 
 # 3. Sysselsetting i ulike næringer, etter arbeidsstedskommune
 
@@ -245,4 +387,5 @@ row.names(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 
 
 colnames(Pendling) <- c("1106, 1135, 1145, 1146, 1149, 1151, 1160, 4611, 4612, 4613, 4614, 4615, 4616, 4617, 4618")
 ```
+
 
