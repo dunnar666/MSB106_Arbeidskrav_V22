@@ -129,11 +129,10 @@ names(syssel_arb)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
-```{r removing rows with zero values}
-row_sub = apply(syssel_arb, 1, function(row) all(row !=0 ))
-syssel_arb[row_sub,]
+```{r}
+syssel_arb[syssel_arb$`Alle Næringer` !=0, ] %>% 
+  view()
 ```
-
 
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
