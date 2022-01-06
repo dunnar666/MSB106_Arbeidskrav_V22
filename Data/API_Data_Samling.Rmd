@@ -25,6 +25,7 @@ moenster <- '\\s*\\([\\d\\s-]*\\d*\\)\\s*$'
 # 1a. Sysselsatte Etter Arbeidssted (Kevin & Ola A.)
 
 ```{r}
+# Henter her inn data via API og inkluderer alle kommunenumre
 syssel_arb <- ApiData(
   urlToData = "07984",
   Region = list("vs:KommunerS", c(
@@ -72,6 +73,7 @@ syssel_arb <- syssel_arb$dataset %>%
 ```
 
 ```{r}
+# Fjerne irrelevant kolonne som heter NAstatus
 syssel_arb <- syssel_arb %>% 
   select(-NAstatus)
 ```
@@ -127,9 +129,16 @@ names(syssel_arb)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
+```{r removing rows with zero values}
+row_sub = apply(syssel_arb, 1, function(row) all(row !=0 ))
+syssel_arb[row_sub,]
+```
+
+
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
 ```{r}
+# Henter her inn data via API og inkluderer alle kommunenumre
 syssel_bos <- ApiData(
   urlToData = "07984",
   Region = list("vs:KommunerS", c(
