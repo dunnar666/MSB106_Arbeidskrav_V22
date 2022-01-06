@@ -300,6 +300,21 @@ hardanger_bos <- syssel_bos %>%
     knr %in% c(1228, 4618))
 ```
 
+
+### Skriver .csv av ovenfor. Flytt ned når vi kommer vidare:
+
+```{r writing_csv}
+write_csv(syssel_arb, file="syssel_arb.csv")
+write_csv(haugalandet_arb, file="haugalandet_arb.csv")
+write_csv(sunhordland_arb, file="sunhordland_arb.csv")
+write_csv(hardanger_arb, file="hardanger_arb.csv")
+write_csv(syssel_bos, file="syssel_bos.csv")
+write_csv(haugalandet_bos, file="haugalandet_bos.csv")
+write_csv(sunhordland_bos, file="sunhordland_bos.csv")
+write_csv(hardanger_bos, file="hardanger_bos.csv")
+```
+
+
 # 2. Mål for Beskrivelse av Næringsstrukturen
 
 
