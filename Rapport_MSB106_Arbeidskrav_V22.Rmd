@@ -15,19 +15,18 @@ library(tidyverse)
 
 # Innlesing av .csv filer
 
-
-# **HUSK Å FIKSE**
-
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv")
-syssel_arb <- read_csv("Data/syssel_arb.csv")
-syssel_arb <- read_csv("Data/syssel_arb.csv")
-syssel_arb <- read_csv("Data/syssel_arb.csv")
+hld_arb <- read_csv("Data/hld_arb.csv")
+sun_arb <- read_csv("Data/sun_arb.csv")
+har_arb <- read_csv("Data/har_arb.csv")
 syssel_bos <- read_csv("Data/syssel_bos.csv")
-haugalandet_bos <- read_csv("Data/haugalandet_bos.csv")
-sunhordland_bos <- read_csv("Data/sunhordland_bos.csv")
-hardanger_bos <- read_csv("Data/hardanger_bos.csv")
+hld_bos <- read_csv("Data/hld_bos.csv")
+sun_bos <- read_csv("Data/sun_bos.csv")
+har_bos <- read_csv("Data/har_bos.csv")
 ```
+
+# 1.
 
 ```{r}
 
