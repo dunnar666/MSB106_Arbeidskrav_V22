@@ -15,29 +15,40 @@ library(tidyverse)
 
 # Innlesing av .csv filer
 
+
+# **HUSK Å FIKSE**
+
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv")
-haugalandet_arb <- read_csv("Data/haugalandet_arb.csv")
-sunhordland_arb <- read_csv("Data/sunhordland_arb.csv")
-hardanger_arb <- read_csv("Data/hardanger_arb.csv")
+syssel_arb <- read_csv("Data/syssel_arb.csv")
+syssel_arb <- read_csv("Data/syssel_arb.csv")
+syssel_arb <- read_csv("Data/syssel_arb.csv")
 syssel_bos <- read_csv("Data/syssel_bos.csv")
 haugalandet_bos <- read_csv("Data/haugalandet_bos.csv")
 sunhordland_bos <- read_csv("Data/sunhordland_bos.csv")
 hardanger_bos <- read_csv("Data/hardanger_bos.csv")
 ```
 
+```{r}
+
+```
+
+
 ```{r ggplot_For_Arbeidssted_Haugalandet}
-haugalandet_arb %>% 
+syssel_arb %>% 
+  filter(knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160)) %>% 
   ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   geom_line(aes(group = knavn, colour = knavn)) +
-  scale_size_manual(values = c(seq(2.0, 0.5, by = -0.1))) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = "Haugalandet", x = "År") +
   theme(legend.position = 'bottom')
 ```
 
 ```{r Haugesund}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1106) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -47,7 +58,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Sauda}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1135) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -57,7 +68,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Bokn}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1145) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -67,7 +78,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Tysvær}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1146) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -77,7 +88,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Karmøy}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1149) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -87,7 +98,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Utsira}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1151) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -97,7 +108,7 @@ haugalandet_arb %>%
 ```
 
 ```{r Vindafjord}
-haugalandet_arb %>%
+syssel_arb %>%
   filter(knr == 1160) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -109,18 +120,21 @@ haugalandet_arb %>%
 Så gjer vi det samme for *Sunnhordland*
 
 ```{r ggplot_For_Arbeidssted_Sunnhordland}
-sunhordland_arb %>% 
+syssel_arb %>% 
+  filter(knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617)) %>% 
   ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   geom_line(aes(group = knavn, colour = knavn)) +
-  scale_size_manual(values = c(seq(2.0, 0.5, by = -0.1))) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = "Haugalandet", x = "År") +
   theme(legend.position = 'bottom')
 ```
 
 
 ```{r Etne}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4611) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -130,7 +144,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Sveio}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4612) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -140,7 +154,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Bømlo}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4613) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -150,7 +164,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Stord}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4614) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -160,7 +174,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Fitjar}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4615) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -170,7 +184,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Tysnes}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4616) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -180,7 +194,7 @@ sunhordland_arb %>%
 ```
 
 ```{r Kvinnherad}
-sunhordland_arb %>%
+syssel_arb %>%
   filter(knr == 4617) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -192,17 +206,21 @@ sunhordland_arb %>%
 Til slutt må vi gjere det samme med *Hardanger*
 
 ```{r ggplot_For_Arbeidssted_Hardanger}
-hardanger_arb %>% 
+syssel_arb %>% 
+  filter(knr %in% c(4618, 1228)) %>% 
   ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   geom_line(aes(group = knavn, colour = knavn)) +
-  scale_size_manual(values = c(seq(2.0, 0.5, by = -0.1))) +
+  scale_color_manual(values=c('#111111','#054987')) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = "Haugalandet", x = "År") +
   theme(legend.position = 'bottom')
 ```
 
 ```{r Odda}
-hardanger_arb %>%
+syssel_arb %>%
   filter(knr == 1228) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +
@@ -212,7 +230,7 @@ hardanger_arb %>%
 ```
 
 ```{r Ullensvang}
-hardanger_arb %>%
+syssel_arb %>%
   filter(knr == 4618) %>%
  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
   geom_line() +

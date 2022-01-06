@@ -146,22 +146,219 @@ syssel_arb[1][(syssel_arb)[1] == "1231"] <- "4618"
 
 ## SKiller mellom Haugalandet, Sunhordland & Hardanger
 
+## Haugalandet, Sunnhordland & Hardanger
+
+### Haugalandet
+
 ```{r}
-haugalandet_arb <- syssel_arb %>% 
-  filter(
-    knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160))
+hld_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1106",
+          "1135",
+          "1145",
+          "1146",
+          "1149",
+          "1151",
+          "1160")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
 ```
 
 ```{r}
-sunhordland_arb <- syssel_arb %>% 
-  filter(
-    knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617))
+hld_arb <- hld_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = hld_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
 ```
 
 ```{r}
-hardanger_arb <- syssel_arb %>% 
-  filter(
-    knr %in% c(1228, 4618))
+hld_arb <- hld_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+
+```{r}
+hld_arb <- hld_arb %>% 
+  mutate(
+    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1160_Vindafjord`) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+hld_arb <- hld_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(hld_arb)[[1]] <- "Næringer"
+names(hld_arb)[[5]] <- "År"
+```
+
+### Sunnhordland
+
+```{r}
+sun_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1211",
+          "1216",
+          "1219",
+          "1221",
+          "1222",
+          "1223",
+          "1224",
+          "4611",
+          "4612",
+          "4613",
+          "4614",
+          "4615",
+          "4616",
+          "4617")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+sun_arb <- sun_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = sun_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  mutate(
+    Etne = `4611_Etne` + `1211_Etne (-2019)`,
+    Sveio = `4612_Sveio` + `1216_Sveio (-2019)`,
+    Bømlo = `4613_Bømlo` + `1219_Bømlo (1916-2019)`,
+    Stord = `4614_Stord` + `1221_Stord (-2019)`,
+    Fitjar = `4615_Fitjar` + `1222_Fitjar (-2019)`,
+    Tysnes = `4616_Tysnes` + `1223_Tysnes (-2019)`,
+    Kvinnherad = `4617_Kvinnherad` + `1224_Kvinnherad (-2019)`,
+    Totalt = Etne + Sveio + Bømlo + Stord + Fitjar + Tysnes + Kvinnherad) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+sun_arb <- sun_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(sun_arb)[[1]] <- "Næringer"
+names(sun_arb)[[5]] <- "År"
+```
+
+### Hardanger
+
+```{r}
+har_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1228",
+          "1231",
+          "4618")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+har_arb <- har_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = har_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  mutate(
+    Ullensvang = `1231_Ullensvang (1977-2019)` + `4618_Ullensvang`,
+    Totalt = `1228_Odda (1913-2019)` + Ullensvang) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+har_arb <- har_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(har_arb)[[1]] <- "Næringer"
+names(har_arb)[[5]] <- "År"
 ```
 
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
@@ -300,12 +497,226 @@ hardanger_bos <- syssel_bos %>%
     knr %in% c(1228, 4618))
 ```
 
+## Haugalandet, Sunnhordland & Hardanger
+
+### Haugalandet
+
+```{r}
+hld_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1106",
+          "1135",
+          "1145",
+          "1146",
+          "1149",
+          "1151",
+          "1160")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+hld_arb <- hld_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = hld_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
+```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+
+```{r}
+hld_arb <- hld_arb %>% 
+  mutate(
+    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1160_Vindafjord`) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+hld_arb <- hld_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(hld_arb)[[1]] <- "Næringer"
+names(hld_arb)[[5]] <- "År"
+```
+
+### Sunnhordland
+
+```{r}
+sun_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1211",
+          "1216",
+          "1219",
+          "1221",
+          "1222",
+          "1223",
+          "1224",
+          "4611",
+          "4612",
+          "4613",
+          "4614",
+          "4615",
+          "4616",
+          "4617")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+sun_arb <- sun_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = sun_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  mutate(
+    Etne = `4611_Etne` + `1211_Etne (-2019)`,
+    Sveio = `4612_Sveio` + `1216_Sveio (-2019)`,
+    Bømlo = `4613_Bømlo` + `1219_Bømlo (1916-2019)`,
+    Stord = `4614_Stord` + `1221_Stord (-2019)`,
+    Fitjar = `4615_Fitjar` + `1222_Fitjar (-2019)`,
+    Tysnes = `4616_Tysnes` + `1223_Tysnes (-2019)`,
+    Kvinnherad = `4617_Kvinnherad` + `1224_Kvinnherad (-2019)`,
+    Totalt = Etne + Sveio + Bømlo + Stord + Fitjar + Tysnes + Kvinnherad) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+sun_arb <- sun_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(sun_arb)[[1]] <- "Næringer"
+names(sun_arb)[[5]] <- "År"
+```
+
+### Hardanger
+
+```{r}
+har_arb <- ApiData(
+  urlToData = "07984",
+  Region = list("vs:KommunerS", c(
+          "1228",
+          "1231",
+          "4618")),
+  ContentsCode = "SysselsatteArb",
+  NACE2007 = TRUE,
+  Alder = "15-74",
+  Kjonn = "0",
+  Tid = c(
+    as.character(2008:2020)))
+```
+
+```{r}
+har_arb <- har_arb$dataset %>% 
+  tibble() %>% 
+  rename(
+    knr = Region,
+    aar = Tid
+) %>% 
+    mutate(knavn = har_arb$`07984: Sysselsatte per 4. kvartal, etter region, næring (SN2007), kjønn, alder, statistikkvariabel og år`$region)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  pivot_wider(
+    names_from = c(knr, knavn),
+    values_from = value)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  filter(NACE2007 == "00-99")
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  mutate(
+    Ullensvang = `1231_Ullensvang (1977-2019)` + `4618_Ullensvang`,
+    Totalt = `1228_Odda (1913-2019)` + Ullensvang) %>% 
+  select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  mutate(
+    Kjonn = fct_recode(Kjonn,
+                     "Begge Kjønn" = "0"))
+
+har_arb <- har_arb %>% 
+  mutate(
+    NACE2007 = fct_recode(NACE2007,
+                     "Alle Næringer" = "00-99"))
+```
+
+```{r}
+names(har_arb)[[1]] <- "Næringer"
+names(har_arb)[[5]] <- "År"
+```
 
 ### Skriver .csv av ovenfor. Flytt ned når vi kommer vidare:
 
 ```{r writing_csv}
 write_csv(syssel_arb, file="syssel_arb.csv")
-write_csv(haugalandet_arb, file="haugalandet_arb.csv")
+write_csv(hld_arb, file="hld_arb.csv")
 write_csv(sunhordland_arb, file="sunhordland_arb.csv")
 write_csv(hardanger_arb, file="hardanger_arb.csv")
 write_csv(syssel_bos, file="syssel_bos.csv")
