@@ -130,9 +130,15 @@ names(syssel_arb)[[24]] <- "Uoppgitt"
 ```
 
 ```{r}
-syssel_arb[syssel_arb$`Alle Næringer` !=0, ] %>% 
-  view()
+syssel_arb <- syssel_arb[syssel_arb$`Alle Næringer` !=0, ]
 ```
+
+```{r}
+syssel_arb %>% 
+  mutate(
+  )
+```
+
 
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
@@ -233,6 +239,10 @@ names(syssel_bos)[[21]] <- "Undervisning"
 names(syssel_bos)[[22]] <- "Helse- og Sosialtjenester"
 names(syssel_bos)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_bos)[[24]] <- "Uoppgitt"
+```
+
+```{r}
+syssel_bos <- syssel_arb[syssel_arb$`Alle Næringer` !=0, ]
 ```
 
 
