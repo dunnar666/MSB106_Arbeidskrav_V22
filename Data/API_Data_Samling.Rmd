@@ -177,10 +177,6 @@ names(syssel_bos)[[23]] <- "Personlig Tjenesteyting"
 names(syssel_bos)[[24]] <- "Uoppgitt"
 ```
 
-#### Testing
-
-Abd. Push Pull
-
 # 2. Mål for Beskrivelse av Næringsstrukturen
 
 
