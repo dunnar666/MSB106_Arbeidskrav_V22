@@ -38,6 +38,8 @@ har_bos <- read_csv("Data/har_bos.csv", show_col_types = FALSE)
 
 # 1.
 
+## Haugalandet
+
 ```{r}
 hld_arb %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
@@ -61,16 +63,17 @@ syssel_arb %>%
   theme(axis.title.y = element_text(angle=0))+
   theme(legend.position = 'bottom')
 ```
-```{r}
+
+```{r hld_arb_long}
 hld_arb_long <- syssel_arb %>%
   pivot_longer(
     cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
     names_to = "Næring",
-    values_to = "Ansatte"
-  )
+    values_to = "Ansatte")
 ```
 
 ```{r Næringsfordeling- og utvikling i Haugelandet}
+# Ola: Skal vi ta vekk denne, Kevin? - Sjå dei to kode-chunkane under, og vurder
 
 # Kevin: Hei! Vurderer om denne må gjøres på både Sunnhordland, samt Hardanger.
 
@@ -93,6 +96,52 @@ hld_arb_long %>%
   
   # Bestemmer at forklaringene skal stå på høyre side
   theme(legend.position = 'right')
+```
+
+```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største}
+hld_arb_long %>% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
+  filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  # Angir aksetitler
+  labs(title = "Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = 'bottom')
+```
+
+```{r Næringsfordeling_og_Utvikling_Haugelandet_4_Minste}
+hld_arb_long %>% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
+  filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  # Angir aksetitler
+  labs(title = "Haugalandet: Bokn, Sauda, Tysvær og Utsira", x = "År", y = "Antall ansatte") +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på 4 kolonner
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = 'bottom')
 ```
 
 ```{r Haugesund}
@@ -172,6 +221,8 @@ syssel_arb %>%
   coord_cartesian(ylim = c(4422, 5037), xlim = c())
 ```
 
+## Sunnhordland
+
 Så gjer vi det samme for *Sunnhordland*
 
 ```{r}
@@ -197,6 +248,59 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
+```{r sun_arb_long}
+sun_arb_long <- syssel_arb %>%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = "Næring",
+    values_to = "Ansatte")
+```
+
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største}
+sun_arb_long %>% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c("Bømlo", "Stord", "Kvinnherad")) %>% 
+  filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  # Angir aksetitler
+  labs(title = "Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = 'bottom')
+```
+
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste}
+sun_arb_long %>% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c("Etne", "Sveio", "Fitjar", "Tysnes")) %>% 
+  filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  # Angir aksetitler
+  labs(title = "Sunnhordland: Etne, Fitjar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = 'bottom')
+```
 
 ```{r Etne}
 syssel_arb %>%
@@ -268,6 +372,8 @@ syssel_arb %>%
   coord_cartesian(ylim = c(5472, 6084), xlim = c())
 ```
 
+## Hardanger
+
 Til slutt må vi gjere det samme med *Hardanger*
 
 ```{r}
@@ -277,7 +383,6 @@ har_arb %>%
   labs(title = "Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
-
 
 ```{r ggplot_For_Arbeidssted_Hardanger}
 syssel_arb %>% 
@@ -290,6 +395,37 @@ syssel_arb %>%
   geom_hline(yintercept = 0) +
   scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
    labs(title = "Hardanger", x = "År") +
+  theme(legend.position = 'bottom')
+```
+
+```{r har_arb_long}
+har_arb_long <- syssel_arb %>%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = "Næring",
+    values_to = "Ansatte")
+```
+
+```{r Næringsfordeling_og_Utvikling_Hardanger}
+har_arb_long %>% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Hardanger
+  filter(knavn %in% c("Odda", "Ullensvang")) %>% 
+  filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  # Angir aksetitler
+  labs(title = "Hardanger: Odda, Ullensvang", x = "År", y = "Antall ansatte") +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
   theme(legend.position = 'bottom')
 ```
 
