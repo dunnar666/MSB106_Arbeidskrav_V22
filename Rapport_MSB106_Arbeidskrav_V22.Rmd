@@ -7,10 +7,10 @@ author:
 - Heidi Marie Rolfsnes
 subtitle: MSB106, Anvendt by- og regionaløkonomi
 output:
+  pdf_document: default
+  html_notebook: default
   html_document:
     df_print: paged
-  html_notebook: default
-  pdf_document: default
 lang: no-NB
 ---
 
@@ -99,7 +99,7 @@ hld_arb_long %>%
   theme(legend.position = 'right')
 ```
 
-```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største}
+```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted}
 hld_arb_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
   filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
@@ -122,7 +122,7 @@ hld_arb_long %>%
   theme(legend.position = 'bottom')
 ```
 
-```{r Næringsfordeling_og_Utvikling_Haugelandet_4_Minste}
+```{r Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted}
 hld_arb_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
   filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
@@ -257,7 +257,7 @@ sun_arb_long <- syssel_arb %>%
     values_to = "Ansatte")
 ```
 
-```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største}
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted}
 sun_arb_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
   filter(knavn %in% c("Bømlo", "Stord", "Kvinnherad")) %>% 
@@ -280,7 +280,7 @@ sun_arb_long %>%
   theme(legend.position = 'bottom')
 ```
 
-```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste}
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted}
 sun_arb_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
   filter(knavn %in% c("Etne", "Sveio", "Fitjar", "Tysnes")) %>% 
@@ -407,7 +407,7 @@ har_arb_long <- syssel_arb %>%
     values_to = "Ansatte")
 ```
 
-```{r Næringsfordeling_og_Utvikling_Hardanger}
+```{r Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted}
 har_arb_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Hardanger
   filter(knavn %in% c("Odda", "Ullensvang")) %>% 
@@ -485,7 +485,7 @@ hld_bos_long <- syssel_bos %>%
     values_to = "Ansatte")
 ```
 
-```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største}
+```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted}
 hld_bos_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
   filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
@@ -508,7 +508,7 @@ hld_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
-```{r Næringsfordeling_og_Utvikling_Haugelandet_4_Minste}
+```{r Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted}
 hld_bos_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
   filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
@@ -564,7 +564,7 @@ sun_bos_long <- syssel_bos %>%
     values_to = "Ansatte")
 ```
 
-```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største}
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted}
 sun_bos_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
   filter(knavn %in% c("Bømlo", "Stord", "Kvinnherad")) %>% 
@@ -587,7 +587,7 @@ sun_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
-```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste}
+```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted}
 sun_bos_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
   filter(knavn %in% c("Etne", "Sveio", "Fitjar", "Tysnes")) %>% 
@@ -612,7 +612,7 @@ sun_bos_long %>%
 
 ## Hardanger
 
-```{r Arbeidssted_Hardanger_1}
+```{r Bosted_Hardanger_1}
 har_bos %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
   geom_line() +
@@ -620,7 +620,7 @@ har_bos %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-```{r Arbeidssted_Hardanger_2}
+```{r Bosted_Hardanger_2}
 syssel_bos %>% 
   filter(knr %in% c(4618, 1228)) %>% 
   ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
@@ -642,7 +642,7 @@ har_bos_long <- syssel_bos %>%
     values_to = "Ansatte")
 ```
 
-```{r Næringsfordeling_og_Utvikling_Hardanger}
+```{r Næringsfordeling_og_Utvikling_Hardanger_Bosted}
 har_bos_long %>% 
   # Vi ønsker å studere alle kommunene som formelt sett regnes som Hardanger
   filter(knavn %in% c("Odda", "Ullensvang")) %>% 
