@@ -226,7 +226,7 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<p>Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.</p>
+<p>#Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.</p>
 <p>I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Hardanger.</p>
 <p>Problemstillinger og beregninger vi vil se nærmere på</p>
 <ul>
@@ -266,6 +266,19 @@ pre code {
 <p>Tallene er hentet fra SSB 09.01.21 (<a href="https://www.ssb.no/statbank/table/01223/tableViewLayout1/" class="uri">https://www.ssb.no/statbank/table/01223/tableViewLayout1/</a>) gjelder for 4 kvartal 2020.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiA8LSByZWFkX2NzdihcIkRhdGEvc3lzc2VsX2FyYi5jc3ZcIiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSlcbmhsZF9hcmIgPC0gcmVhZF9jc3YoXCJEYXRhL2hsZF9hcmIuY3N2XCIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpXG5zdW5fYXJiIDwtIHJlYWRfY3N2KFwiRGF0YS9zdW5fYXJiLmNzdlwiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKVxuaGFyX2FyYiA8LSByZWFkX2NzdihcIkRhdGEvaGFyX2FyYi5jc3ZcIiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSlcbnN5c3NlbF9ib3MgPC0gcmVhZF9jc3YoXCJEYXRhL3N5c3NlbF9ib3MuY3N2XCIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpXG5obGRfYm9zIDwtIHJlYWRfY3N2KFwiRGF0YS9obGRfYm9zLmNzdlwiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKVxuc3VuX2JvcyA8LSByZWFkX2NzdihcIkRhdGEvc3VuX2Jvcy5jc3ZcIiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSlcbmhhcl9ib3MgPC0gcmVhZF9jc3YoXCJEYXRhL2hhcl9ib3MuY3N2XCIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpXG5QZW5kbGluZyA8LSByZWFkX2NzdihcIkRhdGEvUGVuZGxpbmcuY3N2XCIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpXG5oZ2xfUGVuZGxpbmcgPC0gcmVhZF9jc3YoXCJEYXRhL2hnbF9QZW5kbGluZy5jc3ZcIiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSlcbnN1bl9QZW5kbGluZyA8LSByZWFkX2NzdihcIkRhdGEvc3VuX1BlbmRsaW5nLmNzdlwiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb &lt;- read_csv(&quot;Data/syssel_arb.csv&quot;, show_col_types = FALSE)
+hld_arb &lt;- read_csv(&quot;Data/hld_arb.csv&quot;, show_col_types = FALSE)
+sun_arb &lt;- read_csv(&quot;Data/sun_arb.csv&quot;, show_col_types = FALSE)
+har_arb &lt;- read_csv(&quot;Data/har_arb.csv&quot;, show_col_types = FALSE)
+syssel_bos &lt;- read_csv(&quot;Data/syssel_bos.csv&quot;, show_col_types = FALSE)
+hld_bos &lt;- read_csv(&quot;Data/hld_bos.csv&quot;, show_col_types = FALSE)
+sun_bos &lt;- read_csv(&quot;Data/sun_bos.csv&quot;, show_col_types = FALSE)
+har_bos &lt;- read_csv(&quot;Data/har_bos.csv&quot;, show_col_types = FALSE)
+Pendling &lt;- read_csv(&quot;Data/Pendling.csv&quot;, show_col_types = FALSE)
+hgl_Pendling &lt;- read_csv(&quot;Data/hgl_Pendling.csv&quot;, show_col_types = FALSE)
+sun_Pendling &lt;- read_csv(&quot;Data/sun_Pendling.csv&quot;, show_col_types = FALSE)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -276,54 +289,221 @@ pre code {
 <h2>Haugalandet</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2FyYiAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiSGF1Z2FsYW5kZXRcIikrXG4gIHlsYWIoXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpK1xuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpXG5gYGAifQ== -->
+<pre class="r"><code>hld_arb %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Haugalandet&quot;)+
+  ylab(&quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDExMDYsIDExMzUsIDExNDUsIDExNDYsIDExNDksIDExNTEsIDExNjApKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsIFwiLTAxLTAxXCIpKSwgeSA9IGBBbGxlIE7DpnJpbmdlcmAsIChhbmdsZT0wKSkpICtcbiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9IFwiQVwiKSArXG4gIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArXG4gIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICtcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgK1xuICBsYWJzKHRpdGxlID0gXCJIYXVnYWxhbmRldFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGUgaSAgXFxuIGFsbGUgbsOmcmluZ2VyXCIpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKStcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>syssel_arb %&gt;% 
+  filter(knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160)) %&gt;% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = `Alle Næringer`, (angle=0))) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  labs(title = &quot;Haugalandet&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>hld_arb_long &lt;- syssel_arb %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBPbGE6IFNrYWwgdmkgdGEgdmVrayBkZW5uZSwgS2V2aW4/IC0gU2rDpSBkZWkgdG8ga29kZS1jaHVua2FuZSB1bmRlciwgb2cgdnVyZGVyXG5cbiMgS2V2aW46IEhlaSEgVnVyZGVyZXIgb20gZGVubmUgbcOlIGdqw7hyZXMgcMOlIGLDpWRlIFN1bm5ob3JkbGFuZCwgc2FtdCBIYXJkYW5nZXIuXG5cbmhsZF9hcmJfbG9uZyAlPiUgXG4gICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBIYXVnYWxhbmRldFxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiQm9rblwiLCBcIkhhdWdlc3VuZFwiLCBcIkthcm3DuHlcIiwgXCJTYXVkYVwiLCBcIlR5c3bDpnJcIiwgXCJVdHNpcmFcIiwgXCJWaW5kYWZqb3JkXCIpKSAlPiUgXG4gIFxuICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXRcbiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgXCItMDEtMDFcIikpLCB5ID0gQW5zYXR0ZSkpICtcbiAgXG4gICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlc1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgIyBBbmdpciBha3NldGl0bGVyXG4gIGxhYnMoeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlXCIpICtcbiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpVxuICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArXG4gIFxuICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSAzKSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ3JpZ2h0JylcbmBgYCJ9 -->
+<pre class="r"><code># Ola: Skal vi ta vekk denne, Kevin? - Sjå dei to kode-chunkane under, og vurder
+
+# Kevin: Hei! Vurderer om denne må gjøres på både Sunnhordland, samt Hardanger.
+
+hld_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c(&quot;Bokn&quot;, &quot;Haugesund&quot;, &quot;Karmøy&quot;, &quot;Sauda&quot;, &quot;Tysvær&quot;, &quot;Utsira&quot;, &quot;Vindafjord&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;right&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2FyYl9sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0XG4gIGZpbHRlcihrbmF2biAlaW4lIGMoXCJIYXVnZXN1bmRcIiwgXCJLYXJtw7h5XCIsIFwiVmluZGFmam9yZFwiKSkgJT4lIFxuICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoXCJJbmR1c3RyaVwiLCBcIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXJcIiwgXCJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZ1wiLCBcIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uXCIsIFwiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0XCIsIFwiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlXCIpKSAlPiUgXG4gIFxuICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXRcbiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgXCItMDEtMDFcIikpLCB5ID0gQW5zYXR0ZSkpICtcbiAgXG4gICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlc1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgIyBBbmdpciBha3NldGl0bGVyXG4gIGxhYnModGl0bGUgPSBcIkhhdWdhbGFuZGV0OiBIYXVnZXN1bmQsIEthcm3DuHkgb2cgVmluZGFmam9yZFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyXG4gIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gXCJmcmVlX3lcIiwgbmNvbCA9IDMpICtcbiAgXG4gICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZVxuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>hld_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c(&quot;Haugesund&quot;, &quot;Karmøy&quot;, &quot;Vindafjord&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Haugalandet: Haugesund, Karmøy og Vindafjord&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2FyYl9sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0XG4gIGZpbHRlcihrbmF2biAlaW4lIGMoXCJCb2tuXCIsIFwiU2F1ZGFcIiwgXCJUeXN2w6ZyXCIsIFwiVXRzaXJhXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiSGF1Z2FsYW5kZXQ6IEJva24sIFNhdWRhLCBUeXN2w6ZyIG9nIFV0c2lyYVwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgNCBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSA0KSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>hld_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c(&quot;Bokn&quot;, &quot;Sauda&quot;, &quot;Tysvær&quot;, &quot;Utsira&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Haugalandet: Bokn, Sauda, Tysvær og Utsira&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på 4 kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTA2KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJIYXVnZXN1bmRcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlIGkgIFxcbiBhbGxlIG7DpnJpbmdlclwiKSArXG4gIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMjA4NTIsIDIyMTkwKSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1106) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Haugesund&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(20852, 22190), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTM1KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJTYXVkYVwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGUgaSAgXFxuIGFsbGUgbsOmcmluZ2VyXCIpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKStcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxOTM3LCAyMTgwKSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1135) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Sauda&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(1937, 2180), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTQ1KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJCb2tuXCIsIHggPSBcIsOFclwiLCB5ID0gXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygyOTEsIDMyNyksIHhsaW0gPSBjKCkpXG5gYGAifQ== -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1145) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Bokn&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(291, 327), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTQ2KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJUeXN2w6ZyXCIsIHggPSBcIsOFclwiLCB5ID0gXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg0MDQ4LCA0NzczKSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1146) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Tysvær&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(4048, 4773), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTQ5KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJLYXJtw7h5XCIsIHggPSBcIsOFclwiLCB5ID0gXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxNDU5MSwgMTYwNTkpLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1149) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Karmøy&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(14591, 16059), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTUxKSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJVdHNpcmFcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlIGkgIFxcbiBhbGxlIG7DpnJpbmdlclwiKSArXG4gIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrIFxuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDg4LCAxMTQpLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1151) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Utsira&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(88, 114), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMTYwKSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJWaW5kYWZqb3JkXCIsIHggPSBcIsOFclwiLCB5ID0gXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg0NDIyLCA1MDM3KSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1160) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Vindafjord&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(4422, 5037), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -332,50 +512,184 @@ pre code {
 <p>Så gjer vi det samme for <em>Sunnhordland</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2FyYiAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRhbGFuZFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGUgaSAgXFxuIGFsbGUgbsOmcmluZ2VyXCIpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSlcbmBgYCJ9 -->
+<pre class="r"><code>sun_arb %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Sunnhordaland&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDQ2MTEsIDQ2MTIsIDQ2MTMsIDQ2MTQsIDQ2MTUsIDQ2MTYsIDQ2MTcpKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgK1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICtcbiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgK1xuICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kXCIsIHggPSBcIsOFclwiKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;% 
+  filter(knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617)) %&gt;% 
+  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = &quot;Sunnhordland&quot;, x = &quot;År&quot;) +
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>sun_arb_long &lt;- syssel_arb %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2FyYl9sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZFxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiQsO4bWxvXCIsIFwiU3RvcmRcIiwgXCJLdmlubmhlcmFkXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kOiBCw7htbG8sIEt2aW5uaGVyYWQgb2cgU3RvcmRcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlXCIpICtcbiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpVxuICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArXG4gIFxuICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSAzKSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>sun_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c(&quot;Bømlo&quot;, &quot;Stord&quot;, &quot;Kvinnherad&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Sunnhordland: Bømlo, Kvinnherad og Stord&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2FyYl9sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZFxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiRXRuZVwiLCBcIlN2ZWlvXCIsIFwiRml0amFyXCIsIFwiVHlzbmVzXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kOiBFdG5lLCBGaXRqYXIsIFN2ZWlvIG9nIFR5c25lc1wiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyXG4gIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gXCJmcmVlX3lcIiwgbmNvbCA9IDQpICtcbiAgXG4gICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZVxuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>sun_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c(&quot;Etne&quot;, &quot;Sveio&quot;, &quot;Fitjar&quot;, &quot;Tysnes&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Sunnhordland: Etne, Fitjar, Sveio og Tysnes&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjExKSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJFdG5lXCIsIHggPSBcIsOFclwiKSArIFxuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDE2MTMsIDE3NzUpLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4611) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Etne&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(1613, 1775), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjEyKSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJTdmVpb1wiLCB4ID0gXCLDhXJcIikgKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxMzU3LCAxNTIzKSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4612) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Sveio&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(1357, 1523), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjEzKSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJCw7htbG9cIiwgeCA9IFwiw4VyXCIpICsgXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoNDY2MiwgNDg5MCksIHhsaW0gPSBjKCkpXG5gYGAifQ== -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4613) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Bømlo&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(4662, 4890), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjE0KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJTdG9yZFwiLCB4ID0gXCLDhXJcIikgKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArXG4gIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg5MTYxLCA5OTM4KSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4614) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Stord&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(9161, 9938), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjE1KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJGaXRqYXJcIiwgeCA9IFwiw4VyXCIpICsgXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMTA4NSwgMTI1OSksIHhsaW0gPSBjKCkpXG5gYGAifQ== -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4615) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Fitjar&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(1085, 1259), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjE2KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJUeXNuZXNcIiwgeCA9IFwiw4VyXCIpICsgXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoOTg5LCAxMTg4KSwgeGxpbSA9IGMoKSlcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4616) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Tysnes&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(989, 1188), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjE3KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJLdmlubmhlcmFkXCIsIHggPSBcIsOFclwiKSArIFxuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDU0NzIsIDYwODQpLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4617) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Kvinnherad&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(5472, 6084), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -384,26 +698,93 @@ pre code {
 <p>Til slutt må vi gjere det samme med <em>Hardanger</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2FyYiAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiSGFyZGFuZ2VyXCIsIHk9IFwiQWxsZSBOw6ZyaW5nZXJcIikgKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKVxuYGBgIn0= -->
+<pre class="r"><code>har_arb %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Hardanger&quot;, y= &quot;Alle Næringer&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDQ2MTgsIDEyMjgpKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgK1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcz1jKCcjMTExMTExJywnIzA1NDk4NycpKSArXG4gIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICtcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgK1xuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgIGxhYnModGl0bGUgPSBcIkhhcmRhbmdlclwiLCB4ID0gXCLDhXJcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>syssel_arb %&gt;% 
+  filter(knr %in% c(4618, 1228)) %&gt;% 
+  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_color_manual(values=c(&#39;#111111&#39;,&#39;#054987&#39;)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = &quot;Hardanger&quot;, x = &quot;År&quot;) +
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>har_arb_long &lt;- syssel_arb %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2FyYl9sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhcmRhbmdlclxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiT2RkYVwiLCBcIlVsbGVuc3ZhbmdcIikpICU+JSBcbiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKFwiSW5kdXN0cmlcIiwgXCJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyXCIsIFwiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmdcIiwgXCJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvblwiLCBcIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldFwiLCBcIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZVwiKSkgJT4lIFxuICBcbiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0XG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsIFwiLTAxLTAxXCIpKSwgeSA9IEFuc2F0dGUpKSArXG4gIFxuICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXNcbiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9IFwiQVwiKSArXG4gICMgQW5naXIgYWtzZXRpdGxlclxuICBsYWJzKHRpdGxlID0gXCJIYXJkYW5nZXI6IE9kZGEsIFVsbGVuc3ZhbmdcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlXCIpICtcbiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpVxuICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArXG4gIFxuICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSAzKSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>har_arb_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Hardanger
+  filter(knavn %in% c(&quot;Odda&quot;, &quot;Ullensvang&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Hardanger: Odda, Ullensvang&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSAxMjI4KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJPZGRhXCIsIHggPSBcIsOFclwiKSArIFxuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDM0ODksIDM3NDApLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 1228) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Odda&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(3489, 3740), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2FyYiAlPiVcbiAgZmlsdGVyKGtuciA9PSA0NjE4KSAlPiVcbiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICtcbiAgZ2VvbV9saW5lKCkgK1xuICBsYWJzKHRpdGxlID0gXCJVbGxlbnN2YW5nXCIsIHggPSBcIsOFclwiKSArIFxuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDEyMzUsIDUyOTEpLCB4bGltID0gYygpKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_arb %&gt;%
+  filter(knr == 4618) %&gt;%
+ ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  geom_line() +
+  labs(title = &quot;Ullensvang&quot;, x = &quot;År&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+  coord_cartesian(ylim = c(1235, 5291), xlim = c())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -414,22 +795,94 @@ pre code {
 <h2>Haugalandet</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2JvcyAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiSGF1Z2FsYW5kZXRcIikrXG4gIHlsYWIoXCJBbnRhbGwgYW5zYXR0ZSBpICBcXG4gYWxsZSBuw6ZyaW5nZXJcIikgK1xuICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpK1xuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpXG5gYGAifQ== -->
+<pre class="r"><code>hld_bos %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Haugalandet&quot;)+
+  ylab(&quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2JvcyAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDExMDYsIDExMzUsIDExNDUsIDExNDYsIDExNDksIDExNTEsIDExNjApKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsIFwiLTAxLTAxXCIpKSwgeSA9IGBBbGxlIE7DpnJpbmdlcmAsIChhbmdsZT0wKSkpICtcbiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9IFwiQVwiKSArXG4gIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArXG4gIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICtcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgK1xuICBsYWJzKHRpdGxlID0gXCJIYXVnYWxhbmRldFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGUgaSAgXFxuIGFsbGUgbsOmcmluZ2VyXCIpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKStcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>syssel_bos %&gt;% 
+  filter(knr %in% c(1106, 1135, 1145, 1146, 1149, 1151, 1160)) %&gt;% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = `Alle Næringer`, (angle=0))) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  labs(title = &quot;Haugalandet&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2Jvc19sb25nIDwtIHN5c3NlbF9ib3MgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>hld_bos_long &lt;- syssel_bos %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2Jvc19sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0XG4gIGZpbHRlcihrbmF2biAlaW4lIGMoXCJIYXVnZXN1bmRcIiwgXCJLYXJtw7h5XCIsIFwiVmluZGFmam9yZFwiKSkgJT4lIFxuICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoXCJJbmR1c3RyaVwiLCBcIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXJcIiwgXCJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZ1wiLCBcIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uXCIsIFwiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0XCIsIFwiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlXCIpKSAlPiUgXG4gIFxuICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXRcbiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgXCItMDEtMDFcIikpLCB5ID0gQW5zYXR0ZSkpICtcbiAgXG4gICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlc1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgIyBBbmdpciBha3NldGl0bGVyXG4gIGxhYnModGl0bGUgPSBcIkhhdWdhbGFuZGV0OiBIYXVnZXN1bmQsIEthcm3DuHkgb2cgVmluZGFmam9yZFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyXG4gIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gXCJmcmVlX3lcIiwgbmNvbCA9IDMpICtcbiAgXG4gICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZVxuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>hld_bos_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c(&quot;Haugesund&quot;, &quot;Karmøy&quot;, &quot;Vindafjord&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Haugalandet: Haugesund, Karmøy og Vindafjord&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGxkX2Jvc19sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0XG4gIGZpbHRlcihrbmF2biAlaW4lIGMoXCJCb2tuXCIsIFwiU2F1ZGFcIiwgXCJUeXN2w6ZyXCIsIFwiVXRzaXJhXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiSGF1Z2FsYW5kZXQ6IEJva24sIFNhdWRhLCBUeXN2w6ZyIG9nIFV0c2lyYVwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgNCBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSA0KSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>hld_bos_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Haugalandet
+  filter(knavn %in% c(&quot;Bokn&quot;, &quot;Sauda&quot;, &quot;Tysvær&quot;, &quot;Utsira&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Haugalandet: Bokn, Sauda, Tysvær og Utsira&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på 4 kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -437,22 +890,93 @@ pre code {
 <h2>Sunnhordland</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2JvcyAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRhbGFuZFwiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGUgaSAgXFxuIGFsbGUgbsOmcmluZ2VyXCIpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSlcbmBgYCJ9 -->
+<pre class="r"><code>sun_bos %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Sunnhordaland&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte i  \n alle næringer&quot;) +
+  theme(axis.title.y = element_text(angle=0))+ 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2JvcyAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDQ2MTEsIDQ2MTIsIDQ2MTMsIDQ2MTQsIDQ2MTUsIDQ2MTYsIDQ2MTcpKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgK1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICtcbiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgK1xuICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArXG4gIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgK1xuICAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kXCIsIHggPSBcIsOFclwiKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKVxuYGBgIn0= -->
+<pre class="r"><code>syssel_bos %&gt;% 
+  filter(knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617)) %&gt;% 
+  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = &quot;Sunnhordland&quot;, x = &quot;År&quot;) +
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2Jvc19sb25nIDwtIHN5c3NlbF9ib3MgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>sun_bos_long &lt;- syssel_bos %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2Jvc19sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZFxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiQsO4bWxvXCIsIFwiU3RvcmRcIiwgXCJLdmlubmhlcmFkXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kOiBCw7htbG8sIEt2aW5uaGVyYWQgb2cgU3RvcmRcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlXCIpICtcbiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpVxuICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArXG4gIFxuICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSAzKSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>sun_bos_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c(&quot;Bømlo&quot;, &quot;Stord&quot;, &quot;Kvinnherad&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Sunnhordland: Bømlo, Kvinnherad og Stord&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX2Jvc19sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZFxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiRXRuZVwiLCBcIlN2ZWlvXCIsIFwiRml0amFyXCIsIFwiVHlzbmVzXCIpKSAlPiUgXG4gIGZpbHRlcihOw6ZyaW5nICVpbiUgYyhcIkluZHVzdHJpXCIsIFwiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlclwiLCBcIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nXCIsIFwiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb25cIiwgXCJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXRcIiwgXCJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VcIikpICU+JSBcbiAgXG4gICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdFxuICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCBcIi0wMS0wMVwiKSksIHkgPSBBbnNhdHRlKSkgK1xuICBcbiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSBcIkFcIikgK1xuICAjIEFuZ2lyIGFrc2V0aXRsZXJcbiAgbGFicyh0aXRsZSA9IFwiU3VubmhvcmRsYW5kOiBFdG5lLCBGaXRqYXIsIFN2ZWlvIG9nIFR5c25lc1wiLCB4ID0gXCLDhXJcIiwgeSA9IFwiQW50YWxsIGFuc2F0dGVcIikgK1xuICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICtcbiAgXG4gICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyXG4gIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gXCJmcmVlX3lcIiwgbmNvbCA9IDQpICtcbiAgXG4gICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZVxuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>sun_bos_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Sunnhordland
+  filter(knavn %in% c(&quot;Etne&quot;, &quot;Sveio&quot;, &quot;Fitjar&quot;, &quot;Tysnes&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Sunnhordland: Etne, Fitjar, Sveio og Tysnes&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 4) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -460,18 +984,67 @@ pre code {
 <h2>Hardanger</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2JvcyAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArXG4gIGdlb21fbGluZSgpICtcbiAgbGFicyh0aXRsZSA9IFwiSGFyZGFuZ2VyXCIsIHk9IFwiQWxsZSBOw6ZyaW5nZXJcIikgKyBcbiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKVxuYGBgIn0= -->
+<pre class="r"><code>har_bos %&gt;% 
+  ggplot(mapping = aes(x = År, y = Totalt)) +
+  geom_line() +
+  labs(title = &quot;Hardanger&quot;, y= &quot;Alle Næringer&quot;) + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzc2VsX2JvcyAlPiUgXG4gIGZpbHRlcihrbnIgJWluJSBjKDQ2MTgsIDEyMjgpKSAlPiUgXG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgK1xuICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gXCJBXCIpICtcbiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcz1jKCcjMTExMTExJywnIzA1NDk4NycpKSArXG4gIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICtcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgK1xuICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICtcbiAgIGxhYnModGl0bGUgPSBcIkhhcmRhbmdlclwiLCB4ID0gXCLDhXJcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJylcbmBgYCJ9 -->
+<pre class="r"><code>syssel_bos %&gt;% 
+  filter(knr %in% c(4618, 1228)) %&gt;% 
+  ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  scale_color_manual(values=c(&#39;#111111&#39;,&#39;#054987&#39;)) +
+  scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
+  geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
+   labs(title = &quot;Hardanger&quot;, x = &quot;År&quot;) +
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2Jvc19sb25nIDwtIHN5c3NlbF9ib3MgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsXG4gICAgbmFtZXNfdG8gPSBcIk7DpnJpbmdcIixcbiAgICB2YWx1ZXNfdG8gPSBcIkFuc2F0dGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>har_bos_long &lt;- syssel_bos %&gt;%
+  pivot_longer(
+    cols = `Jordbruk, Skogbrug og Fiske`:Uoppgitt,
+    names_to = &quot;Næring&quot;,
+    values_to = &quot;Ansatte&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFyX2Jvc19sb25nICU+JSBcbiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhcmRhbmdlclxuICBmaWx0ZXIoa25hdm4gJWluJSBjKFwiT2RkYVwiLCBcIlVsbGVuc3ZhbmdcIikpICU+JSBcbiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKFwiSW5kdXN0cmlcIiwgXCJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyXCIsIFwiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmdcIiwgXCJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvblwiLCBcIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldFwiLCBcIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZVwiKSkgJT4lIFxuICBcbiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0XG4gIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsIFwiLTAxLTAxXCIpKSwgeSA9IEFuc2F0dGUpKSArXG4gIFxuICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXNcbiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9IFwiQVwiKSArXG4gICMgQW5naXIgYWtzZXRpdGxlclxuICBsYWJzKHRpdGxlID0gXCJIYXJkYW5nZXI6IE9kZGEsIFVsbGVuc3ZhbmdcIiwgeCA9IFwiw4VyXCIsIHkgPSBcIkFudGFsbCBhbnNhdHRlXCIpICtcbiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpVxuICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArXG4gIFxuICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lclxuICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9IFwiZnJlZV95XCIsIG5jb2wgPSAzKSArXG4gIFxuICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGVcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpXG5gYGAifQ== -->
+<pre class="r"><code>har_bos_long %&gt;% 
+  # Vi ønsker å studere alle kommunene som formelt sett regnes som Hardanger
+  filter(knavn %in% c(&quot;Odda&quot;, &quot;Ullensvang&quot;)) %&gt;% 
+  filter(Næring %in% c(&quot;Industri&quot;, &quot;Helse- og Sosialtjenester&quot;, &quot;Finansiering og Forsikring&quot;, &quot;Elektrisitet, Vann og Renovasjon&quot;, &quot;Bygge- og Anleggsvirksomhet&quot;, &quot;Jordbruk, Skogbrug og Fiske&quot;)) %&gt;% 
+  
+  # Vi omformaterer datoene til mer formålstjenlige format
+  ggplot(mapping = aes(x = as.Date(paste0(aar, &quot;-01-01&quot;)), y = Ansatte)) +
+  
+  # Vi velger hvilken fargeoppslagstabell som skal anvendes
+  scale_color_viridis(discrete = TRUE, option = &quot;A&quot;) +
+  # Angir aksetitler
+  labs(title = &quot;Hardanger: Odda, Ullensvang&quot;, x = &quot;År&quot;, y = &quot;Antall ansatte&quot;) +
+  # Angir hvilke variabler fargene skal basere seg på
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  
+  # Lager et panel som viser flere grafer, fordelt på tre kolonner
+  facet_wrap(facets = ~ knavn, scales = &quot;free_y&quot;, ncol = 3) +
+  
+  # Bestemmer at forklaringene skal stå på høyre side
+  theme(legend.position = &#39;bottom&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -480,10 +1053,16 @@ pre code {
 <h1>Oppgave 4</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGdsX1BlbmRsaW5nXG5gYGAifQ== -->
+<pre class="r"><code>hgl_Pendling</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VuX1BlbmRsaW5nXG5gYGAifQ== -->
+<pre class="r"><code>sun_Pendling</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ul>
@@ -491,6 +1070,9 @@ pre code {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTaXN0ZVxuYGBgIn0= -->
+<pre class="r"><code># Siste</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ul>
@@ -499,7 +1081,7 @@ pre code {
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFyYmVpZHNrcmF2IHbDpXJlbiAyMDIyIg0KYXV0aG9yOg0KLSBLZXZpbiBIYQ0KLSBPbGEgQW5kcmUgT2xvZnNzb24NCi0gQW5uIEVsaXNhYmV0aCBKYWNvYnNlbg0KLSBIZWlkaSBNYXJpZSBSb2xmc25lcw0Kc3VidGl0bGU6IE1TQjEwNiwgQW52ZW5kdCBieS0gb2cgcmVnaW9uYWzDuGtvbm9taQ0Kb3V0cHV0Og0KICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQNCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdA0KICBodG1sX2RvY3VtZW50Og0KICAgIGRmX3ByaW50OiBwYWdlZA0KbGFuZzogbm8tTkINCmVkaXRvcl9vcHRpb25zOiANCiAgbWFya2Rvd246IA0KICAgIHdyYXA6IHNlbnRlbmNlDQotLS0NCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQpzdXBwcmVzc1BhY2thZ2VTdGFydHVwTWVzc2FnZXMoew0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkoZ2dwbG90MikNCmxpYnJhcnkoa25pdHIpDQpsaWJyYXJ5KHZpcmlkaXMpDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCn0pDQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobz1GQUxTRSwgaW5jbHVkZSA9IFRSVUUpDQpgYGANCg0KUm9tbGlnZSBmb3Jza2plbGxlciBpIG7DpnJpbmdzc3RydWt0dXIsIHZpcmtuaW5nZXIgYXYgZWtzb2dlbmUgc2pva2sgaSBiYXNpc3N5c3NlbHNldHRpbmdlbiwgb2cgbG9rYWxlIGZvcnNramVsbGVyIEkgc3lzc2Vsc2V0dGluZ3N2ZWtzdC4NCg0KSSBkZW5uZSBvcHBnYXZlbiB2aWwgdmkgc2UgcMOlIG7DpnJpbmdzc3RydWt0dXJlciBww6UgSGF1Z2FsYW5kZXQsIFN1bm5ob3JkbGFuZCBvZyBIYXJkYW5nZXIuDQoNClByb2JsZW1zdGlsbGluZ2VyIG9nIGJlcmVnbmluZ2VyIHZpIHZpbCBzZSBuw6ZybWVyZSBww6UNCg0KLSAgIEJlc2tyaXZlIHNpdHVhc2pvbmVuIHNsaWsgZGVuIGVyIGZvciAyMDIwLCBvZyBmb3IgdXR2aWtsaW5nZW4gb3ZlciB0aWQuDQotICAgU3lzc2Vsc2V0dGluZ3N1dHZpa2xpbmdlbiBmb3IgdWxpa2UgbsOmcmluZ2VyIGkgdWxpa2Uga29tbXVuZXIgb2cgZm9yIHJlZ2lvbmVuIHNhbWxldC4NCi0gICBBbmRlbGVuIGF2IHN5c3NlbHNldHRpbmdlbiBpbm5lbmZvciBlbmtlbHRuw6ZyaW5nZXIsIG9nIHNhbW1lbmxpZ25lIHNpdHVhc2pvbmVuIG9nIHV0dmlrbGluZ2VuIGZvciBsb2thbGUga29tbXVuZXIgb2cgbG9rYWwgcmVnaW9uIG1lZCBkZXQgc29tIGdqZWxkZXIgZm9yIG5hc2pvbmVuIHNhbWxldC4NCi0gICBCZXJlZ25lIGxva2FsaXNlcmluZ3Nrdm90aWVudGVyIGZvciB1bGlrZSBuw6ZyaW5nZXIgaSB1bGlrZSBrb21tdW5lciwgb2cgZm9yIHJlZ2lvbmVuKGUpIHNhbWxldC4NCi0gICBCZXJlZ25lIHVsaWtlIGFnZ3JlZ2VyaW5nc25pdsOlZXIgYXYgbsOmcmluZ2VyIG9nIGdlb2dyYWZpLCBpZGVudGlmaXNlciBtdWxpZ2Uga2x5bmdlciBiYXNlcnQgcMOlIHZlcmRpZW5lIGZvciBsb2thbGlzZXJpbmdza3ZvdGllbnRlbmUuDQotICAgR2rDuHJlIGVuIHZ1cmRlcmluZyBhdiBodm9yIGtvbnNlbnRyZXJ0L3NwcmVkdCBlbiBuw6ZyaW5nIGVyIGZvcmRlbHQgbWVsbG9tIGtvbW11bmVuZSBpIHJlZ2lvbmVuLCBiYXNlcnQgcMOlIGJlcmVnbmluZ2VyIGF2IGRlbiByb21saWdlIEdpbmktaW5kZWtzZW4uDQotICAgVnVyZGVyZSBvbSBzYW1tZW5saWduaW5nc2dydW5ubGFnZXQgYsO4ciB2w6ZyZSBzYW1sZXQgc3lzc2Vsc2V0dGluZyBpIHJlZ2lvbmVuLCBlbGxlciBzYW1sZXQgc3lzc2Vsc2V0dGluZyBhdiBuYXNqb25lbiwgb2cgZmlubmUgdXQgaHZpbGtlbiByb2xsZSBkZXQgc3BpbGxlciBvbSBlbiBicnVrZXIgcmVnaW9uYWxlIGVsbGVyIG5hc2pvbmFsZSBhbnNsYWcgZm9yIHNhbWxldCBzeXNzZWxzZXR0aW5nLg0KLSAgIEZpbm5lIHV0IG9tIG7DpnJpbmdzc3RydWt0dXJlbiBpIHJlZ2lvbmVuIGhhciBibGl0dCBtZXIgZWxsZXIgbWluZHJlIGRpdmVyc2lmaXNlcnQsIG1hbmdmb2xkaWcsIG92ZXIgdGlkLg0KLSAgIEJlcmVnbmUgZW4gcmVnaW9uYWwgbWFuZ2ZvbGQtaW5kZWtzIG9nIGZpbm5lIHV0IGh2b3JkYW4gdmVyZGllbmUgcMOlIGVuIHNsaWsgaW5kZWtzIGVyIGVuZHJldCBvdmVyIHRpZC4NCi0gICBWdXJkZXJlIG9tIHN5c3NlbHNldHRpbmdzYW5kZWxlbmUgc2thbCBzYW1tZW5saWduZXMgbWVkIG5hc2pvbmFsZSBlbGxlciByZWdpb25hbGUgYW5kZWxlciBmb3IgZGUgdWxpa2UgbsOmcmluZ2VuZQ0KLSAgIEdqZW50YSBiZXJlZ25pbmdlciBmb3IgYW5kZWxlciBhdiBhcmJlaWRzdGFrZXJlIGkgdWxpa2UgbsOmcmluZ2VyLCBsb2thbGlzZXJpbmdza3ZvdGllbnRlciwgZGVuIHJvbWxpZ2UgR2luaS0ga29lZmZpc2llbnRlbiBvZyBtw6VsZXQgZm9yIG1hbmdmb2xkIGF2IG7DpnJpbmdlciwgbWVkIHV0Z2FuZ3NwdW5rdCBpIGRhdGEgc3Blc2lmaXNlcnQgZXR0ZXIgYXJiZWlkc3Rha2VybmVzIGJvc3RlZC4NCi0gICBTYW1tZW5saWduZSByZXN1bHRhdGVuZSBmb3IgZGF0YSBldHRlciBhcmJlaWRzc3RlZCwgb2cga29tbWVudGVyIGh2aWxrZW4gaW5mb3JtYXNqb24gcmVzdWx0YXRlbmUgZ2lyIG9tIHJvbWxpZyBtb2JpbGl0ZXQgaSBhcmJlaWRzbWFya2VkZXQuDQotICAgR2kgZW4ga29ydCBvdmVyc2lrdCBvdmVyIHBlbmRsZXJzdHLDuG1tZXIgbWVsbG9tIGtvbW11bmVuZSBpIHJlZ2lvbmVuDQotICAgQmVyZWduZSBvZyBwcmVzZW50ZXJlIGFuZGVsZXIgYXYgYXJiZWlkc3Rha2VyZSBtZWQgYm9zdGVkIGkgZW4ga29tbXVuZSBzb20gaGFyIGFyYmVpZHNzdGVkIGkgYW5kcmUga29tbXVuZXIsIG9nIGdqw7hyIGRldCBzYW1tZSBmb3IgYW5kZWxlbiBhdiBqb2JiZW5lIGkgZW4ga29tbXVuZSBzb20gZXIgYmVzYXR0IGF2IGFyYmVpZHN0YWtlcmUgZnJhIGFuZHJlIGtvbW11bmVyLg0KLSAgIERpc2t1dGVyZSBmb3Jza2plbGxlciBtZWxsb20ga29tbXVuZW5lIGkgcmVnaW9uZW4sIG9nIGRyw7hmdCB1dHZpa2xpbmdlbiBvdmVyIHRpZCBmb3IgdWxpa2Uga29tbXVuZXINCi0gICBCZXJlZ25lIG9nIHByZXNlbnRlcmUgYW5kZWxlbiBhdiBhcmJlaWRzdGFrZXJlIHNvbSBib3Igb2cgam9iYmVyIGlubmVuZm9yIHNhbW1lIGtvbW11bmUuIFNlIG9tIGRldCBlciBzeXN0ZW1hdGlza2UgZm9yc2tqZWxsZXIgc2V0dCBpIGZvcmhvbGQgdGlsIHNlbnRyYWxpdGV0IG9nIHRpbGdqZW5nZWxpZ2hldCBpIGRldCBsb2thbGUgYXJiZWlkc21hcmtlZGV0LiBPZyBvbSBkZXQgZXIgYmVzdGVtdGUgdHJlbmRlciBpIHV0dmlrbGluZ2VuIGZvciB1bGlrZSBrb21tdW5lci4NCi0gICBCcnVrZSBiZXJlZ25pbmdlbmUgYXYgbG9rYWxpc2VyaW5na3ZvdGllbnRlciB0aWwgw6UgZGVsZSBuw6ZyaW5nZW5lIGlubiBpIGxva2FsLSBvZyBiYXNpc27DpnJpbmdlcg0KLSAgIEZvcm11bGVyZSBlbiDDuGtvbm9taXNrIGJhc2Vtb2RlbGwgb2cgYmVyZWduZSDDuGtvbm9taXNrZSBiYXNlbXVsaXBsaWthdG9yZXIgZm9yIGVua2VsdGtvbW11bmVyIG9nIHJlZ2lvbihlcikuDQotICAgVnVyZGVyZSBsb2thbGUgdmlya25pbmdlciBhdiBhbHRlcm5hdGl2ZSBsb2thbGlzZXJpbmdlciBpIE9kZGEsIEh1c25lcyBvZyBMZWlydmlrDQotICAgRHLDuGZ0ZSB2aXJrbmluZ2VyIGF2IGV0IHNsaWt0IHBvc2l0aXZ0IGVrc29nZW50IHNqb2trIGZvciBkZW4gbG9rYWxlIMO4a29ub21pZW4gZ2plbm5vbSBicnVrIGF2IGVuIGJhc2Vtb2RlbGwNCi0gICBGaW5uZSB1dCBodm9yZGFuIHZpcmtuaW5nZW5lIGV2ZW50dWVsdCBzcHJlcyB0aWwgYW5kcmUga29tbXVuZXIgaSByZWdpb25lbiBvZyBodm9yZGFuIGVuIGthbiBicnVrZSBkYXRhIGZvciBwZW5kbGVzdHLDuG1tZXIgdGlsIMOlIHByZWRpa2VyZSB2aXJrbmluZ2VyIHDDpSBzeXNzZWxzZXR0aW5nZW4gaSB1bGlrZSBrb21tdW5lci4NCi0gICBTYW1tZW5saWduZSBkaXNzZSBwcmVkaWtzam9uZW5lIG1lZCBkZSB2aSBmw6VyIG7DpXIgdmkgZ2plbm5vbWbDuHJlciBhbmFseXNlbiBww6UgcmVnaW9uYWx0IG5pdsOlLg0KLSAgIEdpIGVuIHNoaWZ0LXNoYXJlIGFuYWx5c2UgaSBlbiBkaXNrdXNqb24gYXYgZm9yc2tqZWxsZXIgaSB2ZWtzdCBmb3IgZWtzZW1wZWwgbWVsbG9tIGluZHJlLCBtaWR0cmUgb2cgeXRyZSBkZWxlciBhdiByZWdpb25lbiwgZWxsZXIgZXZlbnR1ZWx0IG9tcsOlZGVyL2tvbW11bmVyIHNvbSBoYXIgaGF0dCBzdGVyayBvZyBzdmFrIGJlZm9sa25pbmdzdXR2aWtsaW5nLg0KDQojIyBPdmVyc2lrdCBvdmVyIGJlZm9sa25pbmdlbmUgaSByZWdpb25lbmUNCg0KIyMjIEhhdWdhbGFuZGV0DQpIYXVnYWxhbmRldCBiZXN0w6VyIGF2IGtvbW11bmVuZSBCb2tuICg4NTIpLCBIYXVnZXN1bmQgKDM3MzU3KSwgS2FybcO4eSAoNDIxODYpLCBTYXVkYSAoNDU5NSksIFR5c3bDpnIoMTEwNjUpLCBVdHNpcmEoMTk4KSBvZyBWaW5kYWZqb3JkKDg3MTQpLiB0aWxzYW1tZW4gYm9yIGRldCAxMDQ5NjcgcGVyc29uZXIgaSBkZW5uZSByZWdpb25lbi4gaSB0aWRzcGVyaW9kZW4gdmkgaGFyIGhlbnRldCBpbm4gZGF0YSBoYXIgZGV0IHZlcnQga29tbXVuZXNhbW1lbnNsw6VpbmcgaSBkZW5uZSByZWdpb25lbi4gRGEgYmxlIMOYbGVuIG9nIHZpbmRhZmpvcmQgc2zDpXR0IGkgc2FtbWVuIHRpbCBlbiBrb21tdW5lIChodm9yZGFuIGhhciB2aSB0YXR0IGhlbnN5biB0aWwgZGV0dGU/Pz8pDQoNCiMjIyBTdW5uaG9yZGxhbmQgb2cgVWxsZW5zdmFuZw0KU3VubmhvcmRsYW5kIG9nIFVsbGVuc3ZhbmcgYmVzdMOlciBhdiBrb21tdW5lbmUgQsO4bWxvKDExOTU3KSwgRXRuZSg0MDYyKSwgRml0amFyKDMxODkpLCBLdmlubmhlcmFkKDEzMDcxKSwgU3RvcmQoMTg3NTkpLCBTdmVpbyg1NzY2KSwgVHlzbmVzKDI4NjkpIG9nIFVsbGVuc3ZhbmcoMTEwNDgpLiBUaWxzYW1tZW4gYm9yIGRldCA3MDcyMSBwZXJzb25lciBpIGRlbm5lIHJlZ2lvbmVuLg0KDQpUYWxsZW5lIGVyIGhlbnRldCBmcmEgU1NCIDA5LjAxLjIxIChodHRwczovL3d3dy5zc2Iubm8vc3RhdGJhbmsvdGFibGUvMDEyMjMvdGFibGVWaWV3TGF5b3V0MS8pIGdqZWxkZXIgZm9yIDQga3ZhcnRhbCAyMDIwLg0KDQpgYGB7ciBjc3ZfZmlsZXJ9DQpzeXNzZWxfYXJiIDwtIHJlYWRfY3N2KCJEYXRhL3N5c3NlbF9hcmIuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCmhsZF9hcmIgPC0gcmVhZF9jc3YoIkRhdGEvaGxkX2FyYi5jc3YiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKQ0Kc3VuX2FyYiA8LSByZWFkX2NzdigiRGF0YS9zdW5fYXJiLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpoYXJfYXJiIDwtIHJlYWRfY3N2KCJEYXRhL2hhcl9hcmIuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCnN5c3NlbF9ib3MgPC0gcmVhZF9jc3YoIkRhdGEvc3lzc2VsX2Jvcy5jc3YiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKQ0KaGxkX2JvcyA8LSByZWFkX2NzdigiRGF0YS9obGRfYm9zLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpzdW5fYm9zIDwtIHJlYWRfY3N2KCJEYXRhL3N1bl9ib3MuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCmhhcl9ib3MgPC0gcmVhZF9jc3YoIkRhdGEvaGFyX2Jvcy5jc3YiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKQ0KUGVuZGxpbmcgPC0gcmVhZF9jc3YoIkRhdGEvUGVuZGxpbmcuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCmhnbF9QZW5kbGluZyA8LSByZWFkX2NzdigiRGF0YS9oZ2xfUGVuZGxpbmcuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCnN1bl9QZW5kbGluZyA8LSByZWFkX2NzdigiRGF0YS9zdW5fUGVuZGxpbmcuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCmBgYA0KDQojIDEgU3lzc2Vsc2V0dGluZyBJIFVsaWtlIE7DpnJpbmdlciwgRXR0ZXIgQXJiZWlkc3N0ZWQgKE1vZGVsbGVyIEZlcmRpZz8/KQ0KDQojIyBIYXVnYWxhbmRldA0KDQpgYGB7ciBBcmJlaWRzc3RlZF9IYXVnYWxhbmRldF8xfQ0KaGxkX2FyYiAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldCIpKw0KICB5bGFiKCJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsNCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKQ0KYGBgDQoNCmBgYHtyIEFyYmVpZHNzdGVkX0hhdWdhbGFuZGV0XzJ9DQpzeXNzZWxfYXJiICU+JSANCiAgZmlsdGVyKGtuciAlaW4lIGMoMTEwNiwgMTEzNSwgMTE0NSwgMTE0NiwgMTE0OSwgMTE1MSwgMTE2MCkpICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IGBBbGxlIE7DpnJpbmdlcmAsIChhbmdsZT0wKSkpICsNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICBnZW9tX2xpbmUoYWVzKGdyb3VwID0ga25hdm4sIGNvbG91ciA9IGtuYXZuKSkgKw0KICBzY2FsZV9zaXplX21hbnVhbCh2YWx1ZXMgPSBjKHNlcSgyLjAsIDIsIGJ5ID0gLTAuMSkpKSArDQogIGdlb21faGxpbmUoeWludGVyY2VwdCA9IDApICsNCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgaGxkX2FyYl9sb25nfQ0KaGxkX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lDQogIHBpdm90X2xvbmdlcigNCiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsDQogICAgbmFtZXNfdG8gPSAiTsOmcmluZyIsDQogICAgdmFsdWVzX3RvID0gIkFuc2F0dGUiKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nLSBvZyB1dHZpa2xpbmcgaSBIYXVnZWxhbmRldH0NCiMgT2xhOiBTa2FsIHZpIHRhIHZla2sgZGVubmUsIEtldmluPyAtIFNqw6UgZGVpIHRvIGtvZGUtY2h1bmthbmUgdW5kZXIsIG9nIHZ1cmRlcg0KDQojIEtldmluOiBIZWkhIFZ1cmRlcmVyIG9tIGRlbm5lIG3DpSBnasO4cmVzIHDDpSBiw6VkZSBTdW5uaG9yZGxhbmQsIHNhbXQgSGFyZGFuZ2VyLg0KDQpobGRfYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGF1Z2FsYW5kZXQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiQm9rbiIsICJIYXVnZXN1bmQiLCAiS2FybcO4eSIsICJTYXVkYSIsICJUeXN2w6ZyIiwgIlV0c2lyYSIsICJWaW5kYWZqb3JkIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdyaWdodCcpDQpgYGANCg0KYGBge3IgTsOmcmluZ3Nmb3JkZWxpbmdfb2dfVXR2aWtsaW5nX0hhdWdlbGFuZGV0XzNfU3TDuHJzdGVfQXJiZWlkc3N0ZWR9DQpobGRfYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGF1Z2FsYW5kZXQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiSGF1Z2VzdW5kIiwgIkthcm3DuHkiLCAiVmluZGFmam9yZCIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhdWdhbGFuZGV0OiBIYXVnZXN1bmQsIEthcm3DuHkgb2cgVmluZGFmam9yZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19IYXVnZWxhbmRldF80X01pbnN0ZV9BcmJlaWRzc3RlZH0NCmhsZF9hcmJfbG9uZyAlPiUgDQogICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBIYXVnYWxhbmRldA0KICBmaWx0ZXIoa25hdm4gJWluJSBjKCJCb2tuIiwgIlNhdWRhIiwgIlR5c3bDpnIiLCAiVXRzaXJhIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiSGF1Z2FsYW5kZXQ6IEJva24sIFNhdWRhLCBUeXN2w6ZyIG9nIFV0c2lyYSIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIDQga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDQpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBIYXVnZXN1bmR9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDExMDYpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiSGF1Z2VzdW5kIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKw0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDIwODUyLCAyMjE5MCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgU2F1ZGF9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDExMzUpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiU2F1ZGEiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMTkzNywgMjE4MCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgQm9rbn0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTE0NSkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJCb2tuIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygyOTEsIDMyNyksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgVHlzdsOmcn0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTE0NikgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJUeXN2w6ZyIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg0MDQ4LCA0NzczKSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBLYXJtw7h5fQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSAxMTQ5KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkthcm3DuHkiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDE0NTkxLCAxNjA1OSksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgVXRzaXJhfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSAxMTUxKSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlV0c2lyYSIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoODgsIDExNCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgVmluZGFmam9yZH0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTE2MCkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJWaW5kYWZqb3JkIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg0NDIyLCA1MDM3KSwgeGxpbSA9IGMoKSkNCmBgYA0KDQojIyBTdW5uaG9yZGxhbmQNCg0KU8OlIGdqZXIgdmkgZGV0IHNhbW1lIGZvciAqU3VubmhvcmRsYW5kKg0KDQpgYGB7cn0NCnN1bl9hcmIgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gw4VyLCB5ID0gVG90YWx0KSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiU3VubmhvcmRhbGFuZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBBcmJlaWRzc3RlZF9TdW5uaG9yZGxhbmR9DQpzeXNzZWxfYXJiICU+JSANCiAgZmlsdGVyKGtuciAlaW4lIGMoNDYxMSwgNDYxMiwgNDYxMywgNDYxNCwgNDYxNSwgNDYxNiwgNDYxNykpICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICsNCiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgKw0KICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICAgbGFicyh0aXRsZSA9ICJTdW5uaG9yZGxhbmQiLCB4ID0gIsOFciIpICsNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3Igc3VuX2FyYl9sb25nfQ0Kc3VuX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lDQogIHBpdm90X2xvbmdlcigNCiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsDQogICAgbmFtZXNfdG8gPSAiTsOmcmluZyIsDQogICAgdmFsdWVzX3RvID0gIkFuc2F0dGUiKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19TdW5uaG9yZGxhbmRfM19TdMO4cnN0ZV9BcmJlaWRzc3RlZH0NCnN1bl9hcmJfbG9uZyAlPiUgDQogICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBTdW5uaG9yZGxhbmQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiQsO4bWxvIiwgIlN0b3JkIiwgIkt2aW5uaGVyYWQiKSkgJT4lIA0KICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoIkluZHVzdHJpIiwgIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXIiLCAiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmciLCAiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb24iLCAiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0IiwgIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZSIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh0aXRsZSA9ICJTdW5uaG9yZGxhbmQ6IELDuG1sbywgS3Zpbm5oZXJhZCBvZyBTdG9yZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19TdW5uaG9yZGxhbmRfNF9NaW5zdGVfQXJiZWlkc3N0ZWR9DQpzdW5fYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gU3VubmhvcmRsYW5kDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkV0bmUiLCAiU3ZlaW8iLCAiRml0amFyIiwgIlR5c25lcyIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIlN1bm5ob3JkbGFuZDogRXRuZSwgRml0amFyLCBTdmVpbyBvZyBUeXNuZXMiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDQpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBFdG5lfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjExKSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkV0bmUiLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMTYxMywgMTc3NSksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgU3ZlaW99DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDQ2MTIpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiU3ZlaW8iLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMTM1NywgMTUyMyksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgQsO4bWxvfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjEzKSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkLDuG1sbyIsIHggPSAiw4VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg0NjYyLCA0ODkwKSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBTdG9yZH0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gNDYxNCkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJTdG9yZCIsIHggPSAiw4VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYyg5MTYxLCA5OTM4KSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBGaXRqYXJ9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDQ2MTUpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiRml0amFyIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDEwODUsIDEyNTkpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFR5c25lc30NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gNDYxNikgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJUeXNuZXMiLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoOTg5LCAxMTg4KSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBLdmlubmhlcmFkfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjE3KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkt2aW5uaGVyYWQiLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoNTQ3MiwgNjA4NCksIHhsaW0gPSBjKCkpDQpgYGANCg0KIyMgSGFyZGFuZ2VyDQoNClRpbCBzbHV0dCBtw6UgdmkgZ2plcmUgZGV0IHNhbW1lIG1lZCAqSGFyZGFuZ2VyKg0KDQpgYGB7ciBBcmJlaWRzc3RlZF9IYXJkYW5nZXJfMX0NCmhhcl9hcmIgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gw4VyLCB5ID0gVG90YWx0KSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiSGFyZGFuZ2VyIiwgeT0gIkFsbGUgTsOmcmluZ2VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKQ0KYGBgDQoNCmBgYHtyIEFyYmVpZHNzdGVkX0hhcmRhbmdlcl8yfQ0Kc3lzc2VsX2FyYiAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDQ2MTgsIDEyMjgpKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArDQogIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXM9YygnIzExMTExMScsJyMwNTQ5ODcnKSkgKw0KICBzY2FsZV9zaXplX21hbnVhbCh2YWx1ZXMgPSBjKHNlcSgyLjAsIDIsIGJ5ID0gLTAuMSkpKSArDQogIGdlb21faGxpbmUoeWludGVyY2VwdCA9IDApICsNCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlciIsIHggPSAiw4VyIikgKw0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBoYXJfYXJiX2xvbmd9DQpoYXJfYXJiX2xvbmcgPC0gc3lzc2VsX2FyYiAlPiUNCiAgcGl2b3RfbG9uZ2VyKA0KICAgIGNvbHMgPSBgSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlYDpVb3BwZ2l0dCwNCiAgICBuYW1lc190byA9ICJOw6ZyaW5nIiwNCiAgICB2YWx1ZXNfdG8gPSAiQW5zYXR0ZSIpDQpgYGANCg0KYGBge3IgTsOmcmluZ3Nmb3JkZWxpbmdfb2dfVXR2aWtsaW5nX0hhcmRhbmdlcl9BcmJlaWRzc3RlZH0NCmhhcl9hcmJfbG9uZyAlPiUgDQogICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBIYXJkYW5nZXINCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiT2RkYSIsICJVbGxlbnN2YW5nIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiSGFyZGFuZ2VyOiBPZGRhLCBVbGxlbnN2YW5nIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIikgKw0KICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlDQogIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICsNCiAgDQogICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSAzKSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgT2RkYX0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTIyOCkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJPZGRhIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDM0ODksIDM3NDApLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFVsbGVuc3Zhbmd9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDQ2MTgpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiVWxsZW5zdmFuZyIsIHggPSAiw4VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxMjM1LCA1MjkxKSwgeGxpbSA9IGMoKSkNCmBgYA0KDQojIDMgU3lzc2Vsc2V0dGluZyBJIFVsaWtlIE7DpnJpbmdlciwgRXR0ZXIgQm9zdGVkIChNb2RlbGxlciBVbmRlciBBcmJlaWQpDQoNCiMjIEhhdWdhbGFuZGV0DQoNCmBgYHtyIEJvc3RlZF9IYXVnYWxhbmRldF8xfQ0KaGxkX2JvcyAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldCIpKw0KICB5bGFiKCJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsNCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKQ0KYGBgDQoNCmBgYHtyIEJvc3RlZF9IYXVnYWxhbmRldF8yfQ0Kc3lzc2VsX2JvcyAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDExMDYsIDExMzUsIDExNDUsIDExNDYsIDExNDksIDExNTEsIDExNjApKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBgQWxsZSBOw6ZyaW5nZXJgLCAoYW5nbGU9MCkpKSArDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICsNCiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgKw0KICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArDQogIGxhYnModGl0bGUgPSAiSGF1Z2FsYW5kZXQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIGhsZF9ib3NfbG9uZ30NCmhsZF9ib3NfbG9uZyA8LSBzeXNzZWxfYm9zICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGBKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VgOlVvcHBnaXR0LA0KICAgIG5hbWVzX3RvID0gIk7DpnJpbmciLA0KICAgIHZhbHVlc190byA9ICJBbnNhdHRlIikNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfSGF1Z2VsYW5kZXRfM19TdMO4cnN0ZV9Cb3N0ZWR9DQpobGRfYm9zX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGF1Z2FsYW5kZXQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiSGF1Z2VzdW5kIiwgIkthcm3DuHkiLCAiVmluZGFmam9yZCIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhdWdhbGFuZGV0OiBIYXVnZXN1bmQsIEthcm3DuHkgb2cgVmluZGFmam9yZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19IYXVnZWxhbmRldF80X01pbnN0ZV9Cb3N0ZWR9DQpobGRfYm9zX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGF1Z2FsYW5kZXQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiQm9rbiIsICJTYXVkYSIsICJUeXN2w6ZyIiwgIlV0c2lyYSIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhdWdhbGFuZGV0OiBCb2tuLCBTYXVkYSwgVHlzdsOmciBvZyBVdHNpcmEiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSA0IGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSA0KSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KIyMgU3VubmhvcmRsYW5kDQoNCmBgYHtyIEJvc3RlZF9TdW5uaG9yZGxhbmRfMX0NCnN1bl9ib3MgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gw4VyLCB5ID0gVG90YWx0KSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiU3VubmhvcmRhbGFuZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBCb3N0ZWRfU3VubmhvcmRsYW5kXzJ9DQpzeXNzZWxfYm9zICU+JSANCiAgZmlsdGVyKGtuciAlaW4lIGMoNDYxMSwgNDYxMiwgNDYxMywgNDYxNCwgNDYxNSwgNDYxNiwgNDYxNykpICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICsNCiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgKw0KICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICAgbGFicyh0aXRsZSA9ICJTdW5uaG9yZGxhbmQiLCB4ID0gIsOFciIpICsNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3Igc3VuX2Jvc19sb25nfQ0Kc3VuX2Jvc19sb25nIDwtIHN5c3NlbF9ib3MgJT4lDQogIHBpdm90X2xvbmdlcigNCiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsDQogICAgbmFtZXNfdG8gPSAiTsOmcmluZyIsDQogICAgdmFsdWVzX3RvID0gIkFuc2F0dGUiKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19TdW5uaG9yZGxhbmRfM19TdMO4cnN0ZV9Cb3N0ZWR9DQpzdW5fYm9zX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gU3VubmhvcmRsYW5kDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkLDuG1sbyIsICJTdG9yZCIsICJLdmlubmhlcmFkIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiU3VubmhvcmRsYW5kOiBCw7htbG8sIEt2aW5uaGVyYWQgb2cgU3RvcmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDMpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfU3VubmhvcmRsYW5kXzRfTWluc3RlX0Jvc3RlZH0NCnN1bl9ib3NfbG9uZyAlPiUgDQogICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBTdW5uaG9yZGxhbmQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiRXRuZSIsICJTdmVpbyIsICJGaXRqYXIiLCAiVHlzbmVzIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiU3VubmhvcmRsYW5kOiBFdG5lLCBGaXRqYXIsIFN2ZWlvIG9nIFR5c25lcyIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gNCkgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCiMjIEhhcmRhbmdlcg0KDQpgYGB7ciBCb3N0ZWRfSGFyZGFuZ2VyXzF9DQpoYXJfYm9zICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IMOFciwgeSA9IFRvdGFsdCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlciIsIHk9ICJBbGxlIE7DpnJpbmdlciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBCb3N0ZWRfSGFyZGFuZ2VyXzJ9DQpzeXNzZWxfYm9zICU+JSANCiAgZmlsdGVyKGtuciAlaW4lIGMoNDYxOCwgMTIyOCkpICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICsNCiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcz1jKCcjMTExMTExJywnIzA1NDk4NycpKSArDQogIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICsNCiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgKw0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgIGxhYnModGl0bGUgPSAiSGFyZGFuZ2VyIiwgeCA9ICLDhXIiKSArDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIGhhcl9ib3NfbG9uZ30NCmhhcl9ib3NfbG9uZyA8LSBzeXNzZWxfYm9zICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGBKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VgOlVvcHBnaXR0LA0KICAgIG5hbWVzX3RvID0gIk7DpnJpbmciLA0KICAgIHZhbHVlc190byA9ICJBbnNhdHRlIikNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfSGFyZGFuZ2VyX0Jvc3RlZH0NCmhhcl9ib3NfbG9uZyAlPiUgDQogICMgVmkgw7huc2tlciDDpSBzdHVkZXJlIGFsbGUga29tbXVuZW5lIHNvbSBmb3JtZWx0IHNldHQgcmVnbmVzIHNvbSBIYXJkYW5nZXINCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiT2RkYSIsICJVbGxlbnN2YW5nIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiSGFyZGFuZ2VyOiBPZGRhLCBVbGxlbnN2YW5nIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIikgKw0KICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlDQogIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICsNCiAgDQogICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSAzKSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KIyBPcHBnYXZlIDQNCg0KYGBge3IgUGVuZGxpbmcgcMOlIEhhdWdhbGFuZGV0fQ0KaGdsX1BlbmRsaW5nDQpgYGANCg0KYGBge3IgUGVuZGxpbmcgaSBTdW5uaG9yZGxhbmR9DQpzdW5fUGVuZGxpbmcNCmBgYA0KDQotICAgDQoNCmBgYHtyIHNpc3RlfQ0KIyBTaXN0ZQ0KYGBgDQoNCi0gICANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFyYmVpZHNrcmF2IHbDpXJlbiAyMDIyIg0KYXV0aG9yOg0KLSBLZXZpbiBIYQ0KLSBPbGEgQW5kcmUgT2xvZnNzb24NCi0gQW5uIEVsaXNhYmV0aCBKYWNvYnNlbg0KLSBIZWlkaSBNYXJpZSBSb2xmc25lcw0Kc3VidGl0bGU6IE1TQjEwNiwgQW52ZW5kdCBieS0gb2cgcmVnaW9uYWzDuGtvbm9taQ0Kb3V0cHV0Og0KICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQNCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdA0KICBodG1sX2RvY3VtZW50Og0KICAgIGRmX3ByaW50OiBwYWdlZA0KbGFuZzogbm8tTkINCmVkaXRvcl9vcHRpb25zOiANCiAgbWFya2Rvd246IA0KICAgIHdyYXA6IHNlbnRlbmNlDQotLS0NCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQpzdXBwcmVzc1BhY2thZ2VTdGFydHVwTWVzc2FnZXMoew0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkoZ2dwbG90MikNCmxpYnJhcnkoa25pdHIpDQpsaWJyYXJ5KHZpcmlkaXMpDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCn0pDQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobz1GQUxTRSwgaW5jbHVkZSA9IFRSVUUpDQpgYGANCg0KI1JvbWxpZ2UgZm9yc2tqZWxsZXIgaSBuw6ZyaW5nc3N0cnVrdHVyLCB2aXJrbmluZ2VyIGF2IGVrc29nZW5lIHNqb2trIGkgYmFzaXNzeXNzZWxzZXR0aW5nZW4sIG9nIGxva2FsZSBmb3Jza2plbGxlciBJIHN5c3NlbHNldHRpbmdzdmVrc3QuDQoNCkkgZGVubmUgb3BwZ2F2ZW4gdmlsIHZpIHNlIHDDpSBuw6ZyaW5nc3N0cnVrdHVyZXIgcMOlIEhhdWdhbGFuZGV0LCBTdW5uaG9yZGxhbmQgb2cgSGFyZGFuZ2VyLg0KDQpQcm9ibGVtc3RpbGxpbmdlciBvZyBiZXJlZ25pbmdlciB2aSB2aWwgc2UgbsOmcm1lcmUgcMOlDQoNCi0gICBCZXNrcml2ZSBzaXR1YXNqb25lbiBzbGlrIGRlbiBlciBmb3IgMjAyMCwgb2cgZm9yIHV0dmlrbGluZ2VuIG92ZXIgdGlkLg0KLSAgIFN5c3NlbHNldHRpbmdzdXR2aWtsaW5nZW4gZm9yIHVsaWtlIG7DpnJpbmdlciBpIHVsaWtlIGtvbW11bmVyIG9nIGZvciByZWdpb25lbiBzYW1sZXQuDQotICAgQW5kZWxlbiBhdiBzeXNzZWxzZXR0aW5nZW4gaW5uZW5mb3IgZW5rZWx0bsOmcmluZ2VyLCBvZyBzYW1tZW5saWduZSBzaXR1YXNqb25lbiBvZyB1dHZpa2xpbmdlbiBmb3IgbG9rYWxlIGtvbW11bmVyIG9nIGxva2FsIHJlZ2lvbiBtZWQgZGV0IHNvbSBnamVsZGVyIGZvciBuYXNqb25lbiBzYW1sZXQuDQotICAgQmVyZWduZSBsb2thbGlzZXJpbmdza3ZvdGllbnRlciBmb3IgdWxpa2UgbsOmcmluZ2VyIGkgdWxpa2Uga29tbXVuZXIsIG9nIGZvciByZWdpb25lbihlKSBzYW1sZXQuDQotICAgQmVyZWduZSB1bGlrZSBhZ2dyZWdlcmluZ3NuaXbDpWVyIGF2IG7DpnJpbmdlciBvZyBnZW9ncmFmaSwgaWRlbnRpZmlzZXIgbXVsaWdlIGtseW5nZXIgYmFzZXJ0IHDDpSB2ZXJkaWVuZSBmb3IgbG9rYWxpc2VyaW5nc2t2b3RpZW50ZW5lLg0KLSAgIEdqw7hyZSBlbiB2dXJkZXJpbmcgYXYgaHZvciBrb25zZW50cmVydC9zcHJlZHQgZW4gbsOmcmluZyBlciBmb3JkZWx0IG1lbGxvbSBrb21tdW5lbmUgaSByZWdpb25lbiwgYmFzZXJ0IHDDpSBiZXJlZ25pbmdlciBhdiBkZW4gcm9tbGlnZSBHaW5pLWluZGVrc2VuLg0KLSAgIFZ1cmRlcmUgb20gc2FtbWVubGlnbmluZ3NncnVubmxhZ2V0IGLDuHIgdsOmcmUgc2FtbGV0IHN5c3NlbHNldHRpbmcgaSByZWdpb25lbiwgZWxsZXIgc2FtbGV0IHN5c3NlbHNldHRpbmcgYXYgbmFzam9uZW4sIG9nIGZpbm5lIHV0IGh2aWxrZW4gcm9sbGUgZGV0IHNwaWxsZXIgb20gZW4gYnJ1a2VyIHJlZ2lvbmFsZSBlbGxlciBuYXNqb25hbGUgYW5zbGFnIGZvciBzYW1sZXQgc3lzc2Vsc2V0dGluZy4NCi0gICBGaW5uZSB1dCBvbSBuw6ZyaW5nc3N0cnVrdHVyZW4gaSByZWdpb25lbiBoYXIgYmxpdHQgbWVyIGVsbGVyIG1pbmRyZSBkaXZlcnNpZmlzZXJ0LCBtYW5nZm9sZGlnLCBvdmVyIHRpZC4NCi0gICBCZXJlZ25lIGVuIHJlZ2lvbmFsIG1hbmdmb2xkLWluZGVrcyBvZyBmaW5uZSB1dCBodm9yZGFuIHZlcmRpZW5lIHDDpSBlbiBzbGlrIGluZGVrcyBlciBlbmRyZXQgb3ZlciB0aWQuDQotICAgVnVyZGVyZSBvbSBzeXNzZWxzZXR0aW5nc2FuZGVsZW5lIHNrYWwgc2FtbWVubGlnbmVzIG1lZCBuYXNqb25hbGUgZWxsZXIgcmVnaW9uYWxlIGFuZGVsZXIgZm9yIGRlIHVsaWtlIG7DpnJpbmdlbmUNCi0gICBHamVudGEgYmVyZWduaW5nZXIgZm9yIGFuZGVsZXIgYXYgYXJiZWlkc3Rha2VyZSBpIHVsaWtlIG7DpnJpbmdlciwgbG9rYWxpc2VyaW5nc2t2b3RpZW50ZXIsIGRlbiByb21saWdlIEdpbmktIGtvZWZmaXNpZW50ZW4gb2cgbcOlbGV0IGZvciBtYW5nZm9sZCBhdiBuw6ZyaW5nZXIsIG1lZCB1dGdhbmdzcHVua3QgaSBkYXRhIHNwZXNpZmlzZXJ0IGV0dGVyIGFyYmVpZHN0YWtlcm5lcyBib3N0ZWQuDQotICAgU2FtbWVubGlnbmUgcmVzdWx0YXRlbmUgZm9yIGRhdGEgZXR0ZXIgYXJiZWlkc3N0ZWQsIG9nIGtvbW1lbnRlciBodmlsa2VuIGluZm9ybWFzam9uIHJlc3VsdGF0ZW5lIGdpciBvbSByb21saWcgbW9iaWxpdGV0IGkgYXJiZWlkc21hcmtlZGV0Lg0KLSAgIEdpIGVuIGtvcnQgb3ZlcnNpa3Qgb3ZlciBwZW5kbGVyc3Ryw7htbWVyIG1lbGxvbSBrb21tdW5lbmUgaSByZWdpb25lbg0KLSAgIEJlcmVnbmUgb2cgcHJlc2VudGVyZSBhbmRlbGVyIGF2IGFyYmVpZHN0YWtlcmUgbWVkIGJvc3RlZCBpIGVuIGtvbW11bmUgc29tIGhhciBhcmJlaWRzc3RlZCBpIGFuZHJlIGtvbW11bmVyLCBvZyBnasO4ciBkZXQgc2FtbWUgZm9yIGFuZGVsZW4gYXYgam9iYmVuZSBpIGVuIGtvbW11bmUgc29tIGVyIGJlc2F0dCBhdiBhcmJlaWRzdGFrZXJlIGZyYSBhbmRyZSBrb21tdW5lci4NCi0gICBEaXNrdXRlcmUgZm9yc2tqZWxsZXIgbWVsbG9tIGtvbW11bmVuZSBpIHJlZ2lvbmVuLCBvZyBkcsO4ZnQgdXR2aWtsaW5nZW4gb3ZlciB0aWQgZm9yIHVsaWtlIGtvbW11bmVyDQotICAgQmVyZWduZSBvZyBwcmVzZW50ZXJlIGFuZGVsZW4gYXYgYXJiZWlkc3Rha2VyZSBzb20gYm9yIG9nIGpvYmJlciBpbm5lbmZvciBzYW1tZSBrb21tdW5lLiBTZSBvbSBkZXQgZXIgc3lzdGVtYXRpc2tlIGZvcnNramVsbGVyIHNldHQgaSBmb3Job2xkIHRpbCBzZW50cmFsaXRldCBvZyB0aWxnamVuZ2VsaWdoZXQgaSBkZXQgbG9rYWxlIGFyYmVpZHNtYXJrZWRldC4gT2cgb20gZGV0IGVyIGJlc3RlbXRlIHRyZW5kZXIgaSB1dHZpa2xpbmdlbiBmb3IgdWxpa2Uga29tbXVuZXIuDQotICAgQnJ1a2UgYmVyZWduaW5nZW5lIGF2IGxva2FsaXNlcmluZ2t2b3RpZW50ZXIgdGlsIMOlIGRlbGUgbsOmcmluZ2VuZSBpbm4gaSBsb2thbC0gb2cgYmFzaXNuw6ZyaW5nZXINCi0gICBGb3JtdWxlcmUgZW4gw7hrb25vbWlzayBiYXNlbW9kZWxsIG9nIGJlcmVnbmUgw7hrb25vbWlza2UgYmFzZW11bGlwbGlrYXRvcmVyIGZvciBlbmtlbHRrb21tdW5lciBvZyByZWdpb24oZXIpLg0KLSAgIFZ1cmRlcmUgbG9rYWxlIHZpcmtuaW5nZXIgYXYgYWx0ZXJuYXRpdmUgbG9rYWxpc2VyaW5nZXIgaSBPZGRhLCBIdXNuZXMgb2cgTGVpcnZpaw0KLSAgIERyw7hmdGUgdmlya25pbmdlciBhdiBldCBzbGlrdCBwb3NpdGl2dCBla3NvZ2VudCBzam9rayBmb3IgZGVuIGxva2FsZSDDuGtvbm9taWVuIGdqZW5ub20gYnJ1ayBhdiBlbiBiYXNlbW9kZWxsDQotICAgRmlubmUgdXQgaHZvcmRhbiB2aXJrbmluZ2VuZSBldmVudHVlbHQgc3ByZXMgdGlsIGFuZHJlIGtvbW11bmVyIGkgcmVnaW9uZW4gb2cgaHZvcmRhbiBlbiBrYW4gYnJ1a2UgZGF0YSBmb3IgcGVuZGxlc3Ryw7htbWVyIHRpbCDDpSBwcmVkaWtlcmUgdmlya25pbmdlciBww6Ugc3lzc2Vsc2V0dGluZ2VuIGkgdWxpa2Uga29tbXVuZXIuDQotICAgU2FtbWVubGlnbmUgZGlzc2UgcHJlZGlrc2pvbmVuZSBtZWQgZGUgdmkgZsOlciBuw6VyIHZpIGdqZW5ub21mw7hyZXIgYW5hbHlzZW4gcMOlIHJlZ2lvbmFsdCBuaXbDpS4NCi0gICBHaSBlbiBzaGlmdC1zaGFyZSBhbmFseXNlIGkgZW4gZGlza3Vzam9uIGF2IGZvcnNramVsbGVyIGkgdmVrc3QgZm9yIGVrc2VtcGVsIG1lbGxvbSBpbmRyZSwgbWlkdHJlIG9nIHl0cmUgZGVsZXIgYXYgcmVnaW9uZW4sIGVsbGVyIGV2ZW50dWVsdCBvbXLDpWRlci9rb21tdW5lciBzb20gaGFyIGhhdHQgc3Rlcmsgb2cgc3ZhayBiZWZvbGtuaW5nc3V0dmlrbGluZy4NCg0KIyMgT3ZlcnNpa3Qgb3ZlciBiZWZvbGtuaW5nZW5lIGkgcmVnaW9uZW5lDQoNCiMjIyBIYXVnYWxhbmRldA0KSGF1Z2FsYW5kZXQgYmVzdMOlciBhdiBrb21tdW5lbmUgQm9rbiAoODUyKSwgSGF1Z2VzdW5kICgzNzM1NyksIEthcm3DuHkgKDQyMTg2KSwgU2F1ZGEgKDQ1OTUpLCBUeXN2w6ZyKDExMDY1KSwgVXRzaXJhKDE5OCkgb2cgVmluZGFmam9yZCg4NzE0KS4gdGlsc2FtbWVuIGJvciBkZXQgMTA0OTY3IHBlcnNvbmVyIGkgZGVubmUgcmVnaW9uZW4uIGkgdGlkc3BlcmlvZGVuIHZpIGhhciBoZW50ZXQgaW5uIGRhdGEgaGFyIGRldCB2ZXJ0IGtvbW11bmVzYW1tZW5zbMOlaW5nIGkgZGVubmUgcmVnaW9uZW4uIERhIGJsZSDDmGxlbiBvZyB2aW5kYWZqb3JkIHNsw6V0dCBpIHNhbW1lbiB0aWwgZW4ga29tbXVuZSAoaHZvcmRhbiBoYXIgdmkgdGF0dCBoZW5zeW4gdGlsIGRldHRlPz8/KQ0KDQojIyMgU3VubmhvcmRsYW5kIG9nIFVsbGVuc3ZhbmcNClN1bm5ob3JkbGFuZCBvZyBVbGxlbnN2YW5nIGJlc3TDpXIgYXYga29tbXVuZW5lIELDuG1sbygxMTk1NyksIEV0bmUoNDA2MiksIEZpdGphcigzMTg5KSwgS3Zpbm5oZXJhZCgxMzA3MSksIFN0b3JkKDE4NzU5KSwgU3ZlaW8oNTc2NiksIFR5c25lcygyODY5KSBvZyBVbGxlbnN2YW5nKDExMDQ4KS4gVGlsc2FtbWVuIGJvciBkZXQgNzA3MjEgcGVyc29uZXIgaSBkZW5uZSByZWdpb25lbi4NCg0KVGFsbGVuZSBlciBoZW50ZXQgZnJhIFNTQiAwOS4wMS4yMSAoaHR0cHM6Ly93d3cuc3NiLm5vL3N0YXRiYW5rL3RhYmxlLzAxMjIzL3RhYmxlVmlld0xheW91dDEvKSBnamVsZGVyIGZvciA0IGt2YXJ0YWwgMjAyMC4NCg0KYGBge3IgY3N2X2ZpbGVyfQ0Kc3lzc2VsX2FyYiA8LSByZWFkX2NzdigiRGF0YS9zeXNzZWxfYXJiLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpobGRfYXJiIDwtIHJlYWRfY3N2KCJEYXRhL2hsZF9hcmIuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCnN1bl9hcmIgPC0gcmVhZF9jc3YoIkRhdGEvc3VuX2FyYi5jc3YiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKQ0KaGFyX2FyYiA8LSByZWFkX2NzdigiRGF0YS9oYXJfYXJiLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpzeXNzZWxfYm9zIDwtIHJlYWRfY3N2KCJEYXRhL3N5c3NlbF9ib3MuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNCmhsZF9ib3MgPC0gcmVhZF9jc3YoIkRhdGEvaGxkX2Jvcy5jc3YiLCBzaG93X2NvbF90eXBlcyA9IEZBTFNFKQ0Kc3VuX2JvcyA8LSByZWFkX2NzdigiRGF0YS9zdW5fYm9zLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpoYXJfYm9zIDwtIHJlYWRfY3N2KCJEYXRhL2hhcl9ib3MuY3N2Iiwgc2hvd19jb2xfdHlwZXMgPSBGQUxTRSkNClBlbmRsaW5nIDwtIHJlYWRfY3N2KCJEYXRhL1BlbmRsaW5nLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpoZ2xfUGVuZGxpbmcgPC0gcmVhZF9jc3YoIkRhdGEvaGdsX1BlbmRsaW5nLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpzdW5fUGVuZGxpbmcgPC0gcmVhZF9jc3YoIkRhdGEvc3VuX1BlbmRsaW5nLmNzdiIsIHNob3dfY29sX3R5cGVzID0gRkFMU0UpDQpgYGANCg0KIyAxIFN5c3NlbHNldHRpbmcgSSBVbGlrZSBOw6ZyaW5nZXIsIEV0dGVyIEFyYmVpZHNzdGVkIChNb2RlbGxlciBGZXJkaWc/PykNCg0KIyMgSGF1Z2FsYW5kZXQNCg0KYGBge3IgQXJiZWlkc3N0ZWRfSGF1Z2FsYW5kZXRfMX0NCmhsZF9hcmIgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gw4VyLCB5ID0gVG90YWx0KSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiSGF1Z2FsYW5kZXQiKSsNCiAgeWxhYigiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBBcmJlaWRzc3RlZF9IYXVnYWxhbmRldF8yfQ0Kc3lzc2VsX2FyYiAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDExMDYsIDExMzUsIDExNDUsIDExNDYsIDExNDksIDExNTEsIDExNjApKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBgQWxsZSBOw6ZyaW5nZXJgLCAoYW5nbGU9MCkpKSArDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IGtuYXZuLCBjb2xvdXIgPSBrbmF2bikpICsNCiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgKw0KICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArDQogIGxhYnModGl0bGUgPSAiSGF1Z2FsYW5kZXQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIGhsZF9hcmJfbG9uZ30NCmhsZF9hcmJfbG9uZyA8LSBzeXNzZWxfYXJiICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGBKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VgOlVvcHBnaXR0LA0KICAgIG5hbWVzX3RvID0gIk7DpnJpbmciLA0KICAgIHZhbHVlc190byA9ICJBbnNhdHRlIikNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZy0gb2cgdXR2aWtsaW5nIGkgSGF1Z2VsYW5kZXR9DQojIE9sYTogU2thbCB2aSB0YSB2ZWtrIGRlbm5lLCBLZXZpbj8gLSBTasOlIGRlaSB0byBrb2RlLWNodW5rYW5lIHVuZGVyLCBvZyB2dXJkZXINCg0KIyBLZXZpbjogSGVpISBWdXJkZXJlciBvbSBkZW5uZSBtw6UgZ2rDuHJlcyBww6UgYsOlZGUgU3VubmhvcmRsYW5kLCBzYW10IEhhcmRhbmdlci4NCg0KaGxkX2FyYl9sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0DQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkJva24iLCAiSGF1Z2VzdW5kIiwgIkthcm3DuHkiLCAiU2F1ZGEiLCAiVHlzdsOmciIsICJVdHNpcmEiLCAiVmluZGFmam9yZCIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDMpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAncmlnaHQnKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19IYXVnZWxhbmRldF8zX1N0w7hyc3RlX0FyYmVpZHNzdGVkfQ0KaGxkX2FyYl9sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0DQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkhhdWdlc3VuZCIsICJLYXJtw7h5IiwgIlZpbmRhZmpvcmQiKSkgJT4lIA0KICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoIkluZHVzdHJpIiwgIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXIiLCAiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmciLCAiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb24iLCAiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0IiwgIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZSIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldDogSGF1Z2VzdW5kLCBLYXJtw7h5IG9nIFZpbmRhZmpvcmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDMpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfSGF1Z2VsYW5kZXRfNF9NaW5zdGVfQXJiZWlkc3N0ZWR9DQpobGRfYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGF1Z2FsYW5kZXQNCiAgZmlsdGVyKGtuYXZuICVpbiUgYygiQm9rbiIsICJTYXVkYSIsICJUeXN2w6ZyIiwgIlV0c2lyYSIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhdWdhbGFuZGV0OiBCb2tuLCBTYXVkYSwgVHlzdsOmciBvZyBVdHNpcmEiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSA0IGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSA0KSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgSGF1Z2VzdW5kfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSAxMTA2KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkhhdWdlc3VuZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsNCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygyMDg1MiwgMjIxOTApLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFNhdWRhfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSAxMTM1KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlNhdWRhIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKw0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDE5MzcsIDIxODApLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIEJva259DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDExNDUpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiQm9rbiIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMjkxLCAzMjcpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFR5c3bDpnJ9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDExNDYpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiVHlzdsOmciIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoNDA0OCwgNDc3MyksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgS2FybcO4eX0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTE0OSkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJLYXJtw7h5IiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxNDU5MSwgMTYwNTkpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFV0c2lyYX0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gMTE1MSkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJVdHNpcmEiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDg4LCAxMTQpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFZpbmRhZmpvcmR9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDExNjApICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiVmluZGFmam9yZCIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSBpICBcbiBhbGxlIG7DpnJpbmdlciIpICsNCiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF90ZXh0KGFuZ2xlPTApKSsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoNDQyMiwgNTAzNyksIHhsaW0gPSBjKCkpDQpgYGANCg0KIyMgU3VubmhvcmRsYW5kDQoNClPDpSBnamVyIHZpIGRldCBzYW1tZSBmb3IgKlN1bm5ob3JkbGFuZCoNCg0KYGBge3J9DQpzdW5fYXJiICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IMOFciwgeSA9IFRvdGFsdCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlN1bm5ob3JkYWxhbmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpDQpgYGANCg0KYGBge3IgQXJiZWlkc3N0ZWRfU3VubmhvcmRsYW5kfQ0Kc3lzc2VsX2FyYiAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDQ2MTEsIDQ2MTIsIDQ2MTMsIDQ2MTQsIDQ2MTUsIDQ2MTYsIDQ2MTcpKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArDQogIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICsNCiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgKw0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgIGxhYnModGl0bGUgPSAiU3VubmhvcmRsYW5kIiwgeCA9ICLDhXIiKSArDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIHN1bl9hcmJfbG9uZ30NCnN1bl9hcmJfbG9uZyA8LSBzeXNzZWxfYXJiICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGBKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VgOlVvcHBnaXR0LA0KICAgIG5hbWVzX3RvID0gIk7DpnJpbmciLA0KICAgIHZhbHVlc190byA9ICJBbnNhdHRlIikNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfU3VubmhvcmRsYW5kXzNfU3TDuHJzdGVfQXJiZWlkc3N0ZWR9DQpzdW5fYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gU3VubmhvcmRsYW5kDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkLDuG1sbyIsICJTdG9yZCIsICJLdmlubmhlcmFkIikpICU+JSANCiAgZmlsdGVyKE7DpnJpbmcgJWluJSBjKCJJbmR1c3RyaSIsICJIZWxzZS0gb2cgU29zaWFsdGplbmVzdGVyIiwgIkZpbmFuc2llcmluZyBvZyBGb3JzaWtyaW5nIiwgIkVsZWt0cmlzaXRldCwgVmFubiBvZyBSZW5vdmFzam9uIiwgIkJ5Z2dlLSBvZyBBbmxlZ2dzdmlya3NvbWhldCIsICJKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2UiKSkgJT4lIA0KICANCiAgIyBWaSBvbWZvcm1hdGVyZXIgZGF0b2VuZSB0aWwgbWVyIGZvcm3DpWxzdGplbmxpZ2UgZm9ybWF0DQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhcy5EYXRlKHBhc3RlMChhYXIsICItMDEtMDEiKSksIHkgPSBBbnNhdHRlKSkgKw0KICANCiAgIyBWaSB2ZWxnZXIgaHZpbGtlbiBmYXJnZW9wcHNsYWdzdGFiZWxsIHNvbSBza2FsIGFudmVuZGVzDQogIHNjYWxlX2NvbG9yX3ZpcmlkaXMoZGlzY3JldGUgPSBUUlVFLCBvcHRpb24gPSAiQSIpICsNCiAgIyBBbmdpciBha3NldGl0bGVyDQogIGxhYnModGl0bGUgPSAiU3VubmhvcmRsYW5kOiBCw7htbG8sIEt2aW5uaGVyYWQgb2cgU3RvcmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDMpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfU3VubmhvcmRsYW5kXzRfTWluc3RlX0FyYmVpZHNzdGVkfQ0Kc3VuX2FyYl9sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZA0KICBmaWx0ZXIoa25hdm4gJWluJSBjKCJFdG5lIiwgIlN2ZWlvIiwgIkZpdGphciIsICJUeXNuZXMiKSkgJT4lIA0KICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoIkluZHVzdHJpIiwgIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXIiLCAiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmciLCAiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb24iLCAiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0IiwgIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZSIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh0aXRsZSA9ICJTdW5uaG9yZGxhbmQ6IEV0bmUsIEZpdGphciwgU3ZlaW8gb2cgVHlzbmVzIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIikgKw0KICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlDQogIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICsNCiAgDQogICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSA0KSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgRXRuZX0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gNDYxMSkgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJFdG5lIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDE2MTMsIDE3NzUpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIFN2ZWlvfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjEyKSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlN2ZWlvIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDEzNTcsIDE1MjMpLCB4bGltID0gYygpKQ0KYGBgDQoNCmBgYHtyIELDuG1sb30NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gNDYxMykgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJCw7htbG8iLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoNDY2MiwgNDg5MCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgU3RvcmR9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDQ2MTQpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiU3RvcmQiLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoOTE2MSwgOTkzOCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgRml0amFyfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjE1KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkZpdGphciIsIHggPSAiw4VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygxMDg1LCAxMjU5KSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBUeXNuZXN9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDQ2MTYpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiVHlzbmVzIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDk4OSwgMTE4OCksIHhsaW0gPSBjKCkpDQpgYGANCg0KYGBge3IgS3Zpbm5oZXJhZH0NCnN5c3NlbF9hcmIgJT4lDQogIGZpbHRlcihrbnIgPT0gNDYxNykgJT4lDQogZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFhciwgeSA9IGBBbGxlIE7DpnJpbmdlcmApKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJLdmlubmhlcmFkIiwgeCA9ICLDhXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgY29vcmRfY2FydGVzaWFuKHlsaW0gPSBjKDU0NzIsIDYwODQpLCB4bGltID0gYygpKQ0KYGBgDQoNCiMjIEhhcmRhbmdlcg0KDQpUaWwgc2x1dHQgbcOlIHZpIGdqZXJlIGRldCBzYW1tZSBtZWQgKkhhcmRhbmdlcioNCg0KYGBge3IgQXJiZWlkc3N0ZWRfSGFyZGFuZ2VyXzF9DQpoYXJfYXJiICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IMOFciwgeSA9IFRvdGFsdCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlciIsIHk9ICJBbGxlIE7DpnJpbmdlciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBBcmJlaWRzc3RlZF9IYXJkYW5nZXJfMn0NCnN5c3NlbF9hcmIgJT4lIA0KICBmaWx0ZXIoa25yICVpbiUgYyg0NjE4LCAxMjI4KSkgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICBnZW9tX2xpbmUoYWVzKGdyb3VwID0ga25hdm4sIGNvbG91ciA9IGtuYXZuKSkgKw0KICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzPWMoJyMxMTExMTEnLCcjMDU0OTg3JykpICsNCiAgc2NhbGVfc2l6ZV9tYW51YWwodmFsdWVzID0gYyhzZXEoMi4wLCAyLCBieSA9IC0wLjEpKSkgKw0KICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwKSArDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICAgbGFicyh0aXRsZSA9ICJIYXJkYW5nZXIiLCB4ID0gIsOFciIpICsNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgaGFyX2FyYl9sb25nfQ0KaGFyX2FyYl9sb25nIDwtIHN5c3NlbF9hcmIgJT4lDQogIHBpdm90X2xvbmdlcigNCiAgICBjb2xzID0gYEpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZWA6VW9wcGdpdHQsDQogICAgbmFtZXNfdG8gPSAiTsOmcmluZyIsDQogICAgdmFsdWVzX3RvID0gIkFuc2F0dGUiKQ0KYGBgDQoNCmBgYHtyIE7DpnJpbmdzZm9yZGVsaW5nX29nX1V0dmlrbGluZ19IYXJkYW5nZXJfQXJiZWlkc3N0ZWR9DQpoYXJfYXJiX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGFyZGFuZ2VyDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIk9kZGEiLCAiVWxsZW5zdmFuZyIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlcjogT2RkYSwgVWxsZW5zdmFuZyIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIE9kZGF9DQpzeXNzZWxfYXJiICU+JQ0KICBmaWx0ZXIoa25yID09IDEyMjgpICU+JQ0KIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiT2RkYSIsIHggPSAiw4VyIikgKyANCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogIGNvb3JkX2NhcnRlc2lhbih5bGltID0gYygzNDg5LCAzNzQwKSwgeGxpbSA9IGMoKSkNCmBgYA0KDQpgYGB7ciBVbGxlbnN2YW5nfQ0Kc3lzc2VsX2FyYiAlPiUNCiAgZmlsdGVyKGtuciA9PSA0NjE4KSAlPiUNCiBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYWFyLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlVsbGVuc3ZhbmciLCB4ID0gIsOFciIpICsgDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkgKw0KICBjb29yZF9jYXJ0ZXNpYW4oeWxpbSA9IGMoMTIzNSwgNTI5MSksIHhsaW0gPSBjKCkpDQpgYGANCg0KIyAzIFN5c3NlbHNldHRpbmcgSSBVbGlrZSBOw6ZyaW5nZXIsIEV0dGVyIEJvc3RlZCAoTW9kZWxsZXIgVW5kZXIgQXJiZWlkKQ0KDQojIyBIYXVnYWxhbmRldA0KDQpgYGB7ciBCb3N0ZWRfSGF1Z2FsYW5kZXRfMX0NCmhsZF9ib3MgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gw4VyLCB5ID0gVG90YWx0KSkgKw0KICBnZW9tX2xpbmUoKSArDQogIGxhYnModGl0bGUgPSAiSGF1Z2FsYW5kZXQiKSsNCiAgeWxhYigiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrDQogIHNjYWxlX3hfY29udGludW91cyhicmVha3MgPSBzZXEoMjAwOCwgMjAyMCwgYnkgPSAxKSkNCmBgYA0KDQpgYGB7ciBCb3N0ZWRfSGF1Z2FsYW5kZXRfMn0NCnN5c3NlbF9ib3MgJT4lIA0KICBmaWx0ZXIoa25yICVpbiUgYygxMTA2LCAxMTM1LCAxMTQ1LCAxMTQ2LCAxMTQ5LCAxMTUxLCAxMTYwKSkgJT4lIA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gYEFsbGUgTsOmcmluZ2VyYCwgKGFuZ2xlPTApKSkgKw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArDQogIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICsNCiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgKw0KICBsYWJzKHRpdGxlID0gIkhhdWdhbGFuZGV0IiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIGkgIFxuIGFsbGUgbsOmcmluZ2VyIikgKw0KICB0aGVtZShheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoYW5nbGU9MCkpKw0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBobGRfYm9zX2xvbmd9DQpobGRfYm9zX2xvbmcgPC0gc3lzc2VsX2JvcyAlPiUNCiAgcGl2b3RfbG9uZ2VyKA0KICAgIGNvbHMgPSBgSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlYDpVb3BwZ2l0dCwNCiAgICBuYW1lc190byA9ICJOw6ZyaW5nIiwNCiAgICB2YWx1ZXNfdG8gPSAiQW5zYXR0ZSIpDQpgYGANCg0KYGBge3IgTsOmcmluZ3Nmb3JkZWxpbmdfb2dfVXR2aWtsaW5nX0hhdWdlbGFuZGV0XzNfU3TDuHJzdGVfQm9zdGVkfQ0KaGxkX2Jvc19sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0DQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkhhdWdlc3VuZCIsICJLYXJtw7h5IiwgIlZpbmRhZmpvcmQiKSkgJT4lIA0KICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoIkluZHVzdHJpIiwgIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXIiLCAiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmciLCAiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb24iLCAiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0IiwgIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZSIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldDogSGF1Z2VzdW5kLCBLYXJtw7h5IG9nIFZpbmRhZmpvcmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDMpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfSGF1Z2VsYW5kZXRfNF9NaW5zdGVfQm9zdGVkfQ0KaGxkX2Jvc19sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIEhhdWdhbGFuZGV0DQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkJva24iLCAiU2F1ZGEiLCAiVHlzdsOmciIsICJVdHNpcmEiKSkgJT4lIA0KICBmaWx0ZXIoTsOmcmluZyAlaW4lIGMoIkluZHVzdHJpIiwgIkhlbHNlLSBvZyBTb3NpYWx0amVuZXN0ZXIiLCAiRmluYW5zaWVyaW5nIG9nIEZvcnNpa3JpbmciLCAiRWxla3RyaXNpdGV0LCBWYW5uIG9nIFJlbm92YXNqb24iLCAiQnlnZ2UtIG9nIEFubGVnZ3N2aXJrc29taGV0IiwgIkpvcmRicnVrLCBTa29nYnJ1ZyBvZyBGaXNrZSIpKSAlPiUgDQogIA0KICAjIFZpIG9tZm9ybWF0ZXJlciBkYXRvZW5lIHRpbCBtZXIgZm9ybcOlbHN0amVubGlnZSBmb3JtYXQNCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGFzLkRhdGUocGFzdGUwKGFhciwgIi0wMS0wMSIpKSwgeSA9IEFuc2F0dGUpKSArDQogIA0KICAjIFZpIHZlbGdlciBodmlsa2VuIGZhcmdlb3Bwc2xhZ3N0YWJlbGwgc29tIHNrYWwgYW52ZW5kZXMNCiAgc2NhbGVfY29sb3JfdmlyaWRpcyhkaXNjcmV0ZSA9IFRSVUUsIG9wdGlvbiA9ICJBIikgKw0KICAjIEFuZ2lyIGFrc2V0aXRsZXINCiAgbGFicyh0aXRsZSA9ICJIYXVnYWxhbmRldDogQm9rbiwgU2F1ZGEsIFR5c3bDpnIgb2cgVXRzaXJhIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIikgKw0KICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlDQogIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICsNCiAgDQogICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgNCBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gNCkgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCiMjIFN1bm5ob3JkbGFuZA0KDQpgYGB7ciBCb3N0ZWRfU3VubmhvcmRsYW5kXzF9DQpzdW5fYm9zICU+JSANCiAgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IMOFciwgeSA9IFRvdGFsdCkpICsNCiAgZ2VvbV9saW5lKCkgKw0KICBsYWJzKHRpdGxlID0gIlN1bm5ob3JkYWxhbmQiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUgaSAgXG4gYWxsZSBuw6ZyaW5nZXIiKSArDQogIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfdGV4dChhbmdsZT0wKSkrIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpDQpgYGANCg0KYGBge3IgQm9zdGVkX1N1bm5ob3JkbGFuZF8yfQ0Kc3lzc2VsX2JvcyAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDQ2MTEsIDQ2MTIsIDQ2MTMsIDQ2MTQsIDQ2MTUsIDQ2MTYsIDQ2MTcpKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArDQogIHNjYWxlX3NpemVfbWFudWFsKHZhbHVlcyA9IGMoc2VxKDIuMCwgMiwgYnkgPSAtMC4xKSkpICsNCiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgKw0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpICsNCiAgIGxhYnModGl0bGUgPSAiU3VubmhvcmRsYW5kIiwgeCA9ICLDhXIiKSArDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCmBgYHtyIHN1bl9ib3NfbG9uZ30NCnN1bl9ib3NfbG9uZyA8LSBzeXNzZWxfYm9zICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGBKb3JkYnJ1aywgU2tvZ2JydWcgb2cgRmlza2VgOlVvcHBnaXR0LA0KICAgIG5hbWVzX3RvID0gIk7DpnJpbmciLA0KICAgIHZhbHVlc190byA9ICJBbnNhdHRlIikNCmBgYA0KDQpgYGB7ciBOw6ZyaW5nc2ZvcmRlbGluZ19vZ19VdHZpa2xpbmdfU3VubmhvcmRsYW5kXzNfU3TDuHJzdGVfQm9zdGVkfQ0Kc3VuX2Jvc19sb25nICU+JSANCiAgIyBWaSDDuG5za2VyIMOlIHN0dWRlcmUgYWxsZSBrb21tdW5lbmUgc29tIGZvcm1lbHQgc2V0dCByZWduZXMgc29tIFN1bm5ob3JkbGFuZA0KICBmaWx0ZXIoa25hdm4gJWluJSBjKCJCw7htbG8iLCAiU3RvcmQiLCAiS3Zpbm5oZXJhZCIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIlN1bm5ob3JkbGFuZDogQsO4bWxvLCBLdmlubmhlcmFkIG9nIFN0b3JkIiwgeCA9ICLDhXIiLCB5ID0gIkFudGFsbCBhbnNhdHRlIikgKw0KICAjIEFuZ2lyIGh2aWxrZSB2YXJpYWJsZXIgZmFyZ2VuZSBza2FsIGJhc2VyZSBzZWcgcMOlDQogIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gTsOmcmluZywgY29sb3VyID0gTsOmcmluZykpICsNCiAgDQogICMgTGFnZXIgZXQgcGFuZWwgc29tIHZpc2VyIGZsZXJlIGdyYWZlciwgZm9yZGVsdCBww6UgdHJlIGtvbG9ubmVyDQogIGZhY2V0X3dyYXAoZmFjZXRzID0gfiBrbmF2biwgc2NhbGVzID0gImZyZWVfeSIsIG5jb2wgPSAzKSArDQogIA0KICAjIEJlc3RlbW1lciBhdCBmb3JrbGFyaW5nZW5lIHNrYWwgc3TDpSBww6UgaMO4eXJlIHNpZGUNCiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gJ2JvdHRvbScpDQpgYGANCg0KYGBge3IgTsOmcmluZ3Nmb3JkZWxpbmdfb2dfVXR2aWtsaW5nX1N1bm5ob3JkbGFuZF80X01pbnN0ZV9Cb3N0ZWR9DQpzdW5fYm9zX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gU3VubmhvcmRsYW5kDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIkV0bmUiLCAiU3ZlaW8iLCAiRml0amFyIiwgIlR5c25lcyIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIlN1bm5ob3JkbGFuZDogRXRuZSwgRml0amFyLCBTdmVpbyBvZyBUeXNuZXMiLCB4ID0gIsOFciIsIHkgPSAiQW50YWxsIGFuc2F0dGUiKSArDQogICMgQW5naXIgaHZpbGtlIHZhcmlhYmxlciBmYXJnZW5lIHNrYWwgYmFzZXJlIHNlZyBww6UNCiAgZ2VvbV9saW5lKG1hcHBpbmcgPSBhZXMoZ3JvdXAgPSBOw6ZyaW5nLCBjb2xvdXIgPSBOw6ZyaW5nKSkgKw0KICANCiAgIyBMYWdlciBldCBwYW5lbCBzb20gdmlzZXIgZmxlcmUgZ3JhZmVyLCBmb3JkZWx0IHDDpSB0cmUga29sb25uZXINCiAgZmFjZXRfd3JhcChmYWNldHMgPSB+IGtuYXZuLCBzY2FsZXMgPSAiZnJlZV95IiwgbmNvbCA9IDQpICsNCiAgDQogICMgQmVzdGVtbWVyIGF0IGZvcmtsYXJpbmdlbmUgc2thbCBzdMOlIHDDpSBow7h5cmUgc2lkZQ0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQojIyBIYXJkYW5nZXINCg0KYGBge3IgQm9zdGVkX0hhcmRhbmdlcl8xfQ0KaGFyX2JvcyAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSDDhXIsIHkgPSBUb3RhbHQpKSArDQogIGdlb21fbGluZSgpICsNCiAgbGFicyh0aXRsZSA9ICJIYXJkYW5nZXIiLCB5PSAiQWxsZSBOw6ZyaW5nZXIiKSArIA0KICBzY2FsZV94X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDIwMDgsIDIwMjAsIGJ5ID0gMSkpDQpgYGANCg0KYGBge3IgQm9zdGVkX0hhcmRhbmdlcl8yfQ0Kc3lzc2VsX2JvcyAlPiUgDQogIGZpbHRlcihrbnIgJWluJSBjKDQ2MTgsIDEyMjgpKSAlPiUgDQogIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBhYXIsIHkgPSBgQWxsZSBOw6ZyaW5nZXJgKSkgKw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogIGdlb21fbGluZShhZXMoZ3JvdXAgPSBrbmF2biwgY29sb3VyID0ga25hdm4pKSArDQogIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXM9YygnIzExMTExMScsJyMwNTQ5ODcnKSkgKw0KICBzY2FsZV9zaXplX21hbnVhbCh2YWx1ZXMgPSBjKHNlcSgyLjAsIDIsIGJ5ID0gLTAuMSkpKSArDQogIGdlb21faGxpbmUoeWludGVyY2VwdCA9IDApICsNCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgyMDA4LCAyMDIwLCBieSA9IDEpKSArDQogICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlciIsIHggPSAiw4VyIikgKw0KICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAnYm90dG9tJykNCmBgYA0KDQpgYGB7ciBoYXJfYm9zX2xvbmd9DQpoYXJfYm9zX2xvbmcgPC0gc3lzc2VsX2JvcyAlPiUNCiAgcGl2b3RfbG9uZ2VyKA0KICAgIGNvbHMgPSBgSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlYDpVb3BwZ2l0dCwNCiAgICBuYW1lc190byA9ICJOw6ZyaW5nIiwNCiAgICB2YWx1ZXNfdG8gPSAiQW5zYXR0ZSIpDQpgYGANCg0KYGBge3IgTsOmcmluZ3Nmb3JkZWxpbmdfb2dfVXR2aWtsaW5nX0hhcmRhbmdlcl9Cb3N0ZWR9DQpoYXJfYm9zX2xvbmcgJT4lIA0KICAjIFZpIMO4bnNrZXIgw6Ugc3R1ZGVyZSBhbGxlIGtvbW11bmVuZSBzb20gZm9ybWVsdCBzZXR0IHJlZ25lcyBzb20gSGFyZGFuZ2VyDQogIGZpbHRlcihrbmF2biAlaW4lIGMoIk9kZGEiLCAiVWxsZW5zdmFuZyIpKSAlPiUgDQogIGZpbHRlcihOw6ZyaW5nICVpbiUgYygiSW5kdXN0cmkiLCAiSGVsc2UtIG9nIFNvc2lhbHRqZW5lc3RlciIsICJGaW5hbnNpZXJpbmcgb2cgRm9yc2lrcmluZyIsICJFbGVrdHJpc2l0ZXQsIFZhbm4gb2cgUmVub3Zhc2pvbiIsICJCeWdnZS0gb2cgQW5sZWdnc3Zpcmtzb21oZXQiLCAiSm9yZGJydWssIFNrb2dicnVnIG9nIEZpc2tlIikpICU+JSANCiAgDQogICMgVmkgb21mb3JtYXRlcmVyIGRhdG9lbmUgdGlsIG1lciBmb3Jtw6Vsc3RqZW5saWdlIGZvcm1hdA0KICBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gYXMuRGF0ZShwYXN0ZTAoYWFyLCAiLTAxLTAxIikpLCB5ID0gQW5zYXR0ZSkpICsNCiAgDQogICMgVmkgdmVsZ2VyIGh2aWxrZW4gZmFyZ2VvcHBzbGFnc3RhYmVsbCBzb20gc2thbCBhbnZlbmRlcw0KICBzY2FsZV9jb2xvcl92aXJpZGlzKGRpc2NyZXRlID0gVFJVRSwgb3B0aW9uID0gIkEiKSArDQogICMgQW5naXIgYWtzZXRpdGxlcg0KICBsYWJzKHRpdGxlID0gIkhhcmRhbmdlcjogT2RkYSwgVWxsZW5zdmFuZyIsIHggPSAiw4VyIiwgeSA9ICJBbnRhbGwgYW5zYXR0ZSIpICsNCiAgIyBBbmdpciBodmlsa2UgdmFyaWFibGVyIGZhcmdlbmUgc2thbCBiYXNlcmUgc2VnIHDDpQ0KICBnZW9tX2xpbmUobWFwcGluZyA9IGFlcyhncm91cCA9IE7DpnJpbmcsIGNvbG91ciA9IE7DpnJpbmcpKSArDQogIA0KICAjIExhZ2VyIGV0IHBhbmVsIHNvbSB2aXNlciBmbGVyZSBncmFmZXIsIGZvcmRlbHQgcMOlIHRyZSBrb2xvbm5lcg0KICBmYWNldF93cmFwKGZhY2V0cyA9IH4ga25hdm4sIHNjYWxlcyA9ICJmcmVlX3kiLCBuY29sID0gMykgKw0KICANCiAgIyBCZXN0ZW1tZXIgYXQgZm9ya2xhcmluZ2VuZSBza2FsIHN0w6UgcMOlIGjDuHlyZSBzaWRlDQogIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9ICdib3R0b20nKQ0KYGBgDQoNCiMgT3BwZ2F2ZSA0DQoNCmBgYHtyIFBlbmRsaW5nIHDDpSBIYXVnYWxhbmRldH0NCmhnbF9QZW5kbGluZw0KYGBgDQoNCmBgYHtyIFBlbmRsaW5nIGkgU3VubmhvcmRsYW5kfQ0Kc3VuX1BlbmRsaW5nDQpgYGANCg0KLSAgIA0KDQpgYGB7ciBzaXN0ZX0NCiMgU2lzdGUNCmBgYA0KDQotICAgDQo=</div>
 
 
 
