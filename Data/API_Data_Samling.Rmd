@@ -690,18 +690,6 @@ names(har_bos)[[1]] <- "Næringer"
 names(har_bos)[[5]] <- "År"
 ```
 
-### Skriver .csv av ovenfor. Flytt ned når vi kommer vidare:
-
-```{r writing_csv}
-write_csv(syssel_arb, file="syssel_arb.csv")
-write_csv(hld_arb, file="hld_arb.csv")
-write_csv(sun_arb, file="sun_arb.csv")
-write_csv(har_arb, file="har_arb.csv")
-write_csv(syssel_bos, file="syssel_bos.csv")
-write_csv(hld_bos, file="hld_bos.csv")
-write_csv(sun_bos, file="sun_bos.csv")
-write_csv(har_bos, file="har_bos.csv")
-```
 
 
 # 2. Mål for Beskrivelse av Næringsstrukturen
@@ -745,10 +733,114 @@ Pendling <- Pendling_raw$dataset %>%
   unite("Bokommuen", NavnBokommuen, Bokommuen) %>% 
   select(-ContentsCode, -Tid) %>% 
   pivot_wider(
-    id_cols = ArbstedKomm,
-    names_from = Bokommuen,
+    id_cols = Bokommuen,
+    names_from = ArbstedKomm,
     values_from = value
   )
 ```
 
 
+### Haugalandet
+```{r} 
+hgl_Pendling_raw <- ApiData(
+  urlToData = "03321",
+  ArbstedKomm = c(paste0(c(1106, 1135, 1145, 1146, 
+                           1149, 1151, 1160),
+                         ""
+                         )
+                  ), 
+  ContentsCode = "Sysselsatte",
+  Bokommuen = c(paste0(c(1106, 1135, 1145, 1146, 
+                         1149, 1151, 1160),
+                       ""
+                       )
+                ),
+  Tid = "2020"
+  )
+
+```
+
+```{r}
+names(hgl_Pendling_raw)[[1]] <- "desc"
+
+```
+
+```{r}
+hgl_Pendling <- hgl_Pendling_raw$dataset %>% 
+  mutate(
+    NavnArbstedKomm = hgl_Pendling_raw$desc$arbeidsstedskommune,
+    NavnBokommuen = hgl_Pendling_raw$desc$bostedskommune
+  ) %>% 
+  unite("ArbstedKomm", NavnArbstedKomm, ArbstedKomm) %>% 
+  unite("Bokommuen", NavnBokommuen, Bokommuen) %>% 
+  select(-ContentsCode, -Tid) %>% 
+  pivot_wider(
+    id_cols = Bokommuen,
+    names_from = ArbstedKomm,
+    values_from = value
+  )
+```
+
+
+### Sunnhordland
+
+```{r} 
+sun_Pendling_raw <- ApiData(
+  urlToData = "03321",
+  ArbstedKomm = c(paste0(c(4611, 4612, 4613, 
+                         4614, 4615, 4616, 4617, 4618),
+                         ""
+                         )
+                  ), 
+  ContentsCode = "Sysselsatte",
+  Bokommuen = c(paste0(c(4611, 4612, 4613, 
+                         4614, 4615, 4616, 4617, 4618),
+                       ""
+                       )
+                ),
+  Tid = "2020"
+  )
+
+```
+
+```{r}
+names(sun_Pendling_raw)[[1]] <- "desc"
+
+```
+
+```{r}
+sun_Pendling <- sun_Pendling_raw$dataset %>% 
+  mutate(
+    NavnArbstedKomm = sun_Pendling_raw$desc$arbeidsstedskommune,
+    NavnBokommuen = sun_Pendling_raw$desc$bostedskommune
+  ) %>% 
+  unite("ArbstedKomm", NavnArbstedKomm, ArbstedKomm) %>% 
+  unite("Bokommuen", NavnBokommuen, Bokommuen) %>% 
+  select(-ContentsCode, -Tid) %>% 
+  pivot_wider(
+    id_cols = Bokommuen,
+    names_from = ArbstedKomm,
+    values_from = value
+  )
+```
+
+
+### Skriver .csv av ovenfor. Flytt ned når vi kommer vidare:
+
+```{r writing_csv}
+#oppgave1
+write_csv(syssel_arb, file="syssel_arb.csv")
+write_csv(hld_arb, file="hld_arb.csv")
+write_csv(sun_arb, file="sun_arb.csv")
+write_csv(har_arb, file="har_arb.csv")
+write_csv(syssel_bos, file="syssel_bos.csv")
+write_csv(hld_bos, file="hld_bos.csv")
+write_csv(sun_bos, file="sun_bos.csv")
+write_csv(har_bos, file="har_bos.csv")
+#oppgave 2
+#oppgave 3
+#oppgave 4
+write_csv(Pendling, file = "Pendling.csv")
+write_csv(hgl_Pendling, file = "hgl_Pendling.csv")
+write_csv(sun_Pendling, file = "sun_Pendling.csv")
+```

@@ -12,6 +12,9 @@ output:
   html_document:
     df_print: paged
 lang: no-NB
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +28,45 @@ library(tidyverse)
 knitr::opts_chunk$set(echo=FALSE, include = TRUE)
 ```
 
-# Innlesing av .csv filer
+Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.
+
+I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Hardanger.
+
+Problemstillinger og beregninger vi vil se nærmere på
+
+-   Beskrive situasjonen slik den er for 2020, og for utviklingen over tid.
+-   Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
+-   Andelen av sysselsettingen innenfor enkeltnæringer, og sammenligne situasjonen og utviklingen for lokale kommuner og lokal region med det som gjelder for nasjonen samlet.
+-   Beregne lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen(e) samlet.
+-   Beregne ulike aggregeringsnivåer av næringer og geografi, identifiser mulige klynger basert på verdiene for lokaliseringskvotientene.
+-   Gjøre en vurdering av hvor konsentrert/spredt en næring er fordelt mellom kommunene i regionen, basert på beregninger av den romlige Gini-indeksen.
+-   Vurdere om sammenligningsgrunnlaget bør være samlet sysselsetting i regionen, eller samlet sysselsetting av nasjonen, og finne ut hvilken rolle det spiller om en bruker regionale eller nasjonale anslag for samlet sysselsetting.
+-   Finne ut om næringsstrukturen i regionen har blitt mer eller mindre diversifisert, mangfoldig, over tid.
+-   Beregne en regional mangfold-indeks og finne ut hvordan verdiene på en slik indeks er endret over tid.
+-   Vurdere om sysselsettingsandelene skal sammenlignes med nasjonale eller regionale andeler for de ulike næringene
+-   Gjenta beregninger for andeler av arbeidstakere i ulike næringer, lokaliseringskvotienter, den romlige Gini- koeffisienten og målet for mangfold av næringer, med utgangspunkt i data spesifisert etter arbeidstakernes bosted.
+-   Sammenligne resultatene for data etter arbeidssted, og kommenter hvilken informasjon resultatene gir om romlig mobilitet i arbeidsmarkedet.
+-   Gi en kort oversikt over pendlerstrømmer mellom kommunene i regionen
+-   Beregne og presentere andeler av arbeidstakere med bosted i en kommune som har arbeidssted i andre kommuner, og gjør det samme for andelen av jobbene i en kommune som er besatt av arbeidstakere fra andre kommuner.
+-   Diskutere forskjeller mellom kommunene i regionen, og drøft utviklingen over tid for ulike kommuner
+-   Beregne og presentere andelen av arbeidstakere som bor og jobber innenfor samme kommune. Se om det er systematiske forskjeller sett i forhold til sentralitet og tilgjengelighet i det lokale arbeidsmarkedet. Og om det er bestemte trender i utviklingen for ulike kommuner.
+-   Bruke beregningene av lokaliseringkvotienter til å dele næringene inn i lokal- og basisnæringer
+-   Formulere en økonomisk basemodell og beregne økonomiske basemuliplikatorer for enkeltkommuner og region(er).
+-   Vurdere lokale virkninger av alternative lokaliseringer i Odda, Husnes og Leirvik
+-   Drøfte virkninger av et slikt positivt eksogent sjokk for den lokale økonomien gjennom bruk av en basemodell
+-   Finne ut hvordan virkningene eventuelt spres til andre kommuner i regionen og hvordan en kan bruke data for pendlestrømmer til å predikere virkninger på sysselsettingen i ulike kommuner.
+-   Sammenligne disse prediksjonene med de vi får når vi gjennomfører analysen på regionalt nivå.
+-   Gi en shift-share analyse i en diskusjon av forskjeller i vekst for eksempel mellom indre, midtre og ytre deler av regionen, eller eventuelt områder/kommuner som har hatt sterk og svak befolkningsutvikling.
+
+## Oversikt over befolkningene i regionene
+
+### Haugalandet
+Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714). tilsammen bor det 104967 personer i denne regionen. i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen. Da ble Ølen og vindafjord slått i sammen til en kommune (hvordan har vi tatt hensyn til dette???)
+
+### Sunnhordland og Ullensvang
+Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048). Tilsammen bor det 70721 personer i denne regionen.
+
+Tallene er hentet fra SSB 09.01.21 (https://www.ssb.no/statbank/table/01223/tableViewLayout1/) gjelder for 4 kvartal 2020.
 
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv", show_col_types = FALSE)
@@ -36,6 +77,9 @@ syssel_bos <- read_csv("Data/syssel_bos.csv", show_col_types = FALSE)
 hld_bos <- read_csv("Data/hld_bos.csv", show_col_types = FALSE)
 sun_bos <- read_csv("Data/sun_bos.csv", show_col_types = FALSE)
 har_bos <- read_csv("Data/har_bos.csv", show_col_types = FALSE)
+Pendling <- read_csv("Data/Pendling.csv", show_col_types = FALSE)
+hgl_Pendling <- read_csv("Data/hgl_Pendling.csv", show_col_types = FALSE)
+sun_Pendling <- read_csv("Data/sun_Pendling.csv", show_col_types = FALSE)
 ```
 
 # 1 Sysselsetting I Ulike Næringer, Etter Arbeidssted (Modeller Ferdig??)
@@ -234,7 +278,6 @@ sun_arb %>%
   theme(axis.title.y = element_text(angle=0))+ 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
-
 
 ```{r Arbeidssted_Sunnhordland}
 syssel_arb %>% 
@@ -542,7 +585,6 @@ sun_bos %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-
 ```{r Bosted_Sunnhordland_2}
 syssel_bos %>% 
   filter(knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617)) %>% 
@@ -665,10 +707,20 @@ har_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
+# Oppgave 4
 
--
+```{r Pendling på Haugalandet}
+hgl_Pendling
+```
+
+```{r Pendling i Sunnhordland}
+sun_Pendling
+```
+
+-   
+
 ```{r siste}
 # Siste
 ```
 
--
+-   
