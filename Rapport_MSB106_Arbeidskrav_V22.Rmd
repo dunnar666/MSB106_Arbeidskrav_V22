@@ -28,7 +28,7 @@ library(tidyverse)
 knitr::opts_chunk$set(echo=FALSE, include = TRUE)
 ```
 
-Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.
+#Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.
 
 I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Hardanger.
 
