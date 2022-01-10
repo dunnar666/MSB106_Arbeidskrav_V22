@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.7)  10 JAN 2022 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.7)  10 JAN 2022 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -560,7 +560,7 @@ fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-05.
+07.
 (c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
@@ -568,373 +568,373 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 {c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/p
 dftex.map}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 212.
+(Font)              <10> on input line 214.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 212.
+(Font)              <7> on input line 214.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 212.
+(Font)              <5> on input line 214.
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.
-pdf, id=62, 469.755pt x 325.215pt>
+pdf, id=72, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
 _1-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_
 1-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Haugalandet_1-1.pdf  used on input line 222.
+idssted_Haugalandet_1-1.pdf  used on input line 228.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [2]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.
-pdf, id=73, 469.755pt x 325.215pt>
+pdf, id=83, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
 _2-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_
 2-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Haugalandet_2-1.pdf  used on input line 224.
+idssted_Haugalandet_2-1.pdf  used on input line 235.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [3 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
 _1-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_3_
-Største_Arbeidsted-1.pdf, id=84, 469.755pt x 325.215pt>
+Største_Arbeidsted-1.pdf, id=93, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_3_Største_Arbeidsted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
 t_3_Største_Arbeidsted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Haugalandet_3_Største_Arbeidsted-1.pdf  used on input line 226.
+ing_Total_Haugalandet_3_Største_Arbeidsted-1.pdf  used on input line 241.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [4 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
 _2-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_4_
-Minste_Arbeidsted-1.pdf, id=94, 469.755pt x 325.215pt>
+Minste_Arbeidsted-1.pdf, id=103, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_4_Minste_Arbeidsted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
 t_4_Minste_Arbeidsted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Haugalandet_4_Minste_Arbeidsted-1.pdf  used on input line 228.
+ing_Total_Haugalandet_4_Minste_Arbeidsted-1.pdf  used on input line 243.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [5 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_3_Største_Arbeidsted-1.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-30.
+53.
 (c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Haugelandet_3_Største_Arbeidssted-1.pdf, id=104, 469.755pt x 325.215pt>
+ng_Haugelandet_3_Største_Arbeidssted-1.pdf, id=113, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Haugelandet_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Haugelandet_3_Største_Arbeidssted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf  used on in
-put line 234.
+put line 257.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [6 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_4_Minste_Arbeidsted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Haugelandet_4_Minste_Arbeidssted-1.pdf, id=115, 469.755pt x 325.215pt>
+ng_Haugelandet_4_Minste_Arbeidssted-1.pdf, id=124, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Haugelandet_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf  used on inpu
-t line 240.
+t line 263.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [7 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
-vikling_Haugelandet_3_Største_Arbeidssted-1.pdf>]
+vikling_Haugelandet_3_Største_Arbeidssted-1.pdf>] [8 <./Rapport_MSB106_Arbeids
+krav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste
+_Arbeidssted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland_1-1
-.pdf, id=126, 469.755pt x 325.215pt>
+.pdf, id=145, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
 d_1-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland
 _1-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Sunnhordland_1-1.pdf  used on input line 247.
+idssted_Sunnhordland_1-1.pdf  used on input line 315.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[8 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
-vikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland_2-1
-.pdf, id=138, 469.755pt x 325.215pt>
+.pdf, id=146, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
 d_2-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland
 _2-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Sunnhordland_2-1.pdf  used on input line 249.
+idssted_Sunnhordland_2-1.pdf  used on input line 324.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [9 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
 d_1-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_3
-_Største_Arbeidsted-1.pdf, id=148, 469.755pt x 325.215pt>
+_Største_Arbeidsted-1.pdf, id=158, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
 and_3_Største_Arbeidsted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
 nd_3_Største_Arbeidsted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Sunnhordland_3_Største_Arbeidsted-1.pdf  used on input line 251.
+ing_Total_Sunnhordland_3_Største_Arbeidsted-1.pdf  used on input line 331.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [10 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordla
 nd_2-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_4
-_Minste_Arbeidsted-1.pdf, id=159, 469.755pt x 325.215pt>
+_Minste_Arbeidsted-1.pdf, id=168, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
 and_4_Minste_Arbeidsted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
 nd_4_Minste_Arbeidsted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Sunnhordland_4_Minste_Arbeidsted-1.pdf  used on input line 253.
+ing_Total_Sunnhordland_4_Minste_Arbeidsted-1.pdf  used on input line 333.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [11 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
 land_3_Største_Arbeidsted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Sunnhordland_3_Største_Arbeidssted-1.pdf, id=169, 469.755pt x 325.215pt>
+ng_Sunnhordland_3_Største_Arbeidssted-1.pdf, id=178, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Sunnhordland_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf  used on i
-nput line 255.
+nput line 341.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [12 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
 land_4_Minste_Arbeidsted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Sunnhordland_4_Minste_Arbeidssted-1.pdf, id=179, 469.755pt x 325.215pt>
+ng_Sunnhordland_4_Minste_Arbeidssted-1.pdf, id=188, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf  used on inp
-ut line 261.
+ut line 347.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [13 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pd
-f, id=190, 469.755pt x 325.215pt>
+f, id=199, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1
 -1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-
 1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Hardanger_1-1.pdf  used on input line 268.
+idssted_Hardanger_1-1.pdf  used on input line 354.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [14 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pd
-f, id=201, 469.755pt x 325.215pt>
+f, id=211, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2
 -1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-
 1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
-idssted_Hardanger_2-1.pdf  used on input line 270.
+idssted_Hardanger_2-1.pdf  used on input line 356.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [15 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_
 1-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_Arbe
-idsted-1.pdf, id=211, 469.755pt x 325.215pt>
+idsted-1.pdf, id=221, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger
 _Arbeidsted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_
 Arbeidsted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Hardanger_Arbeidsted-1.pdf  used on input line 272.
+ing_Total_Hardanger_Arbeidsted-1.pdf  used on input line 358.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [16 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_
 2-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Hardanger_Arbeidssted-1.pdf, id=221, 469.755pt x 325.215pt>
+ng_Hardanger_Arbeidssted-1.pdf, id=231, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Hardanger_Arbeidssted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Hardanger_Arbeidssted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ingsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf  used on input line 278.
+ingsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf  used on input line 364.
 
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [17 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardange
 r_Arbeidsted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf, 
-id=231, 469.755pt x 325.215pt>
+id=241, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.
 pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.p
 df>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Haugalandet_1-1.pdf  used on input line 287.
+ed_Haugalandet_1-1.pdf  used on input line 373.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [18 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Hardanger_Arbeidssted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf, 
-id=242, 469.755pt x 325.215pt>
+id=252, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.
 pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.p
 df>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Haugalandet_2-1.pdf  used on input line 289.
+ed_Haugalandet_2-1.pdf  used on input line 375.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [19 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1
 .pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_3_
-Største_Bosted-1.pdf, id=254, 469.755pt x 325.215pt>
+Største_Bosted-1.pdf, id=264, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_3_Største_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
 t_3_Største_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Haugalandet_3_Største_Bosted-1.pdf  used on input line 291.
+ing_Total_Haugalandet_3_Største_Bosted-1.pdf  used on input line 377.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [20 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1
 .pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_4_
-Minste_Bosted-1.pdf, id=264, 469.755pt x 325.215pt>
+Minste_Bosted-1.pdf, id=274, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
 et_4_Minste_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
 t_4_Minste_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Haugalandet_4_Minste_Bosted-1.pdf  used on input line 293.
+ing_Total_Haugalandet_4_Minste_Bosted-1.pdf  used on input line 379.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [21 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalan
 det_3_Største_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Haugelandet_3_Største_Bosted-1.pdf, id=274, 469.755pt x 325.215pt>
+ng_Haugelandet_3_Største_Bosted-1.pdf, id=284, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Haugelandet_3_Største_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Haugelandet_3_Største_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf  used on input l
-ine 295.
+ine 381.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [22 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalan
 det_4_Minste_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Haugelandet_4_Minste_Bosted-1.pdf, id=284, 469.755pt x 325.215pt>
+ng_Haugelandet_4_Minste_Bosted-1.pdf, id=294, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Haugelandet_4_Minste_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Haugelandet_4_Minste_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf  used on input lin
-e 297.
+e 383.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [23 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Haugelandet_3_Største_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf,
- id=294, 469.755pt x 325.215pt>
+ id=305, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1
 .pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.
 pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Sunnhordland_1-1.pdf  used on input line 302.
+ed_Sunnhordland_1-1.pdf  used on input line 388.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [24 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Haugelandet_4_Minste_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf,
- id=306, 469.755pt x 325.215pt>
+ id=316, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1
 .pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.
 pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Sunnhordland_2-1.pdf  used on input line 304.
+ed_Sunnhordland_2-1.pdf  used on input line 390.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [25 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-
 1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_3
-_Største_Bosted-1.pdf, id=317, 469.755pt x 325.215pt>
+_Største_Bosted-1.pdf, id=327, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
 and_3_Største_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
 nd_3_Største_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Sunnhordland_3_Største_Bosted-1.pdf  used on input line 306.
+ing_Total_Sunnhordland_3_Største_Bosted-1.pdf  used on input line 392.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [26 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-
 1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_4
-_Minste_Bosted-1.pdf, id=327, 469.755pt x 325.215pt>
+_Minste_Bosted-1.pdf, id=337, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
 and_4_Minste_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
 nd_4_Minste_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Sunnhordland_4_Minste_Bosted-1.pdf  used on input line 308.
+ing_Total_Sunnhordland_4_Minste_Bosted-1.pdf  used on input line 394.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [27 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
 land_3_Største_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Sunnhordland_3_Største_Bosted-1.pdf, id=337, 469.755pt x 325.215pt>
+ng_Sunnhordland_3_Største_Bosted-1.pdf, id=347, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Sunnhordland_3_Største_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Sunnhordland_3_Største_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf  used on input 
-line 310.
+line 396.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [28 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
 land_4_Minste_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Sunnhordland_4_Minste_Bosted-1.pdf, id=347, 469.755pt x 325.215pt>
+ng_Sunnhordland_4_Minste_Bosted-1.pdf, id=357, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Sunnhordland_4_Minste_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Sunnhordland_4_Minste_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
 ingsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf  used on input li
-ne 312.
+ne 398.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [29 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Sunnhordland_3_Største_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf, id
-=357, 469.755pt x 325.215pt>
+=367, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pd
 f Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf
 >
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Hardanger_1-1.pdf  used on input line 317.
+ed_Hardanger_1-1.pdf  used on input line 403.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [30 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
 tvikling_Sunnhordland_4_Minste_Bosted-1.pdf>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf, id
-=368, 469.755pt x 325.215pt>
+=378, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pd
 f Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf
 >
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
-ed_Hardanger_2-1.pdf  used on input line 319.
+ed_Hardanger_2-1.pdf  used on input line 405.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [31 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.p
 df>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_Bost
-ed-1.pdf, id=379, 469.755pt x 325.215pt>
+ed-1.pdf, id=389, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger
 _Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_
 Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ing_Total_Hardanger_Bosted-1.pdf  used on input line 321.
+ing_Total_Hardanger_Bosted-1.pdf  used on input line 407.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [32 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.p
 df>]
 <Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
-ng_Hardanger_Bosted-1.pdf, id=389, 469.755pt x 325.215pt>
+ng_Hardanger_Bosted-1.pdf, id=399, 469.755pt x 325.215pt>
 File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
 vikling_Hardanger_Bosted-1.pdf Graphic file (type pdf)
 <use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
 ikling_Hardanger_Bosted-1.pdf>
 Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
-ingsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf  used on input line 323.
+ingsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf  used on input line 409.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [33 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardange
 r_Bosted-1.pdf>] [34 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næri
@@ -942,16 +942,16 @@ ngsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf>] [35] (./Rapport_MSB106_Arbei
 dskrav_V22.aux)
 Package rerunfilecheck Info: File `Rapport_MSB106_Arbeidskrav_V22.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 1DD3F0EEB97C23C511164991DE7C29EF;2154.
+(rerunfilecheck)             Checksum: 01697889B266FEECE693872B3DDCC7FC;3340.
  ) 
 Here is how much of TeX's memory you used:
- 12109 strings out of 480313
- 210327 string characters out of 5895429
- 505940 words of memory out of 5000000
- 29700 multiletter control sequences out of 15000+600000
+ 12121 strings out of 480313
+ 210849 string characters out of 5895429
+ 506195 words of memory out of 5000000
+ 29708 multiletter control sequences out of 15000+600000
  453662 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,498b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,63p,835b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
 ec.enc}{c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/l
 m/lm-ts1.enc}<c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
@@ -962,10 +962,10 @@ TeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/Ola Andre/AppData/Roam
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/Ola Andre/AppD
 ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/Ola A
 ndre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Rapport_MSB106_Arbeidskrav_V22.pdf (35 pages, 362993 bytes).
+Output written on Rapport_MSB106_Arbeidskrav_V22.pdf (35 pages, 367450 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 344 compressed objects within 4 object streams
- 60 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 475 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
