@@ -5,6 +5,10 @@ author:
 - Ola Andre Olofsson
 - Ann Elisabeth Jacobsen
 - Heidi Marie Rolfsnes
+- Daniel Karstad
+- Henriette Hansen
+- Susann Birkeland Sivertsen
+- Vilde Haugland
 subtitle: MSB106, Anvendt by- og regionaløkonomi
 output:
   pdf_document: default
