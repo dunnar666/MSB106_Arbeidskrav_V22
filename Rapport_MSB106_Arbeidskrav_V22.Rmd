@@ -94,7 +94,7 @@ sun_Pendling <- read_csv("Data/sun_Pendling.csv", show_col_types = FALSE)
 hld_arb %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
   geom_line() +
-  labs(title = "Haugalandet")+
+  labs(title = "Fig. 1: Haugalandet")+
   ylab("Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
@@ -108,7 +108,7 @@ syssel_arb %>%
   geom_line(aes(group = knavn, colour = knavn)) +
   scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
-  labs(title = "Haugalandet", x = "År", y = "Antall ansatte i  \n alle næringer") +
+  labs(title = "Fig. 2: Haugalandet", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+
   theme(legend.position = 'bottom')
 ```
@@ -121,13 +121,37 @@ hld_arb_long <- syssel_arb %>%
     values_to = "Ansatte")
 ```
 
+```{r Næring_Total_Haugalandet_3_Største_Arbeidsted}
+hld_arb_long %>% 
+  filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
+  filter(Næring %in% "Alle Næringer") %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(title = "Fig. 3: Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
+  theme(legend.position = 'bottom')
+```
+
+```{r Næring_Total_Haugalandet_4_Minste_Arbeidsted}
+hld_arb_long %>% 
+  filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
+  filter(Næring %in% "Alle Næringer") %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(title = "Fig. 4: Haugalandet: Bokn, Sauda Tysvær og Utsira", x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
+  theme(legend.position = 'bottom')
+```
+
 ```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted}
 hld_arb_long %>% 
   filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 5: Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
   theme(legend.position = 'bottom')
@@ -139,51 +163,26 @@ hld_arb_long %>%
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Haugalandet: Bokn, Sauda, Tysvær og Utsira", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 6: Haugalandet: Bokn, Sauda, Tysvær og Utsira", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
 ```
-
-```{r}
-hld_arb_long %>% 
-  filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
-  filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
-  geom_line(mapping = aes(group = Næring, colour = Næring)) +
-  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
-```
-
-```{r}
-hld_arb_long %>% 
-  filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
-  filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Haugalandet: Bokn, Sauda Tysvær og Utsira", x = "År", y = "Antall ansatte") +
-  geom_line(mapping = aes(group = Næring, colour = Næring)) +
-  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
-  theme(legend.position = 'bottom')
-```
-
 
 ## Sunnhordland
 
 Så gjer vi det samme for *Sunnhordland*
 
-```{r}
+```{r Arbeidssted_Sunnhordland_1}
 sun_arb %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
   geom_line() +
-  labs(title = "Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
+  labs(title = "Fig. 7: Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+ 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-```{r Arbeidssted_Sunnhordland}
+```{r Arbeidssted_Sunnhordland_2}
 syssel_arb %>% 
   filter(knr %in% c(4611, 4612, 4613, 4614, 4615, 4616, 4617)) %>% 
   ggplot(mapping = aes(x = aar, y = `Alle Næringer`)) +
@@ -192,7 +191,7 @@ syssel_arb %>%
   scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
   scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
-   labs(title = "Sunnhordland", x = "År") +
+   labs(title = "Fig. 8: Sunnhordland", x = "År") +
   theme(legend.position = 'bottom')
 ```
 
@@ -204,13 +203,37 @@ sun_arb_long <- syssel_arb %>%
     values_to = "Ansatte")
 ```
 
+```{r Næring_Total_Sunnhordland_3_Største_Arbeidsted}
+sun_arb_long %>% 
+  filter(knavn %in% c("Bømlo", "Kvinnherad", "Stord")) %>% 
+  filter(Næring %in% "Alle Næringer") %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(title = "Fig. 9: Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
+  theme(legend.position = 'bottom')
+```
+
+```{r Næring_Total_Sunnhordland_4_Minste_Arbeidsted}
+sun_arb_long %>% 
+  filter(knavn %in% c("Etne", "Fitjar", "Sveio", "Tysnes")) %>% 
+  filter(Næring %in% "Alle Næringer") %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(title = "Fig. 10: Sunnhordland: Etne, Fithar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
+  theme(legend.position = 'bottom')
+```
+
 ```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted}
 sun_arb_long %>% 
   filter(knavn %in% c("Bømlo", "Stord", "Kvinnherad")) %>% 
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 11: Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
   theme(legend.position = 'bottom')
@@ -222,31 +245,7 @@ sun_arb_long %>%
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Sunnhordland: Etne, Fitjar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
-  geom_line(mapping = aes(group = Næring, colour = Næring)) +
-  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
-  theme(legend.position = 'bottom')
-```
-
-```{r}
-sun_arb_long %>% 
-  filter(knavn %in% c("Bømlo", "Kvinnherad", "Stord")) %>% 
-  filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
-  geom_line(mapping = aes(group = Næring, colour = Næring)) +
-  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
-```
-
-```{r}
-sun_arb_long %>% 
-  filter(knavn %in% c("Etne", "Fitjar", "Sveio", "Tysnes")) %>% 
-  filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Sunnhordland: Etne, Fithar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 12: Sunnhordland: Etne, Fitjar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
@@ -260,7 +259,7 @@ Til slutt må vi gjere det samme med *Hardanger*
 har_arb %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
   geom_line() +
-  labs(title = "Hardanger", y= "Alle Næringer") + 
+  labs(title = "Fig. 13: Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
@@ -274,7 +273,7 @@ syssel_arb %>%
   scale_size_manual(values = c(seq(2.0, 2, by = -0.1))) +
   geom_hline(yintercept = 0) +
   scale_x_continuous(breaks = seq(2008, 2020, by = 1)) +
-   labs(title = "Hardanger", x = "År") +
+   labs(title = "Fig. 14: Hardanger", x = "År") +
   theme(legend.position = 'bottom')
 ```
 
@@ -286,27 +285,27 @@ har_arb_long <- syssel_arb %>%
     values_to = "Ansatte")
 ```
 
+```{r Næring_Total_Hardanger_Arbeidsted}
+har_arb_long %>% 
+  filter(knavn %in% c("Odda", "Ullensvang")) %>% 
+  filter(Næring %in% "Alle Næringer") %>% 
+  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  scale_color_viridis(discrete = TRUE, option = "A") +
+  labs(title = "Fig. 15: Sunnhordland: Odda og Ullensvang", x = "År", y = "Antall ansatte") +
+  geom_line(mapping = aes(group = Næring, colour = Næring)) +
+  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
+  theme(legend.position = 'bottom')
+```
+
 ```{r Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted}
 har_arb_long %>% 
   filter(knavn %in% c("Odda", "Ullensvang")) %>% 
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Hardanger: Odda, Ullensvang", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 16: Hardanger: Odda, Ullensvang", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
-```
-
-```{r}
-har_arb_long %>% 
-  filter(knavn %in% c("Odda", "Ullensvang")) %>% 
-  filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Sunnhordland: Odda og Ullensvang", x = "År", y = "Antall ansatte") +
-  geom_line(mapping = aes(group = Næring, colour = Næring)) +
-  facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
 ```
 
