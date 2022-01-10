@@ -131,24 +131,28 @@ hld_arb_long <- syssel_arb %>%
 hld_arb_long %>% 
   filter(knavn %in% c("Haugesund", "Karmøy", "Vindafjord")) %>% 
   filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  ggplot(mapping = aes(x = aar, y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   labs(title = "Fig. 3: Haugalandet: Haugesund, Karmøy og Vindafjord", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2)) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 ```{r Næring_Total_Haugalandet_4_Minste_Arbeidsted}
 hld_arb_long %>% 
   filter(knavn %in% c("Bokn", "Sauda", "Tysvær", "Utsira")) %>% 
   filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  ggplot(mapping = aes(x = aar, y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   labs(title = "Fig. 4: Haugalandet: Bokn, Sauda Tysvær og Utsira", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2)) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 Figur 3 og 4 viser utviklingen av det totale antall ansatte i alle næringer på kommunalt nivå, innenfor Haugaland-regionen.
@@ -226,7 +230,7 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele fra 2008 til 2020.
+Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020. Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig. Vi lager dermed en mer oversiktlig figur, jf. figur 9 & 10.
 
 ```{r sun_arb_long}
 sun_arb_long <- syssel_arb %>%
@@ -240,36 +244,46 @@ sun_arb_long <- syssel_arb %>%
 sun_arb_long %>% 
   filter(knavn %in% c("Bømlo", "Kvinnherad", "Stord")) %>% 
   filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  ggplot(mapping = aes(x = aar, y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   labs(title = "Fig. 9: Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2)) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 ```{r Næring_Total_Sunnhordland_4_Minste_Arbeidsted}
 sun_arb_long %>% 
   filter(knavn %in% c("Etne", "Fitjar", "Sveio", "Tysnes")) %>% 
   filter(Næring %in% "Alle Næringer") %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  ggplot(mapping = aes(x = aar, y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
   labs(title = "Fig. 10: Sunnhordland: Etne, Fithar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2)) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
+
+Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020. En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst. En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
+
+For å få et bedre oversikt over utviklingen i kommunen ønsker vi å se på de 6 mest relevante næringene i hver kommune.
 
 ```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted}
 sun_arb_long %>% 
   filter(knavn %in% c("Bømlo", "Stord", "Kvinnherad")) %>% 
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
-  ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
+  ggplot(mapping = aes(x = aar, y = Ansatte)) +
   scale_fill_distiller(palette = "Dark2") +
   labs(title = "Fig. 11: Sunnhordland: Bømlo, Kvinnherad og Stord", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + 
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2)) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 ```{r Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted}
@@ -277,23 +291,37 @@ sun_arb_long %>%
   filter(knavn %in% c("Etne", "Sveio", "Fitjar", "Tysnes")) %>% 
   filter(Næring %in% c("Industri", "Helse- og Sosialtjenester", "Finansiering og Forsikring", "Elektrisitet, Vann og Renovasjon", "Bygge- og Anleggsvirksomhet", "Jordbruk, Skogbrug og Fiske")) %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
-  scale_color_viridis(discrete = TRUE, option = "A") +
+  scale_fill_distiller(palette = "Dark2") +
   labs(title = "Fig. 12: Sunnhordland: Etne, Fitjar, Sveio og Tysnes", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
 ```
 
+Figur 11 og 12 viser de 6 mest relevante næringene i hver enkelt kommune i Sunnhordlandsregionen fra 2008 til 2020.
+
+En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester. Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
+
+### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
+
+Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008. Dette stemmer overens med to hendelser. Den første er oljeknekken i 2014 som medførte at bl.a. Aker Stord AS som er avhengig av Olje-industrien måtte permitere.
+
+Stord er en kommune som har mye offshore industri. I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte. Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt. Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
+
+Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen. Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring. **Kan det vere ein grunn til dette som burde diskuterast??**
+
 ## Hardanger
 
 Til slutt må vi gjere det samme med *Hardanger*
+
+I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner. i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang. Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
 
 ```{r Arbeidssted_Hardanger_1}
 har_arb %>% 
   ggplot(mapping = aes(x = År, y = Totalt)) +
   geom_line() +
   labs(title = "Fig. 13: Hardanger", y= "Alle Næringer") + 
-  scale_x_continuous(breaks = seq(2008, 2020, by = 1))
+  scale_x_continuous(breaks = seq(2008, 2020, by = 2))
 ```
 
 ```{r Arbeidssted_Hardanger_2}
@@ -324,7 +352,7 @@ har_arb_long %>%
   filter(Næring %in% "Alle Næringer") %>% 
   ggplot(mapping = aes(x = as.Date(paste0(aar, "-01-01")), y = Ansatte)) +
   scale_color_viridis(discrete = TRUE, option = "A") +
-  labs(title = "Fig. 15: Sunnhordland: Odda og Ullensvang", x = "År", y = "Antall ansatte") +
+  labs(title = "Fig. 15: Hardanger: Odda og Ullensvang", x = "År", y = "Antall ansatte") +
   geom_line(mapping = aes(group = Næring, colour = Næring)) +
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
