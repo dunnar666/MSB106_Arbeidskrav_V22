@@ -200,7 +200,7 @@ I helsesektoren er Stavanger universitetssykehus (SuS) sentralt.
 
 ## Sunnhordland
 
-Videre ønsker vi å se på utviklingen i Sunnhordlandsregionen.
+Videre ønsker vi å se på den samme utviklingen, men denne gangen i Sunnhordlandsregionen.
 
 ```{r Arbeidssted_Sunnhordland_1}
 sun_arb %>% 
@@ -210,6 +210,8 @@ sun_arb %>%
   theme(axis.title.y = element_text(angle=0))+ 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
+
+Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020. Sunnhordaland har i 2020 i underkant av 25 500 ansatte. Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang. Fra 2014 har det vært en reduksjon i totalt antall ansatte.
 
 ```{r Arbeidssted_Sunnhordland_2}
 syssel_arb %>% 
@@ -224,7 +226,7 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-Sunnhordaland har i 2020 i underkant av 29 500 ansatte, og har hatt en svak økning fra 2010.
+Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele fra 2008 til 2020.
 
 ```{r sun_arb_long}
 sun_arb_long <- syssel_arb %>%

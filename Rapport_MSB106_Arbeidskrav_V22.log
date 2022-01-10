@@ -1,49 +1,63 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  9 JAN 2022 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.7)  10 JAN 2022 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Rapport_MSB106_Arbeidskrav_V22.tex
 (./Rapport_MSB106_Arbeidskrav_V22.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-10-18> (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22>
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.cl
+o
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count183
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\c@figure=\count189
+\c@table=\count190
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen139
-)) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen140
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count190
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count191
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count191
-\leftroot@=\count192
+\uproot@=\count192
+\leftroot@=\count193
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count193
-\DOTSCASE@=\count194
+\classnum@=\count194
+\DOTSCASE@=\count195
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -52,15 +66,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count195
-\c@MaxMatrixCols=\count196
+\macc@depth=\count196
+\c@MaxMatrixCols=\count197
 \dotsspace@=\muskip16
-\c@parentequation=\count197
-\dspbrk@lvl=\count198
+\c@parentequation=\count198
+\dspbrk@lvl=\count199
 \tag@help=\toks17
-\row@=\count199
-\column@=\count266
-\maxfields@=\count267
+\row@=\count266
+\column@=\count267
+\maxfields@=\count268
 \andhelp@=\toks18
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -72,18 +86,23 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+))
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -117,87 +136,142 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxete
+x.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.
+sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-)) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
+))
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluat
+ex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.s
+ty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 112.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+))
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.
+sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.
+sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/c
+olor.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/p
+dftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyper
+ref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxc
+mds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/p
+dftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/in
+fwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyva
+l.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kv
+setkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys
+/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pd
+fescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolo
+r.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/le
+tltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhoo
+k.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvop
+tions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen148
-\Hy@linkcounter=\count268
-\Hy@pagecounter=\count269
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+\Hy@linkcounter=\count269
+\Hy@pagecounter=\count270
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1en
+c.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
-File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel languages
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyper
+ref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intc
+alc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/ete
+xcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count270
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+\Hy@SavedSpaceFactor=\count271
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc
+.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -210,19 +284,24 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count271
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\c@Hy@tempcnt=\count272
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen149
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitse
+t.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/b
+igintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
-\Fld@menulength=\count272
+\Fld@menulength=\count273
 \Field@Width=\dimen150
 \Fld@charsize=\dimen151
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -234,39 +313,55 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6101.
 Package hyperref Info: PDF/A mode OFF on input line 6106.
 LaTeX Info: Redefining \ref on input line 6146.
 LaTeX Info: Redefining \pageref on input line 6150.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-
+ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count273
-\c@Item=\count274
-\c@Hfootnote=\count275
+\Hy@abspage=\count274
+\c@Item=\count275
+\c@Hfootnote=\count276
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdft
+ex.def
 File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend
+-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
-\Fld@listcount=\count276
-\c@bookmark@seq@number=\count277
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+\Fld@listcount=\count277
+\c@bookmark@seq@number=\count278
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck
+/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounte
+r/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
 )
 \Hy@SectionHShift=\skip52
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geome
+try.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex
+.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count278
-\Gm@cntv=\count279
-\c@Gm@tempcnt=\count280
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
 \Gm@bindingoffset=\dimen152
 \Gm@wd@mp=\dimen153
 \Gm@odd@mp=\dimen154
@@ -276,28 +371,42 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen158
 \Gm@layoutvoffset=\dimen159
 \Gm@dimlist=\toks24
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graph
+icx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graph
+ics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.
+sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/g
+raphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/10/19 3.65 The Babel package
-\babel@savecnt=\count281
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.
+sty
+Package: babel 2021/12/30 3.69 The Babel package
+\babel@savecnt=\count282
 \U@D=\dimen162
 \l@unhyphenated=\language3
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbab
+el.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count282
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-norsk/norsk.ldf
+\bbl@dirlevel=\count283
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-norsk/
+norsk.ldf
 Language: norsk 2012/08/06 v2.0i Norsk support from the babel system
 
 Package babel Warning: No hyphenation patterns were preloaded for
@@ -309,55 +418,69 @@ Package babel Warning: No hyphenation patterns were preloaded for
 Package babel Info: Hyphen rules for 'norsk' set to \l@english
 (babel)             (\language0). Reported on input line 50.
 Package babel Info: Making " an active character on input line 113.
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-norsk/norsk.ldf
-Language: norsk 2012/08/06 v2.0i Norsk support from the babel system
-)) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+))
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etool
+box.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count283
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count284
+\etb@tempcnta=\count284
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3ba
+ckend-pdftex.def
+File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box52
 ) (./Rapport_MSB106_Arbeidskrav_V22.aux)
 \openout1 = `Rapport_MSB106_Arbeidskrav_V22.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/e
+pstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/ep
+stopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
-Package hyperref Info: Link coloring OFF on input line 90.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring OFF on input line 91.
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namer
+ef.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refco
+unt.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestri
+ng/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count285
+\c@section@level=\count286
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
 (./Rapport_MSB106_Arbeidskrav_V22.out) (./Rapport_MSB106_Arbeidskrav_V22.out)
 \@outlinefile=\write3
 \openout3 = `Rapport_MSB106_Arbeidskrav_V22.out'.
@@ -396,295 +519,453 @@ LaTeX Info: Redefining \nameref on input line 90.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+3.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
+3.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+93.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+93.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 92.
+(Font)              <12> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 92.
+(Font)              <8> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 92.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+(Font)              <6> on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.
+fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+
+
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.
+fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.pdf, id=44, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.pdf  used on input line 108.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.pdf, id=45, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.pdf  used on input line 110.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[1
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+05.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 
-{c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 112.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+{c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/p
+dftex.map}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 212.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 212.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 212.
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_1-1.
+pdf, id=62, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
+_1-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_
+1-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Haugalandet_1-1.pdf  used on input line 222.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[2]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.
+pdf, id=73, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
+_2-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_
+2-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Haugalandet_2-1.pdf  used on input line 224.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[3 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
+_1-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_3_
+Største_Arbeidsted-1.pdf, id=84, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_3_Største_Arbeidsted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
+t_3_Største_Arbeidsted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Haugalandet_3_Største_Arbeidsted-1.pdf  used on input line 226.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[4 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet
+_2-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_4_
+Minste_Arbeidsted-1.pdf, id=94, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_4_Minste_Arbeidsted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
+t_4_Minste_Arbeidsted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Haugalandet_4_Minste_Arbeidsted-1.pdf  used on input line 228.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[5 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_3_Største_Arbeidsted-1.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+30.
+(c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling- og utvikling i Haugelandet-1.pdf, id=63, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling- og utvikling i Haugelandet-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling- og utvikling i Haugelandet-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling- og utvikling i Haugelandet-1.pdf  used on input line 116.
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Haugelandet_3_Største_Arbeidssted-1.pdf, id=104, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Haugelandet_3_Største_Arbeidssted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf  used on in
+put line 234.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[2 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Haugalandet_2-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf, id=74, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf  used on input line 122.
+[6 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_4_Minste_Arbeidsted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Haugelandet_4_Minste_Arbeidssted-1.pdf, id=115, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf  used on inpu
+t line 240.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[3 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling- og utvikling i Haugelandet-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf, id=84, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf  used on input line 128.
+[7 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_3_Største_Arbeidssted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland_1-1
+.pdf, id=126, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
+d_1-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland
+_1-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Sunnhordland_1-1.pdf  used on input line 247.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[4 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Haugesund-1.pdf, id=94, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Haugesund-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Haugesund-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Haugesund-1.pdf  used on input line 130.
+[8 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland_2-1
+.pdf, id=138, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
+d_2-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland
+_2-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Sunnhordland_2-1.pdf  used on input line 249.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[5 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Arbeidssted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sauda-1.pdf, id=104, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sauda-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sauda-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sauda-1.pdf  used on input line 132.
+[9 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordlan
+d_1-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_3
+_Største_Arbeidsted-1.pdf, id=148, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
+and_3_Største_Arbeidsted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
+nd_3_Største_Arbeidsted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Sunnhordland_3_Største_Arbeidsted-1.pdf  used on input line 251.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[6 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Haugesund-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bokn-1.pdf, id=114, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bokn-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bokn-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bokn-1.pdf  used on input line 134.
+[10 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordla
+nd_2-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_4
+_Minste_Arbeidsted-1.pdf, id=159, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
+and_4_Minste_Arbeidsted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
+nd_4_Minste_Arbeidsted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Sunnhordland_4_Minste_Arbeidsted-1.pdf  used on input line 253.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[7 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sauda-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysvær-1.pdf, id=125, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysvær-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysvær-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysvær-1.pdf  used on input line 136.
+[11 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
+land_3_Største_Arbeidsted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Sunnhordland_3_Største_Arbeidssted-1.pdf, id=169, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Sunnhordland_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf  used on i
+nput line 255.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[8 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bokn-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Karmøy-1.pdf, id=135, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Karmøy-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Karmøy-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Karmøy-1.pdf  used on input line 138.
+[12 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
+land_4_Minste_Arbeidsted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Sunnhordland_4_Minste_Arbeidssted-1.pdf, id=179, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf  used on inp
+ut line 261.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[9 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysvær-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Utsira-1.pdf, id=145, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Utsira-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Utsira-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Utsira-1.pdf  used on input line 140.
+[13 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pd
+f, id=190, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1
+-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-
+1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Hardanger_1-1.pdf  used on input line 268.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[10 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Karmøy-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Vindafjord-1.pdf, id=155, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Vindafjord-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Vindafjord-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Vindafjord-1.pdf  used on input line 142.
+[14 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pd
+f, id=201, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2
+-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-
+1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbe
+idssted_Hardanger_2-1.pdf  used on input line 270.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[11 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Utsira-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/unnamed-chunk-1-1.pdf, id=166, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 149.
+[15 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_
+1-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_Arbe
+idsted-1.pdf, id=211, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger
+_Arbeidsted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_
+Arbeidsted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Hardanger_Arbeidsted-1.pdf  used on input line 272.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[12 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Vindafjord-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland-1.pdf, id=178, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland-1.pdf  used on input line 151.
+[16 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_
+2-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Hardanger_Arbeidssted-1.pdf, id=221, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Hardanger_Arbeidssted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Hardanger_Arbeidssted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf  used on input line 278.
+
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[13 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/unnamed-chunk-1-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf, id=189, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf  used on input line 153.
+[17 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardange
+r_Arbeidsted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf, 
+id=231, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.
+pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.p
+df>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Haugalandet_1-1.pdf  used on input line 287.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[14 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Sunnhordland-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf, id=199, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf  used on input line 159.
+[18 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Hardanger_Arbeidssted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf, 
+id=242, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.
+pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.p
+df>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Haugalandet_2-1.pdf  used on input line 289.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[15 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Etne-1.pdf, id=209, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Etne-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Etne-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Etne-1.pdf  used on input line 161.
+[19 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1
+.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_3_
+Største_Bosted-1.pdf, id=254, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_3_Største_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
+t_3_Største_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Haugalandet_3_Største_Bosted-1.pdf  used on input line 291.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[16 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Arbeidssted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sveio-1.pdf, id=219, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sveio-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sveio-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sveio-1.pdf  used on input line 163.
+[20 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1
+.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalandet_4_
+Minste_Bosted-1.pdf, id=264, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugaland
+et_4_Minste_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalande
+t_4_Minste_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Haugalandet_4_Minste_Bosted-1.pdf  used on input line 293.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[17 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Etne-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bømlo-1.pdf, id=229, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bømlo-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bømlo-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bømlo-1.pdf  used on input line 165.
+[21 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalan
+det_3_Største_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Haugelandet_3_Største_Bosted-1.pdf, id=274, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_3_Største_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Haugelandet_3_Største_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf  used on input l
+ine 295.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[18 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Sveio-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Stord-1.pdf, id=239, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Stord-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Stord-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Stord-1.pdf  used on input line 167.
+[22 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Haugalan
+det_4_Minste_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Haugelandet_4_Minste_Bosted-1.pdf, id=284, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Haugelandet_4_Minste_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Haugelandet_4_Minste_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf  used on input lin
+e 297.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[19 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bømlo-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Fitjar-1.pdf, id=250, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Fitjar-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Fitjar-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Fitjar-1.pdf  used on input line 169.
+[23 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Haugelandet_3_Største_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf,
+ id=294, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1
+.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.
+pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Sunnhordland_1-1.pdf  used on input line 302.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[20 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Stord-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysnes-1.pdf, id=260, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysnes-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysnes-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysnes-1.pdf  used on input line 171.
+[24 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Haugelandet_4_Minste_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf,
+ id=306, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1
+.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.
+pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Sunnhordland_2-1.pdf  used on input line 304.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[21 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Fitjar-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Kvinnherad-1.pdf, id=270, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Kvinnherad-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Kvinnherad-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Kvinnherad-1.pdf  used on input line 173.
+[25 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-
+1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_3
+_Største_Bosted-1.pdf, id=317, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
+and_3_Største_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
+nd_3_Største_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Sunnhordland_3_Største_Bosted-1.pdf  used on input line 306.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[22 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Tysnes-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pdf, id=280, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pdf  used on input line 180.
+[26 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-
+1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordland_4
+_Minste_Bosted-1.pdf, id=327, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordl
+and_4_Minste_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhordla
+nd_4_Minste_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Sunnhordland_4_Minste_Bosted-1.pdf  used on input line 308.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[23 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Kvinnherad-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pdf, id=291, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pdf  used on input line 187.
+[27 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
+land_3_Største_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Sunnhordland_3_Største_Bosted-1.pdf, id=337, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Sunnhordland_3_Største_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Sunnhordland_3_Største_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf  used on input 
+line 310.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[24 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_1-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf, id=301, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf  used on input line 193.
+[28 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Sunnhord
+land_4_Minste_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Sunnhordland_4_Minste_Bosted-1.pdf, id=347, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Sunnhordland_4_Minste_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Sunnhordland_4_Minste_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf  used on input li
+ne 312.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[25 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Arbeidssted_Hardanger_2-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Odda-1.pdf, id=313, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Odda-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Odda-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Odda-1.pdf  used on input line 195.
+[29 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Sunnhordland_3_Største_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf, id
+=357, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pd
+f Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf
+>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Hardanger_1-1.pdf  used on input line 317.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[26 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Arbeidssted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Ullensvang-1.pdf, id=323, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Ullensvang-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Ullensvang-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Ullensvang-1.pdf  used on input line 197.
+[30 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_U
+tvikling_Sunnhordland_4_Minste_Bosted-1.pdf>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf, id
+=368, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pd
+f Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf
+>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bost
+ed_Hardanger_2-1.pdf  used on input line 319.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[27 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Odda-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf, id=333, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf  used on input line 206.
+[31 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.p
+df>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_Bost
+ed-1.pdf, id=379, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger
+_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardanger_
+Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ing_Total_Hardanger_Bosted-1.pdf  used on input line 321.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[28 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Ullensvang-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf, id=344, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf  used on input line 208.
+[32 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.p
+df>]
+<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikli
+ng_Hardanger_Bosted-1.pdf, id=389, 469.755pt x 325.215pt>
+File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Ut
+vikling_Hardanger_Bosted-1.pdf Graphic file (type pdf)
+<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utv
+ikling_Hardanger_Bosted-1.pdf>
+Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Nær
+ingsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf  used on input line 323.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[29 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_1-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf, id=355, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf  used on input line 210.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[30 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Haugalandet_2-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf, id=365, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf  used on input line 212.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[31 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Bosted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf, id=376, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf  used on input line 217.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[32 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Haugelandet_4_Minste_Bosted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf, id=387, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf  used on input line 219.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[33 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_1-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf, id=397, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf  used on input line 221.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[34 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Sunnhordland_2-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf, id=407, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf  used on input line 223.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[35 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Bosted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf, id=417, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf  used on input line 228.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[36 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Sunnhordland_4_Minste_Bosted-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf, id=428, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf  used on input line 235.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[37 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_1-1.pdf>]
-<Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf, id=439, 469.755pt x 325.215pt>
-File: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf Graphic file (type pdf)
-<use Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf>
-Package pdftex.def Info: Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf  used on input line 237.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[38 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Bosted_Hardanger_2-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 259.
-(c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [39 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næringsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf>] (./Rapport_MSB106_Arbeidskrav_V22.aux)
-Package rerunfilecheck Info: File `Rapport_MSB106_Arbeidskrav_V22.out' has not changed.
-(rerunfilecheck)             Checksum: F7034EAE10972595AE7524219ECB8082;2369.
+[33 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næring_Total_Hardange
+r_Bosted-1.pdf>] [34 <./Rapport_MSB106_Arbeidskrav_V22_files/figure-latex/Næri
+ngsfordeling_og_Utvikling_Hardanger_Bosted-1.pdf>] [35] (./Rapport_MSB106_Arbei
+dskrav_V22.aux)
+Package rerunfilecheck Info: File `Rapport_MSB106_Arbeidskrav_V22.out' has not 
+changed.
+(rerunfilecheck)             Checksum: 1DD3F0EEB97C23C511164991DE7C29EF;2154.
  ) 
 Here is how much of TeX's memory you used:
- 11650 strings out of 480539
- 192665 string characters out of 5900884
- 491918 words of memory out of 5000000
- 29014 multiletter control sequences out of 15000+600000
- 438636 words of font info for 52 fonts, out of 8000000 for 9000
+ 12109 strings out of 480313
+ 210327 string characters out of 5895429
+ 505940 words of memory out of 5000000
+ 29700 multiletter control sequences out of 15000+600000
+ 453662 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,66p,835b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/heidi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Rapport_MSB106_Arbeidskrav_V22.pdf (39 pages, 360962 bytes).
+ 60i,6n,63p,498b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
+ec.enc}{c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/l
+m/lm-ts1.enc}<c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
+/public/lm/lmbx10.pfb><c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmbx12.pfb><c:/Users/Ola Andre/AppData/Roaming/TinyTeX/texm
+f-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/Ola Andre/AppData/Roaming/Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/Ola Andre/AppData/Roam
+ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/Ola Andre/AppD
+ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/Ola A
+ndre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Rapport_MSB106_Arbeidskrav_V22.pdf (35 pages, 362993 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 373 compressed objects within 4 object streams
+ 464 PDF objects out of 1000 (max. 8388607)
+ 344 compressed objects within 4 object streams
  60 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
