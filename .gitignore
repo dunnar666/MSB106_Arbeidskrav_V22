@@ -4,8 +4,10 @@
 .Rproj
 .DS_Store
 .html
+.nb.html
 .pdf
 .docx
+.csv
 
 # Session Data files
 .RData
