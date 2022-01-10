@@ -563,6 +563,16 @@ har_bos_long %>%
 
 # Oppgave 4
 
+Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. De aller fleste kommuner har for lite arbeidsplasser i forhold til antall arbeidene.  Det vil si at de fleste plasser er de avhengige av å pendle til andre plasser. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har folk til å jobbe der innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4. 
+
+Vi har laget en tabell som tar for seg regionen Haugalandet. Her kan vi skille de forskjellige kommunene og se hvor  andelen av innpendling og utpendling er størst eller minst.  
+
+Vi kan se på Karmøy som et eksempel når det gjelder innpendling og utpendling. I Karmøy kommune er det 11637 stykk som jobber i egen kommune, mens 5888 pendler til andre kommuner i regionen. Herav pendler 4916 personer til Haugesund, 9 pendler til Sauda, 31 pendler til Bokn, 712 til Tysvær, 218 til Vindafjord  og 2 personer pendler til Utsira. Når det kommer til innpendling kan vi se at det til sammen er 3384 som pendler til Karmøy fra Hauglandsregionen. Den største andelen fra samme region som pendler til Karmøy er Haugesund. Vi kan se fra tabellen at det er 2586 stykker som pendler fra Haugesund til Karmøy. 
+
+På Utsira som har en mindre befolkning ser vi at 85 jobber i hjemkommunen, mens 9 stk pendler til andre kommune i regionen, henholdsvis til Haugesund, Tysvær og Karmøy.   
+
+På Haugalandet kan vi se  
+
 ```{r Pendling på Haugalandet}
 hgl_Pendling
 ```
