@@ -517,7 +517,7 @@ hld_bos <- hld_bos %>%
 
 ```{r}
 hld_bos <- hld_bos %>% 
-  filter(NACE2007 %in% c("00-99", ))
+  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88"))
 ```
 
 
@@ -537,13 +537,24 @@ hld_bos <- hld_bos %>%
 hld_bos <- hld_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                     "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(hld_bos)[[1]] <- "Næringer"
 names(hld_bos)[[5]] <- "År"
 ```
+
+```{r}
+hld_bos <- hld_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 ### Sunnhordland
 
