@@ -517,7 +517,7 @@ hld_bos <- hld_bos %>%
 
 ```{r}
 hld_bos <- hld_bos %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", ))
 ```
 
 
