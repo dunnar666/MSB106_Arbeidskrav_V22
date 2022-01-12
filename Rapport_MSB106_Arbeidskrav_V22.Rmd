@@ -371,6 +371,10 @@ har_arb_long %>%
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
   theme(legend.position = 'bottom')
 ```
+Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang. 
+
+*Generelt om Ullensvang kommune*
+Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår. Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt. I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
 
 # 2 
 
