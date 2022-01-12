@@ -434,6 +434,37 @@ LQbos <- syssel_bos %>%
   select(aar, knavn, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
 
+For region Haugaland:
+
+```{r}
+hld_bos <- hld_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+LQindustri_hld <- as_tibble(hld_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_hld <- as_tibble(hld_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_hld <- as_tibble(hld_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_hld <- as_tibble(hld_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+hld_bos <- hld_bos %>% 
+  mutate(LQindustri = LQindustri_hld$value,
+         LQjordbruk = LQjordbruk_hld$value,
+         LQundervisning = LQundervisning_hld$value,
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
+For Sunnhordaland:
+For Hardanger:
+
+
+
 
 # 3 Sysselsetting I Ulike Næringer, Etter Bosted (Modeller Under Arbeid)
 
