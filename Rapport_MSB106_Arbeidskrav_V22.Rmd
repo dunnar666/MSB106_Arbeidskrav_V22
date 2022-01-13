@@ -381,6 +381,13 @@ Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i man
 Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen samlet
 
 ```{r}
+#ordner etter kommunenavn og år
+tmp <- syssel_bos
+
+```
+
+
+```{r}
 hau20 <- syssel_bos %>% 
   filter(aar == "2020", knavn == "Haugesund")
 ```
@@ -416,7 +423,22 @@ nasjonalt_bosted <- nasjonalt_bosted %>%
 ```
 
 ```{r}
-LQindustri <- as_tibble(syssel_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+# Forelår å være litt mer forsiktig her. syssel_bos$Eir_Er_industri har lengde 207
+# 13*15 + 12 (den siste Odda). nasjonalt_bosted$Ein_En_Industri har lengde 13
+# Koden her forutsetter at nasjonalt_bosted$Ein_En_Industri kan replikeres 16
+# ganger. Risky i utgangspunktet og her går det galt pga. Odda med 12 obs.
+# Medfører at resultatet blir galt etter Odda. Foreslår å ta det mer stegvis slik at
+# en gar mer kontroll
+
+LQindustri <- syssel_bos %>% 
+  select(aar, knavn, Eir_Er_industri) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Industri), by = c("aar")) %>% 
+  mutate(
+  andel = Eir_Er_industri/Ein_En_Industri
+  )
+
+# Disse må fikses på tilsvarende vis. Har feil verdier slik de er nå 
 LQjordbruk <- as_tibble(syssel_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
 LQundervisning <- as_tibble(syssel_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
 LQhelse <- as_tibble(syssel_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
@@ -424,10 +446,10 @@ LQhelse <- as_tibble(syssel_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
 
 ```{r}
 syssel_bos <- syssel_bos %>% 
-  mutate(LQindustri = LQindustri$value,
-         LQjordbruk = LQjordbruk$value,
-         LQundervisning = LQundervisning$value,
-         LQhelse = LQhelse$value)
+  mutate(LQindustri = LQindustri$andel,
+         LQjordbruk = LQjordbruk,
+         LQundervisning = LQundervisning,
+         LQhelse = LQhelse)
 ```
 
 
