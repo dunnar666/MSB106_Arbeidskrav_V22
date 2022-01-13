@@ -603,7 +603,7 @@ sun_bos <- sun_bos %>%
 
 ```{r}
 sun_bos <- sun_bos %>% 
-  filter(NACE2007 == "00-99") # Sett inn
+  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88")) # Sett inn
 ```
 
 ```{r}
@@ -629,7 +629,11 @@ sun_bos <- sun_bos %>%
 sun_bos <- sun_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99")) # Sett inn
+                          "Alle Næringer" = "00-99",
+                          "Jordbruk, Skogbruk og Fiske" = "01-03",
+                          "Industri" = "10-33",
+                          "Undervisning" = "85",
+                          "Helse- og Sosialtjenester" = "86-88")) # Sett inn
 ```
 
 ```{r}
@@ -637,7 +641,12 @@ names(sun_bos)[[1]] <- "Næringer"
 names(sun_bos)[[5]] <- "År"
 ```
 
-Sett inn pivot
+```{r}
+sun_bos <- sun_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 ### Hardanger
 
@@ -675,7 +684,7 @@ har_bos <- har_bos %>%
 
 ```{r}
 har_bos <- har_bos %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88"))
 ```
 
 ```{r}
@@ -695,7 +704,11 @@ har_bos <- har_bos %>%
 har_bos <- har_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                     "Alle Næringer" = "00-99",
+                          "Jordbruk, Skogbruk og Fiske" = "01-03",
+                          "Industri" = "10-33",
+                          "Undervisning" = "85",
+                          "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
@@ -703,6 +716,11 @@ names(har_bos)[[1]] <- "Næringer"
 names(har_bos)[[5]] <- "År"
 ```
 
+```{r}
+har_bos <- har_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
 
 
 # 2. Mål for Beskrivelse av Næringsstrukturen
