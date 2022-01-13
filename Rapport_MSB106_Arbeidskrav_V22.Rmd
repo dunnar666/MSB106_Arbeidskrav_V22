@@ -378,6 +378,8 @@ Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i man
 
 # 2 
 
+Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen samlet
+
 ```{r}
 hau20 <- syssel_bos %>% 
   filter(aar == "2020", knavn == "Haugesund")
@@ -461,9 +463,55 @@ hld_bos <- hld_bos %>%
 ```
 
 For Sunnhordaland:
+```{r}
+sun_bos <- sun_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+LQindustri_sun <- as_tibble(sun_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_sun <- as_tibble(sun_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_sun <- as_tibble(sun_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_sun <- as_tibble(sun_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+sun_bos <- sun_bos %>% 
+  mutate(LQindustri = LQindustri_sun$value,
+         LQjordbruk = LQjordbruk_sun$value,
+         LQundervisning = LQundervisning_sun$value,
+         LQhelse = LQhelse_sun$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
 For Hardanger:
 
+```{r}
+har_bos <- har_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
 
+```{r}
+LQindustri_har <- as_tibble(har_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_har <- as_tibble(har_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_har <- as_tibble(har_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_har <- as_tibble(har_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+har_bos <- har_bos %>% 
+  mutate(LQindustri = LQindustri_har$value,
+         LQjordbruk = LQjordbruk_har$value,
+         LQundervisning = LQundervisning_har$value,
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
 
 
 # 3 Sysselsetting I Ulike Næringer, Etter Bosted (Modeller Under Arbeid)

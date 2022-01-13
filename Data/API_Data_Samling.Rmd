@@ -517,7 +517,7 @@ hld_bos <- hld_bos %>%
 
 ```{r}
 hld_bos <- hld_bos %>% 
-  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88")) # KOPIER
+  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88")) 
 ```
 
 
@@ -541,7 +541,7 @@ hld_bos <- hld_bos %>%
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
                        "Industri" = "10-33",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88")) # KOPIER
+                       "Helse- og Sosialtjenester" = "86-88")) 
 ```
 
 ```{r}
@@ -552,7 +552,7 @@ names(hld_bos)[[5]] <- "År"
 ```{r}
 hld_bos <- hld_bos %>% 
   pivot_wider(names_from = Næringer,
-              values_from = Totalt) # KOPIER
+              values_from = Totalt) 
 ```
 
 
@@ -603,7 +603,7 @@ sun_bos <- sun_bos %>%
 
 ```{r}
 sun_bos <- sun_bos %>% 
-  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88")) # Sett inn
+  filter(NACE2007 %in% c("00-99", "10-33", "01-03", "85", "86-88")) 
 ```
 
 ```{r}
@@ -633,7 +633,7 @@ sun_bos <- sun_bos %>%
                           "Jordbruk, Skogbruk og Fiske" = "01-03",
                           "Industri" = "10-33",
                           "Undervisning" = "85",
-                          "Helse- og Sosialtjenester" = "86-88")) # Sett inn
+                          "Helse- og Sosialtjenester" = "86-88")) 
 ```
 
 ```{r}
