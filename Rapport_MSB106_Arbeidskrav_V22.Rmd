@@ -86,7 +86,7 @@ hgl_Pendling <- read_csv("Data/hgl_Pendling.csv", show_col_types = FALSE)
 sun_Pendling <- read_csv("Data/sun_Pendling.csv", show_col_types = FALSE)
 ```
 
-# 1 Sysselsetting I Ulike Næringer, Etter Arbeidssted
+# 1 Sysselsetting i ulike næringer, etter arbeidssted
 
 ## Haugalandet
 
@@ -373,7 +373,8 @@ har_arb_long %>%
 ```
 Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang. 
 
-*Generelt om Ullensvang kommune*
+**Generelt om Ullensvang kommune**
+
 Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår. Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt. I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
 
 # 2 
@@ -393,11 +394,8 @@ hau20 <- syssel_bos %>%
 ```
 
 ```{r}
-1905/18137
-```
-
-```{r}
 (hau20$Industri/hau20$`Alle Næringer`)
+1905/18137
 ```
 
 ```{r}
@@ -422,7 +420,7 @@ nasjonalt_bosted <- nasjonalt_bosted %>%
          Ein_En_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
 ```
 
-```{r}
+```{r, include=FALSE}
 # Forelår å være litt mer forsiktig her. syssel_bos$Eir_Er_industri har lengde 207
 # 13*15 + 12 (den siste Odda). nasjonalt_bosted$Ein_En_Industri har lengde 13
 # Koden her forutsetter at nasjonalt_bosted$Ein_En_Industri kan replikeres 16
@@ -536,7 +534,7 @@ har_bos <- har_bos %>%
 ```
 
 
-# 3 Sysselsetting I Ulike Næringer, Etter Bosted (Modeller Under Arbeid)
+# 3 Sysselsetting i ulike næringer, etter bosted (Modeller under arbeid)
 
 ## Haugalandet
 
