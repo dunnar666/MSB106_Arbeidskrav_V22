@@ -1,14 +1,14 @@
-Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,Undervisning,Helse- og Sosialtjenester
-Begge Kjønn,15-74,Sysselsatte,2008,29445,1400,6160,2263,5565
-Begge Kjønn,15-74,Sysselsatte,2009,29185,1370,5926,2286,5784
-Begge Kjønn,15-74,Sysselsatte,2010,28908,1327,5382,2328,5882
-Begge Kjønn,15-74,Sysselsatte,2011,29332,1347,5390,2326,6112
-Begge Kjønn,15-74,Sysselsatte,2012,29527,1298,5660,2312,6111
-Begge Kjønn,15-74,Sysselsatte,2013,29873,1247,5734,2358,6050
-Begge Kjønn,15-74,Sysselsatte,2014,30051,1230,5756,2374,6024
-Begge Kjønn,15-74,Sysselsatte,2015,29086,1309,5282,2365,6092
-Begge Kjønn,15-74,Sysselsatte,2016,28675,1372,4824,2400,6273
-Begge Kjønn,15-74,Sysselsatte,2017,29079,1446,4822,2376,6251
-Begge Kjønn,15-74,Sysselsatte,2018,29320,1463,5054,2333,6299
-Begge Kjønn,15-74,Sysselsatte,2019,29654,1481,5126,2322,6392
-Begge Kjønn,15-74,Sysselsatte,2020,29369,1495,5050,2350,6453
+Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,Finansiering og Forsikring,Undervisning,Helse- og Sosialtjenester
+Begge Kjønn,15-74,Sysselsatte,2008,29445,1400,6160,429,2307,250,2263,5565
+Begge Kjønn,15-74,Sysselsatte,2009,29185,1370,5926,447,2356,236,2286,5784
+Begge Kjønn,15-74,Sysselsatte,2010,28908,1327,5382,468,2317,232,2328,5882
+Begge Kjønn,15-74,Sysselsatte,2011,29332,1347,5390,483,2434,216,2326,6112
+Begge Kjønn,15-74,Sysselsatte,2012,29527,1298,5660,485,2395,203,2312,6111
+Begge Kjønn,15-74,Sysselsatte,2013,29873,1247,5734,481,2428,201,2358,6050
+Begge Kjønn,15-74,Sysselsatte,2014,30051,1230,5756,482,2499,196,2374,6024
+Begge Kjønn,15-74,Sysselsatte,2015,29086,1309,5282,492,2525,185,2365,6092
+Begge Kjønn,15-74,Sysselsatte,2016,28675,1372,4824,490,2545,157,2400,6273
+Begge Kjønn,15-74,Sysselsatte,2017,29079,1446,4822,491,2688,149,2376,6251
+Begge Kjønn,15-74,Sysselsatte,2018,29320,1463,5054,449,2782,150,2333,6299
+Begge Kjønn,15-74,Sysselsatte,2019,29654,1481,5126,471,2745,130,2322,6392
+Begge Kjønn,15-74,Sysselsatte,2020,29369,1495,5050,505,2699,136,2350,6453

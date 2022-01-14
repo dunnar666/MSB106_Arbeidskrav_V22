@@ -186,7 +186,12 @@ hld_arb <- hld_arb %>%
 
 ```{r}
 hld_arb <- hld_arb %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88")) %>% select(-NAstatus)
+```
+
+```{r}
+hld_arb <- hld_arb[-c(105, 106, 107, 108), ]
+hld_arb[is.na(hld_arb)] = 0
 ```
 
 ```{r}
@@ -316,6 +321,11 @@ names(sun_arb)[[5]] <- "År"
 ```
 
 ```{r}
+sun_arb <- sun_arb[-105, ]
+sun_arb[is.na(sun_arb)] = 0
+```
+
+```{r}
 sun_arb <- sun_arb %>% 
   pivot_wider(names_from = Næringer,
               values_from = Totalt)
@@ -391,6 +401,11 @@ har_arb <- har_arb %>%
 ```{r}
 names(har_arb)[[1]] <- "Næringer"
 names(har_arb)[[5]] <- "År"
+```
+
+```{r}
+har_arb <- har_arb[-105, ]
+har_arb[is.na(har_arb)] = 0
 ```
 
 ```{r}

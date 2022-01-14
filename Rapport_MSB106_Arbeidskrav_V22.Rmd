@@ -94,7 +94,7 @@ Første regionen vi velger å se på er Haugalandet. Her ønsker vi å se på ut
 
 ```{r Arbeidssted_Haugalandet_1}
 hld_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 1: Haugalandet")+
   ylab("Antall ansatte i  \n alle næringer") +
@@ -208,7 +208,7 @@ Videre ønsker vi å se på den samme utviklingen, men denne gangen i Sunnhordla
 
 ```{r Arbeidssted_Sunnhordland_1}
 sun_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 7: Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+ 
@@ -320,7 +320,7 @@ I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensva
 
 ```{r Arbeidssted_Hardanger_1}
 har_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 13: Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 2))
