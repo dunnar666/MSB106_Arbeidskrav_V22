@@ -459,7 +459,7 @@ LQbos <- syssel_bos %>%
 For region Haugaland:
 
 ```{r}
-hld_bos <- hld_bos %>% 
+hld_bos_LQ <- hld_bos %>% 
   mutate(Eir_Er_industri = Industri/`Alle Næringer`,
          Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
@@ -467,24 +467,25 @@ hld_bos <- hld_bos %>%
 ```
 
 ```{r}
-LQindustri_hld <- as_tibble(hld_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_hld <- as_tibble(hld_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_hld <- as_tibble(hld_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_hld <- as_tibble(hld_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+LQindustri_hld <- as_tibble(hld_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_hld <- as_tibble(hld_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_hld <- as_tibble(hld_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_hld <- as_tibble(hld_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
 ```
 
 ```{r}
-hld_bos <- hld_bos %>% 
+hld_bos_LQ <- hld_bos_LQ %>% 
   mutate(LQindustri = LQindustri_hld$value,
          LQjordbruk = LQjordbruk_hld$value,
          LQundervisning = LQundervisning_hld$value,
-         LQhelse = LQhelse_hld$value)
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
 
 For Sunnhordaland:
 
 ```{r}
-sun_bos <- sun_bos %>% 
+sun_bos_LQ <- sun_bos %>% 
   mutate(Eir_Er_industri = Industri/`Alle Næringer`,
          Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
@@ -492,24 +493,25 @@ sun_bos <- sun_bos %>%
 ```
 
 ```{r}
-LQindustri_sun <- as_tibble(sun_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_sun <- as_tibble(sun_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_sun <- as_tibble(sun_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_sun <- as_tibble(sun_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+LQindustri_sun <- as_tibble(sun_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_sun <- as_tibble(sun_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_sun <- as_tibble(sun_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_sun <- as_tibble(sun_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
 ```
 
 ```{r}
-sun_bos <- sun_bos %>% 
+sun_bos_LQ <- sun_bos_LQ %>% 
   mutate(LQindustri = LQindustri_sun$value,
          LQjordbruk = LQjordbruk_sun$value,
          LQundervisning = LQundervisning_sun$value,
-         LQhelse = LQhelse_sun$value)
+         LQhelse = LQhelse_sun$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
 
 For Hardanger:
 
 ```{r}
-har_bos <- har_bos %>% 
+har_bos_LQ <- har_bos %>% 
   mutate(Eir_Er_industri = Industri/`Alle Næringer`,
          Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
@@ -517,18 +519,19 @@ har_bos <- har_bos %>%
 ```
 
 ```{r}
-LQindustri_har <- as_tibble(har_bos$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_har <- as_tibble(har_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_har <- as_tibble(har_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_har <- as_tibble(har_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+LQindustri_har <- as_tibble(har_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_har <- as_tibble(har_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_har <- as_tibble(har_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_har <- as_tibble(har_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
 ```
 
 ```{r}
-har_bos <- har_bos %>% 
+har_bos_LQ <- har_bos_LQ %>% 
   mutate(LQindustri = LQindustri_har$value,
          LQjordbruk = LQjordbruk_har$value,
          LQundervisning = LQundervisning_har$value,
-         LQhelse = LQhelse_hld$value)
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
 
 
