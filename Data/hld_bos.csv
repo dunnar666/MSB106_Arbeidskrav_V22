@@ -1,14 +1,14 @@
-Næringer,Kjonn,Alder,ContentsCode,År,Totalt
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2008,50243
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2009,49433
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2010,49673
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2011,50909
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2012,51343
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2013,51821
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2014,52462
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2015,50442
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2016,50190
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2017,50869
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2018,51113
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2019,51563
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2020,50937
+Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,Undervisning,Helse- og Sosialtjenester
+Begge Kjønn,15-74,Sysselsatte,2008,50243,1639,7792,3609,9471
+Begge Kjønn,15-74,Sysselsatte,2009,49433,1612,7032,3773,9702
+Begge Kjønn,15-74,Sysselsatte,2010,49673,1569,6448,3831,9680
+Begge Kjønn,15-74,Sysselsatte,2011,50909,1515,6498,3827,9976
+Begge Kjønn,15-74,Sysselsatte,2012,51343,1404,6589,3880,9885
+Begge Kjønn,15-74,Sysselsatte,2013,51821,1338,6627,3873,10030
+Begge Kjønn,15-74,Sysselsatte,2014,52462,1305,6638,3954,10310
+Begge Kjønn,15-74,Sysselsatte,2015,50442,1351,6300,3887,10401
+Begge Kjønn,15-74,Sysselsatte,2016,50190,1380,6127,4020,10432
+Begge Kjønn,15-74,Sysselsatte,2017,50869,1371,6153,4044,10617
+Begge Kjønn,15-74,Sysselsatte,2018,51113,1326,6161,4096,10759
+Begge Kjønn,15-74,Sysselsatte,2019,51563,1306,6343,4070,10893
+Begge Kjønn,15-74,Sysselsatte,2020,50937,1324,6305,4080,10980

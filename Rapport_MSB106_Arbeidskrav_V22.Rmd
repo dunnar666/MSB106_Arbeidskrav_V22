@@ -478,11 +478,11 @@ hld_bos <- hld_bos %>%
   mutate(LQindustri = LQindustri_hld$value,
          LQjordbruk = LQjordbruk_hld$value,
          LQundervisning = LQundervisning_hld$value,
-         LQhelse = LQhelse_hld$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+         LQhelse = LQhelse_hld$value)
 ```
 
 For Sunnhordaland:
+
 ```{r}
 sun_bos <- sun_bos %>% 
   mutate(Eir_Er_industri = Industri/`Alle Næringer`,
@@ -503,8 +503,7 @@ sun_bos <- sun_bos %>%
   mutate(LQindustri = LQindustri_sun$value,
          LQjordbruk = LQjordbruk_sun$value,
          LQundervisning = LQundervisning_sun$value,
-         LQhelse = LQhelse_sun$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+         LQhelse = LQhelse_sun$value)
 ```
 
 For Hardanger:
@@ -529,8 +528,7 @@ har_bos <- har_bos %>%
   mutate(LQindustri = LQindustri_har$value,
          LQjordbruk = LQjordbruk_har$value,
          LQundervisning = LQundervisning_har$value,
-         LQhelse = LQhelse_hld$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+         LQhelse = LQhelse_hld$value)
 ```
 
 
@@ -540,7 +538,7 @@ har_bos <- har_bos %>%
 
 ```{r Bosted_Haugalandet_1}
 hld_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Haugalandet")+
   ylab("Antall ansatte i  \n alle næringer") +
@@ -621,7 +619,7 @@ hld_bos_long %>%
 
 ```{r Bosted_Sunnhordland_1}
 sun_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+ 
@@ -701,7 +699,7 @@ sun_bos_long %>%
 
 ```{r Bosted_Hardanger_1}
 har_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
