@@ -762,6 +762,10 @@ nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
 
 ## Lokaliseringskvotienter for regionene samlet
 
+#### Splitting?
+
+**Må kanskje finne ut om vi skal dele opp i 2, slik at vi får heile datasettet når vi bruker print()**
+
 ### Haugalandet 2008-2020
 
 - Eir_Er_Jordbruk = Samlet sysselsetting i region Haugalandet
@@ -829,7 +833,7 @@ har_arb_LQ <- har_arb %>%
          Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
 ```
 
-# Nasjonalt?
+## Nasjonalt??
 
 ```{r}
 syssel_arb <- syssel_arb %>% 
@@ -921,8 +925,6 @@ LQ_arb <- syssel_arb %>%
 ```{r}
 LQ_arb[is.na(LQ_arb)] = 0
 ```
-
-
 
 # Oppgave 4
 
