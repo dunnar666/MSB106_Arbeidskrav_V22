@@ -186,14 +186,18 @@ hld_arb <- hld_arb %>%
 
 ```{r}
 hld_arb <- hld_arb %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88")) %>% select(-NAstatus)
 ```
 
+```{r}
+hld_arb <- hld_arb[-c(105, 106, 107, 108), ]
+hld_arb[is.na(hld_arb)] = 0
+```
 
 ```{r}
 hld_arb <- hld_arb %>% 
   mutate(
-    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1160_Vindafjord`) %>% 
+    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1151_Utsira` + `1160_Vindafjord`) %>% 
   select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
 ```
 
@@ -206,13 +210,27 @@ hld_arb <- hld_arb %>%
 hld_arb <- hld_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(hld_arb)[[1]] <- "Næringer"
 names(hld_arb)[[5]] <- "År"
 ```
+
+```{r}
+hld_arb <- hld_arb %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 ### Sunnhordland
 
@@ -261,7 +279,7 @@ sun_arb <- sun_arb %>%
 
 ```{r}
 sun_arb <- sun_arb %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
 ```
 
 ```{r}
@@ -287,13 +305,32 @@ sun_arb <- sun_arb %>%
 sun_arb <- sun_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(sun_arb)[[1]] <- "Næringer"
 names(sun_arb)[[5]] <- "År"
 ```
+
+```{r}
+sun_arb <- sun_arb[-105, ]
+sun_arb[is.na(sun_arb)] = 0
+```
+
+```{r}
+sun_arb <- sun_arb %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 ### Hardanger
 
@@ -331,7 +368,7 @@ har_arb <- har_arb %>%
 
 ```{r}
 har_arb <- har_arb %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
 ```
 
 ```{r}
@@ -351,13 +388,32 @@ har_arb <- har_arb %>%
 har_arb <- har_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(har_arb)[[1]] <- "Næringer"
 names(har_arb)[[5]] <- "År"
 ```
+
+```{r}
+har_arb <- har_arb[-105, ]
+har_arb[is.na(har_arb)] = 0
+```
+
+```{r}
+har_arb <- har_arb %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 # 1b. Sysselsatte Etter Bosted (Kevin & Ola A.)
 
@@ -517,14 +573,13 @@ hld_bos <- hld_bos %>%
 
 ```{r}
 hld_bos <- hld_bos %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
 ```
-
 
 ```{r}
 hld_bos <- hld_bos %>% 
   mutate(
-    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1160_Vindafjord`) %>% 
+    Totalt = `1106_Haugesund` + `1135_Sauda` + `1145_Bokn` + `1146_Tysvær` + `1149_Karmøy` + `1151_Utsira` + `1160_Vindafjord`) %>% 
   select(NACE2007, Kjonn, Alder, ContentsCode, aar, Totalt)
 ```
 
@@ -537,13 +592,27 @@ hld_bos <- hld_bos %>%
 hld_bos <- hld_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(hld_bos)[[1]] <- "Næringer"
 names(hld_bos)[[5]] <- "År"
 ```
+
+```{r}
+hld_bos <- hld_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt) 
+```
+
 
 ### Sunnhordland
 
@@ -592,7 +661,7 @@ sun_bos <- sun_bos %>%
 
 ```{r}
 sun_bos <- sun_bos %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
 ```
 
 ```{r}
@@ -618,13 +687,27 @@ sun_bos <- sun_bos %>%
 sun_bos <- sun_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
 names(sun_bos)[[1]] <- "Næringer"
 names(sun_bos)[[5]] <- "År"
 ```
+
+```{r}
+sun_bos <- sun_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
+
 
 ### Hardanger
 
@@ -662,7 +745,7 @@ har_bos <- har_bos %>%
 
 ```{r}
 har_bos <- har_bos %>% 
-  filter(NACE2007 == "00-99")
+  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
 ```
 
 ```{r}
@@ -682,7 +765,14 @@ har_bos <- har_bos %>%
 har_bos <- har_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
-                     "Alle Næringer" = "00-99"))
+                       "Alle Næringer" = "00-99",
+                       "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Industri" = "10-33",
+                       "Elektrisitet, Vann og Renovasjon" = "35-39",
+                       "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Finansiering og Forsikring" = "64-66",
+                       "Undervisning" = "85",
+                       "Helse- og Sosialtjenester" = "86-88"))
 ```
 
 ```{r}
@@ -690,6 +780,11 @@ names(har_bos)[[1]] <- "Næringer"
 names(har_bos)[[5]] <- "År"
 ```
 
+```{r}
+har_bos <- har_bos %>% 
+  pivot_wider(names_from = Næringer,
+              values_from = Totalt)
+```
 
 
 # 2. Mål for Beskrivelse av Næringsstrukturen
@@ -762,7 +857,6 @@ hgl_Pendling_raw <- ApiData(
 
 ```{r}
 names(hgl_Pendling_raw)[[1]] <- "desc"
-
 ```
 
 ```{r}

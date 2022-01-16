@@ -65,18 +65,12 @@ Problemstillinger og beregninger vi vil se nærmere på
 ## Oversikt over befolkningene i regionene
 
 ### Haugalandet
-
-Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714).
-tilsammen bor det 104967 personer i denne regionen.
-i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen.
-Da ble Ølen og vindafjord slått i sammen til en kommune (hvordan har vi tatt hensyn til dette???)
+Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714). tilsammen bor det 104967 personer i denne regionen. i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen. Da ble Ølen og vindafjord slått i sammen til en kommune (hvordan har vi tatt hensyn til dette???)
 
 ### Sunnhordland og Ullensvang
+Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048). Tilsammen bor det 70721 personer i denne regionen.
 
-Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048).
-Tilsammen bor det 70721 personer i denne regionen.
-
-Tallene er hentet fra SSB 09.01.21 (<https://www.ssb.no/statbank/table/01223/tableViewLayout1/>) gjelder for 4 kvartal 2020.
+Tallene er hentet fra SSB 09.01.21 (https://www.ssb.no/statbank/table/01223/tableViewLayout1/) gjelder for 4 kvartal 2020.
 
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv", show_col_types = FALSE)
@@ -92,16 +86,15 @@ hgl_Pendling <- read_csv("Data/hgl_Pendling.csv", show_col_types = FALSE)
 sun_Pendling <- read_csv("Data/sun_Pendling.csv", show_col_types = FALSE)
 ```
 
-# 1 Sysselsetting I Ulike Næringer, Etter Arbeidssted
+# 1 Sysselsetting i ulike næringer, etter arbeidssted
 
 ## Haugalandet
 
-Første regionen vi velger å se på er Haugalandet.
-Her ønsker vi å se på utviklingen fra 2008 til 2020, av antall ansatte i sin helhet i regionen, samt de 6 mest relevante næringene.
+Første regionen vi velger å se på er Haugalandet. Her ønsker vi å se på utviklingen fra 2008 til 2020, av antall ansatte i sin helhet i regionen, samt de 6 mest relevante næringene.
 
 ```{r Arbeidssted_Haugalandet_1}
 hld_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 1: Haugalandet")+
   ylab("Antall ansatte i  \n alle næringer") +
@@ -109,10 +102,7 @@ hld_arb %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-I 2020 er det i underkant av 50 000 ansatte i alle næringer på Haugalandet.
-Av Fig.
-1 ser vi at Haugalandet fikk en nedgang i antall ansatte i 2015 og 2016.
-I 2017 og 2018 ble det vekst, frem til det snudde i 2019 igjen.
+I 2020 er det i underkant av 50 000 ansatte i alle næringer på Haugalandet. Av Fig. 1 ser vi at Haugalandet fikk en nedgang i antall ansatte i 2015 og 2016. I 2017 og 2018 ble det vekst, frem til det snudde i 2019 igjen.
 
 ```{r Arbeidssted_Haugalandet_2}
 syssel_arb %>% 
@@ -127,10 +117,7 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-I Fig.
-2 ser vi at flere av kommunene på Haugalandet har hatt liten arbeidsplassvekst, med unntak av Tysvær, Vindafjord og Karmøy i den siste tiårsperioden.
-Vi ser dette mer tydelig på fig.
-3 og 4.
+I Fig. 2 ser vi at flere av kommunene på Haugalandet har hatt liten arbeidsplassvekst, med unntak av Tysvær, Vindafjord og Karmøy i den siste tiårsperioden. Vi ser dette mer tydelig på fig. 3 og 4.
 
 ```{r hld_arb_long}
 hld_arb_long <- syssel_arb %>%
@@ -170,8 +157,7 @@ hld_arb_long %>%
 
 Figur 3 og 4 viser utviklingen av det totale antall ansatte i alle næringer på kommunalt nivå, innenfor Haugaland-regionen.
 
-I disse figurene, så ser vi tydelig at Haugesund har hatt reduksjon i antall ansatte totalt sett, mens Karmøy, Vindafjord og Tysvær har hatt en markant vekst de siste ti årene.
-Siden Haugesund har flest arbeidsplasser betyr utviklingen i Haugesund mye for de samlede tallene.
+I disse figurene, så ser vi tydelig at Haugesund har hatt reduksjon i antall ansatte totalt sett, mens Karmøy, Vindafjord og Tysvær har hatt en markant vekst de siste ti årene. Siden Haugesund har flest arbeidsplasser betyr utviklingen i Haugesund mye for de samlede tallene.
 
 ```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted}
 hld_arb_long %>% 
@@ -199,26 +185,16 @@ hld_arb_long %>%
 
 Figur 5 og 6 viser utviklingen av de 6 mest relevante næringene i Haugalandsregionen på kommune nivå.
 
-Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største.
-Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune.
-I Haugalandet utgjør primærnæringer (jordbruk, Skogbrug og Fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
+Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største. Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune. I Haugalandet utgjør primærnæringer (jordbruk, Skogbrug og Fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
 
-### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
+### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet. 
 
 Det er relativt store kommunevise forskjeller i næringsstrukturen.
-Rogaland har en forholdsvis ensidig næringsstruktur, olje og gass er dominerende.
-Fylket er suverent dominerende for fossil energi.
-De har for øvrig de siste årene satset på et en mer differensiert næringsstruktur og næringsliv ved å satse på helse, IKT og fornybar energi.
+Rogaland har en forholdsvis ensidig næringsstruktur, olje og gass er dominerende. Fylket er suverent dominerende for fossil energi. De har for øvrig de siste årene satset på et en mer differensiert næringsstruktur og næringsliv ved å satse på helse, IKT og fornybar energi.
 
-I våre modeller, er satsingen på helse den mest tydelige.
-Av rent tekniske grunner er det vanskelig å se utviklingen i enkelte næringer som utgjør små andeler, på grunn av skalaen som er benyttet.
-Til tross for dette, kan man se at næringsstrukturen i regionen samlet generelt sett har endret seg lite.
+I våre modeller, er satsingen på helse den mest tydelige. Av rent tekniske grunner er det vanskelig å se utviklingen i enkelte næringer som utgjør små andeler, på grunn av skalaen som er benyttet. Til tross for dette, kan man se at næringsstrukturen i regionen samlet generelt sett har endret seg lite.
 
-Rogaland har gode jordbruksmuligheter, men i Fig.
-2: Haugalandet ser vi en nedgang i sysselsettingen de siste tiårene, mens det er en marginal økning i Sunnhordaland, jf.
-Fig 9.
-I Fig.
-12: ser vi at Tysnes har hatt en markant økning i primærnæringen, relativt sett.
+Rogaland har gode jordbruksmuligheter, men i Fig. 2: Haugalandet ser vi en nedgang i sysselsettingen de siste tiårene, mens det er en marginal økning i Sunnhordaland, jf. Fig 9. I Fig. 12: ser vi at Tysnes har hatt en markant økning i primærnæringen, relativt sett.
 
 Universitets- og høgskolesektoren er liten i Rogaland, og den består for det første av Universitetet i Stavanger (UiS) og Høgskulen på Vestlandet (HVL) med campus Haugesund.
 
@@ -232,17 +208,14 @@ Videre ønsker vi å se på den samme utviklingen, men denne gangen i Sunnhordla
 
 ```{r Arbeidssted_Sunnhordland_1}
 sun_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 7: Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+ 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020.
-Sunnhordaland har i 2020 i underkant av 25 500 ansatte.
-Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang.
-Fra 2014 har det vært en reduksjon i totalt antall ansatte.
+Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020. Sunnhordaland har i 2020 i underkant av 25 500 ansatte. Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang. Fra 2014 har det vært en reduksjon i totalt antall ansatte.
 
 ```{r Arbeidssted_Sunnhordland_2}
 syssel_arb %>% 
@@ -257,10 +230,7 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020.
-Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig.
-Vi lager dermed en mer oversiktlig figur, jf.
-figur 9 & 10.
+Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020. Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig. Vi lager dermed en mer oversiktlig figur, jf. figur 9 & 10.
 
 ```{r sun_arb_long}
 sun_arb_long <- syssel_arb %>%
@@ -298,9 +268,7 @@ sun_arb_long %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
-Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020.
-En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst.
-En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
+Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020. En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst. En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
 
 For å få et bedre oversikt over utviklingen i kommunen ønsker vi å se på de 6 mest relevante næringene i hver kommune.
 
@@ -332,24 +300,15 @@ sun_arb_long %>%
 
 Figur 11 og 12 viser de 6 mest relevante næringene i hver enkelt kommune i Sunnhordlandsregionen fra 2008 til 2020.
 
-En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester.
-Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
+En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester. Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
 
 ### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
 
-Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008.
-Dette stemmer overens med to hendelser.
-Den første er oljeknekken i 2014 som medførte at bl.a.
-Aker Stord AS som er avhengig av Olje-industrien måtte permitere.
+Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008. Dette stemmer overens med to hendelser. Den første er oljeknekken i 2014 som medførte at bl.a. Aker Stord AS som er avhengig av Olje-industrien måtte permitere.
 
-Stord er en kommune som har mye offshore industri.
-I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte.
-Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt.
-Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
+Stord er en kommune som har mye offshore industri. I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte. Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt. Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
 
-Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen.
-Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring.
-**Kan det vere ein grunn til dette som burde diskuterast??**
+Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen. Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring. **Kan det vere ein grunn til dette som burde diskuterast??**
 
 # Fortsett Her (OA, KH)
 
@@ -357,13 +316,11 @@ Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring.
 
 Til slutt må vi gjere det samme med *Hardanger*
 
-I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner.
-i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang.
-Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
+I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner. i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang. Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
 
 ```{r Arbeidssted_Hardanger_1}
 har_arb %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Fig. 13: Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 2))
@@ -414,14 +371,176 @@ har_arb_long %>%
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
   theme(legend.position = 'bottom')
 ```
+Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang. 
 
-# 3 Sysselsetting I Ulike Næringer, Etter Bosted (Modeller Under Arbeid)
+**Generelt om Ullensvang kommune**
+
+Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår. Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt. I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
+
+# 2 
+
+Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen samlet
+
+```{r}
+#ordner etter kommunenavn og år
+tmp <- syssel_bos
+```
+
+
+```{r}
+hau20 <- syssel_bos %>% 
+  filter(aar == "2020", knavn == "Haugesund")
+```
+
+```{r}
+(hau20$Industri/hau20$`Alle Næringer`)
+1905/18137
+```
+
+```{r}
+syssel_bos <- syssel_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+
+```{r}
+library(readxl)
+nasjonalt_bosted <- read_excel("Data/nasjonalt_bosted.xlsx")
+```
+
+```{r}
+nasjonalt_bosted <- nasjonalt_bosted %>% 
+  mutate(Ein_En_Industri = Industri/`Alle Næringer`,
+         Ein_En_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Ein_En_Undervisning = Undervisning/`Alle Næringer`,
+         Ein_En_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r, include=FALSE}
+# Forelår å være litt mer forsiktig her. syssel_bos$Eir_Er_industri har lengde 207
+# 13*15 + 12 (den siste Odda). nasjonalt_bosted$Ein_En_Industri har lengde 13
+# Koden her forutsetter at nasjonalt_bosted$Ein_En_Industri kan replikeres 16
+# ganger. Risky i utgangspunktet og her går det galt pga. Odda med 12 obs.
+# Medfører at resultatet blir galt etter Odda. Foreslår å ta det mer stegvis slik at
+# en gar mer kontroll
+
+LQindustri <- syssel_bos %>% 
+  select(aar, knavn, Eir_Er_industri) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Industri), by = c("aar")) %>% 
+  mutate(
+  andel = Eir_Er_industri/Ein_En_Industri
+  )
+
+# Disse må fikses på tilsvarende vis. Har feil verdier slik de er nå 
+LQjordbruk <- as_tibble(syssel_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning <- as_tibble(syssel_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse <- as_tibble(syssel_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+syssel_bos <- syssel_bos %>% 
+  mutate(LQindustri = LQindustri$andel,
+         LQjordbruk = LQjordbruk,
+         LQundervisning = LQundervisning,
+         LQhelse = LQhelse)
+```
+
+
+```{r}
+LQbos <- syssel_bos %>% 
+  select(aar, knavn, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
+For region Haugaland:
+
+```{r}
+hld_bos_LQ <- hld_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+LQindustri_hld <- as_tibble(hld_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_hld <- as_tibble(hld_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_hld <- as_tibble(hld_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_hld <- as_tibble(hld_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+hld_bos_LQ <- hld_bos_LQ %>% 
+  mutate(LQindustri = LQindustri_hld$value,
+         LQjordbruk = LQjordbruk_hld$value,
+         LQundervisning = LQundervisning_hld$value,
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
+For Sunnhordaland:
+
+```{r}
+sun_bos_LQ <- sun_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+LQindustri_sun <- as_tibble(sun_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_sun <- as_tibble(sun_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_sun <- as_tibble(sun_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_sun <- as_tibble(sun_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+sun_bos_LQ <- sun_bos_LQ %>% 
+  mutate(LQindustri = LQindustri_sun$value,
+         LQjordbruk = LQjordbruk_sun$value,
+         LQundervisning = LQundervisning_sun$value,
+         LQhelse = LQhelse_sun$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
+For Hardanger:
+
+```{r}
+har_bos_LQ <- har_bos %>% 
+  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
+         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+LQindustri_har <- as_tibble(har_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
+LQjordbruk_har <- as_tibble(har_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
+LQundervisning_har <- as_tibble(har_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
+LQhelse_har <- as_tibble(har_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+```
+
+```{r}
+har_bos_LQ <- har_bos_LQ %>% 
+  mutate(LQindustri = LQindustri_har$value,
+         LQjordbruk = LQjordbruk_har$value,
+         LQundervisning = LQundervisning_har$value,
+         LQhelse = LQhelse_hld$value) %>% 
+  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+```
+
+
+# 3 Sysselsetting i ulike næringer, etter bosted (Modeller under arbeid)
 
 ## Haugalandet
 
 ```{r Bosted_Haugalandet_1}
 hld_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Haugalandet")+
   ylab("Antall ansatte i  \n alle næringer") +
@@ -502,7 +621,7 @@ hld_bos_long %>%
 
 ```{r Bosted_Sunnhordland_1}
 sun_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Sunnhordaland", x = "År", y = "Antall ansatte i  \n alle næringer") +
   theme(axis.title.y = element_text(angle=0))+ 
@@ -582,7 +701,7 @@ sun_bos_long %>%
 
 ```{r Bosted_Hardanger_1}
 har_bos %>% 
-  ggplot(mapping = aes(x = År, y = Totalt)) +
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
   geom_line() +
   labs(title = "Hardanger", y= "Alle Næringer") + 
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
@@ -634,80 +753,197 @@ har_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
+# 3.1 Lokaliseringskvotienter
+
+```{r}
+library(readxl)
+nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
+```
+
+## Lokaliseringskvotienter for regionene samlet (Må til litt meir arbeid endo)
+
+#### Splitting?
+
+**Må kanskje finne ut om vi skal dele opp i 2, slik at vi får heile datasettet når vi bruker print()**
+
+### Haugalandet 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Haugalandet
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Haugalandet
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Haugalandet
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Haugalandet
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Haugalandet
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Haugalandet
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Haugalandet
+
+```{r hld_industri}
+hld_arb_LQ <- hld_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Haugelandet for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`) %>% 
+  select(År, `Alle Næringer`, Eir_Er_Jordbruk, Eir_Er_Industri, Eir_Er_El_Vann_Reno, Eir_Er_Bygg_og_Anlegg, Eir_Er_Finans, Eir_Er_Undervisning, Eir_Er_Helse)
+```
+
+### Sunnhordland 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Sunnhordland
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Sunnhordland
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Sunnhordland
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Sunnhordland
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Sunnhordland
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Sunnhordland
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Sunnhordland
+
+```{r sun_industri}
+sun_arb_LQ <- sun_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Sunnhordland for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+### Hardanger 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Hardanger
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Hardanger
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Hardanger
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Hardanger
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Hardanger
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Hardanger
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Hardanger
+
+```{r har_industri}
+har_arb_LQ <- har_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Hardanger for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+## Nasjonalt??
+
+```{r}
+syssel_arb <- syssel_arb %>% 
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Anleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+nasjonalt_arbeidssted <- nasjonalt_arbeidssted %>% 
+  mutate(Ein_En_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Ein_En_Industri = Industri/`Alle Næringer`,
+         Ein_En_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Ein_En_Bygg_og_Anlegg = `Bygge- og Anleggsvirksomhet`/`Alle Næringer`,
+         Ein_En_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Ein_En_Undervisning = Undervisning/`Alle Næringer`,
+         Ein_En_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+
+
+LQ_arb_Jordbruk <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Jordbruk) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Jordbruk), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Jordbruk/Ein_En_Jordbruk)
+
+
+LQ_arb_Industri <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Industri) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Industri), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Industri/Ein_En_Industri)
+
+
+LQ_arb_El_Vann_Reno <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_El_Vann_Reno) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_El_Vann_Reno), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_El_Vann_Reno/Ein_En_El_Vann_Reno)
+
+
+LQ_arb_Bygg_Anlegg <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Bygg_og_Anlegg) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Bygg_og_Anlegg), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Bygg_og_Anlegg/Ein_En_Bygg_og_Anlegg)
+
+
+LQ_arb_Finans <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Finans) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Finans), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Finans/Ein_En_Finans)
+
+
+LQ_arb_Undervisning <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Undervisning) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Undervisning), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Undervisning/Ein_En_Undervisning)
+
+
+LQ_arb_Helse <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Helse) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Helse), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Helse/Ein_En_Helse)
+```
+
+```{r}
+syssel_arb <- syssel_arb %>% 
+  mutate(LQ_arb_Jordbruk = LQ_arb_Jordbruk$andel,
+         LQ_arb_Industri = LQ_arb_Industri$andel,
+         LQ_arb_El_Vann_Reno = LQ_arb_El_Vann_Reno$andel,
+         LQ_arb_Bygg_Anlegg = LQ_arb_Bygg_Anlegg$andel,
+         LQ_arb_Finans = LQ_arb_Finans$andel,
+         LQ_arb_Undervisning = LQ_arb_Undervisning$andel,
+         LQ_arb_Helse = LQ_arb_Helse$andel)
+```
+
+```{r}
+LQ_arb <- syssel_arb %>% 
+  select(aar, knavn, LQ_arb_Jordbruk, LQ_arb_Industri, LQ_arb_El_Vann_Reno, LQ_arb_Bygg_Anlegg, LQ_arb_Finans, LQ_arb_Undervisning, LQ_arb_Helse)
+```
+
+```{r}
+LQ_arb[is.na(LQ_arb)] = 0
+```
+
 # Oppgave 4
 
-Pendling er et viktig begrep å bruke når vi snakker om regional utvikling.
-De ulike kommunene eller regionene kan ha ulike behov.
-De aller fleste kommuner har for lite arbeidsplasser i forhold til antall arbeidene.
-Det vil si at de fleste plasser er de avhengige av å pendle til andre plasser.
-Det kan være andre kommuner i samme region eller andre regioner.
-Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har folk til å jobbe der innad i kommunen.
-Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked <https://regionalanalyse.no/rapport/3004/1/4>.
+Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. De aller fleste kommuner har for lite arbeidsplasser i forhold til antall arbeidene.  Det vil si at de fleste plasser er de avhengige av å pendle til andre plasser. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har folk til å jobbe der innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4. 
 
-Vi har laget en tabell som tar for seg regionen Haugalandet.
-Her kan vi skille de forskjellige kommunene og se hvor andelen av innpendling og utpendling er størst eller minst.
+Vi har laget en tabell som tar for seg regionen Haugalandet. Her kan vi skille de forskjellige kommunene og se hvor  andelen av innpendling og utpendling er størst eller minst.  
 
-Vi kan se på Karmøy som et eksempel når det gjelder innpendling og utpendling.
-I Karmøy kommune er det 11637 stykk som jobber i egen kommune, mens 5888 pendler til andre kommuner i regionen.
-Herav pendler 4916 personer til Haugesund, 9 pendler til Sauda, 31 pendler til Bokn, 712 til Tysvær, 218 til Vindafjord og 2 personer pendler til Utsira.
-Når det kommer til innpendling kan vi se at det til sammen er 3384 som pendler til Karmøy fra Hauglandsregionen.
-Den største andelen fra samme region som pendler til Karmøy er Haugesund.
-Vi kan se fra tabellen at det er 2586 stykker som pendler fra Haugesund til Karmøy.
+Vi kan se på Karmøy som et eksempel når det gjelder innpendling og utpendling. I Karmøy kommune er det 11637 stykk som jobber i egen kommune, mens 5888 pendler til andre kommuner i regionen. Herav pendler 4916 personer til Haugesund, 9 pendler til Sauda, 31 pendler til Bokn, 712 til Tysvær, 218 til Vindafjord  og 2 personer pendler til Utsira. Når det kommer til innpendling kan vi se at det til sammen er 3384 som pendler til Karmøy fra Hauglandsregionen. Den største andelen fra samme region som pendler til Karmøy er Haugesund. Vi kan se fra tabellen at det er 2586 stykker som pendler fra Haugesund til Karmøy. 
 
-På Utsira som har en mindre befolkning ser vi at 85 jobber i hjemkommunen, mens 9 stk pendler til andre kommune i regionen, henholdsvis til Haugesund, Tysvær og Karmøy.
+På Utsira som har en mindre befolkning ser vi at 85 jobber i hjemkommunen, mens 9 stk pendler til andre kommune i regionen, henholdsvis til Haugesund, Tysvær og Karmøy.   
 
-På Haugalandet kan vi se
-
-```{r}
-# for ikke å ødelegge hgl_Pendling
-tmp <- hgl_Pendling
-```
-
-
-```{r}
-new_names <- tmp %>% 
-  # Bokommuen???
-  select(-Bokommuen) %>% 
-  names() %>% 
-  str_sub(start = -4L, end = -1L) %>% 
-  paste("k", ., sep = "_") %>% 
-  # retter skrivefeil
-  c("Bokommune", .) 
-
-names(tmp) <- new_names
-
-```
-
+På Haugalandet kan vi se  
 
 ```{r Pendling på Haugalandet}
-tmp %>% 
-  kable()
+hgl_Pendling
 ```
-
-I Sunnhordaland ser det slik ut pr 2020
-
-```{r}
-tmp <- sun_Pendling
-```
-
-
-```{r}
-new_names <- tmp %>% 
-  # Bokommuen???
-  select(-Bokommuen) %>% 
-  names() %>% 
-  str_sub(start = -4L, end = -1L) %>% 
-  paste("k", ., sep = "_") %>% 
-  # retter skrivefeil
-  c("Bokommune", .) 
-
-names(tmp) <- new_names
-```
-
 
 ```{r Pendling i Sunnhordland}
-tmp %>% 
-  kable()
+sun_Pendling
 ```
 
 -   

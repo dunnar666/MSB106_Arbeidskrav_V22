@@ -1,14 +1,14 @@
-Næringer,Kjonn,Alder,ContentsCode,År,Totalt
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2008,50243
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2009,49433
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2010,49673
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2011,50909
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2012,51343
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2013,51821
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2014,52462
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2015,50442
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2016,50190
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2017,50869
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2018,51113
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2019,51563
-Alle Næringer,Begge Kjønn,15-74,Sysselsatte,2020,50937
+Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,Finansiering og Forsikring,Undervisning,Helse- og Sosialtjenester
+Begge Kjønn,15-74,Sysselsatte,2008,50367,1648,7798,603,3880,507,3622,9493
+Begge Kjønn,15-74,Sysselsatte,2009,49548,1618,7038,612,3876,478,3786,9725
+Begge Kjønn,15-74,Sysselsatte,2010,49793,1575,6448,647,3956,461,3844,9704
+Begge Kjønn,15-74,Sysselsatte,2011,51035,1524,6498,673,4389,431,3842,10001
+Begge Kjønn,15-74,Sysselsatte,2012,51459,1410,6589,675,4248,410,3894,9908
+Begge Kjønn,15-74,Sysselsatte,2013,51940,1344,6627,692,4458,382,3887,10050
+Begge Kjønn,15-74,Sysselsatte,2014,52578,1311,6638,679,4510,374,3973,10335
+Begge Kjønn,15-74,Sysselsatte,2015,50552,1361,6300,640,4356,346,3898,10428
+Begge Kjønn,15-74,Sysselsatte,2016,50296,1390,6127,649,4330,332,4036,10457
+Begge Kjønn,15-74,Sysselsatte,2017,50976,1380,6153,653,4490,324,4055,10647
+Begge Kjønn,15-74,Sysselsatte,2018,51214,1335,6161,637,4479,304,4111,10784
+Begge Kjønn,15-74,Sysselsatte,2019,51670,1315,6343,658,4433,290,4085,10911
+Begge Kjønn,15-74,Sysselsatte,2020,51039,1333,6305,672,4345,303,4091,11005
