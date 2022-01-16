@@ -926,21 +926,28 @@ LQ_arb <- syssel_arb %>%
 LQ_arb[is.na(LQ_arb)] = 0
 ```
 
-# Oppgave 4
+# Pendling
 
-Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. De aller fleste kommuner har for lite arbeidsplasser i forhold til antall arbeidene.  Det vil si at de fleste plasser er de avhengige av å pendle til andre plasser. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har folk til å jobbe der innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4. 
+Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere. Det vil si at de fleste er avhengige av å pendle til andre kommuner, også kalt utpendling. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4.  
 
-Vi har laget en tabell som tar for seg regionen Haugalandet. Her kan vi skille de forskjellige kommunene og se hvor  andelen av innpendling og utpendling er størst eller minst.  
+Vi har laget to ulike tabeller som tar for seg regionen Haugalandet og regionen Sunnhordland og Ullensvang, samt en tabell som tar for seg disse regionene samlet. Vi ønsker å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. 
 
-Vi kan se på Karmøy som et eksempel når det gjelder innpendling og utpendling. I Karmøy kommune er det 11637 stykk som jobber i egen kommune, mens 5888 pendler til andre kommuner i regionen. Herav pendler 4916 personer til Haugesund, 9 pendler til Sauda, 31 pendler til Bokn, 712 til Tysvær, 218 til Vindafjord  og 2 personer pendler til Utsira. Når det kommer til innpendling kan vi se at det til sammen er 3384 som pendler til Karmøy fra Hauglandsregionen. Den største andelen fra samme region som pendler til Karmøy er Haugesund. Vi kan se fra tabellen at det er 2586 stykker som pendler fra Haugesund til Karmøy. 
-
-På Utsira som har en mindre befolkning ser vi at 85 jobber i hjemkommunen, mens 9 stk pendler til andre kommune i regionen, henholdsvis til Haugesund, Tysvær og Karmøy.   
-
-På Haugalandet kan vi se  
+Haugalandsregionen: 
 
 ```{r Pendling på Haugalandet}
 hgl_Pendling
 ```
+I tabellen over har vi sett på Haugalandsregionen og kommunene som er knyttet til denne regionen er Haugesund, Sauda, Bokn, Tysvær, Karmøy, Utsira og Vindafjord. Tabellen kan forklares på følgende måte:  
+
+I radene kan vi se innpendling. Her kan vi se en andel stillinger som er besatt av arbeidstakere fra andre kommuner i Haugalandsregionen.  
+
+I kolonnene ser vi utpendling. Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen kommune innenfor Hauglandsregionen.  
+
+De som er markert med gult er arbeidstakere som bor og jobber i samme kommune. 
+
+Haugesund, Karmøy og Tysvær er de kommunene i regionen med høyest andel pendlere både når det gjelder inn- og utpendling. La oss se nærmere på Haugesund som har en stor del av arbeidstakerne i regionen. Det gjelder både når vi ser på innpendling, utpendling og de som bor og jobber i samme kommune. Ut ifra tabellen kan vi se at Haugesund har 11714 arbeidstakere som bor og jobber i kommunen. Fra Haugesund er det eksempelvis 1029 arbeidstakere som pendler til Tysvær og 2586 arbeidstakere som pendler til Karmøy. Til Sauda og Utsira er det en betydelig lavere andel som pendler. Grunnen til at det nok at det er mindre kommuner med færre arbeidsplasser. Mange av de som bor i distriktene som eksempelvis Sauda og Utsira jobber og bor i samme kommune. Vi kan se at i Sauda jobber og bor det 1789 arbeidstaker, mens de har 31 stykk som pendler inn til kommunen og 66 stykk som pendler ut av kommunen. Det kan være flere som pendler inn til og ut av kommunen fra andre regioner, men her ser vi tallene på de som pendler i Haugalandsregionen.  
+
+Vi vet at Haugesund er regionsentrum med sykehus og høgskole. Samtidig har Haugesund flere olje og sjøfartsnæringer.  Det er sentralisert som betyr at det er grunnlag for et større jobbmarked. Det er årsaken til at Haugesund har mer innpendling enn de andre kommunene i regionen. Karmøy og Tysvær som ligger nærmest Haugesund har størst andel utpendling, også til Haugesund.  
 
 ```{r Pendling i Sunnhordland}
 sun_Pendling
