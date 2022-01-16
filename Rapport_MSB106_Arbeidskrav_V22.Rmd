@@ -760,7 +760,7 @@ library(readxl)
 nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
 ```
 
-## Lokaliseringskvotienter for regionene samlet
+## Lokaliseringskvotienter for regionene samlet (Må til litt meir arbeid endo)
 
 #### Splitting?
 
