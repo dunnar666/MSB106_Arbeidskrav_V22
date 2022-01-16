@@ -384,7 +384,6 @@ Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regi
 ```{r}
 #ordner etter kommunenavn og år
 tmp <- syssel_bos
-
 ```
 
 
@@ -753,6 +752,177 @@ har_bos_long %>%
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 2) +
   theme(legend.position = 'bottom')
 ```
+
+# 3.1 Lokaliseringskvotienter
+
+```{r}
+library(readxl)
+nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
+```
+
+## Lokaliseringskvotienter for regionene samlet
+
+### Haugalandet 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Haugalandet
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Haugalandet
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Haugalandet
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Haugalandet
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Haugalandet
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Haugalandet
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Haugalandet
+
+```{r hld_industri}
+hld_arb_LQ <- hld_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Haugelandet for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`) %>% 
+  select(År, `Alle Næringer`, Eir_Er_Jordbruk, Eir_Er_Industri, Eir_Er_El_Vann_Reno, Eir_Er_Bygg_og_Anlegg, Eir_Er_Finans, Eir_Er_Undervisning, Eir_Er_Helse)
+```
+
+### Sunnhordland 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Sunnhordland
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Sunnhordland
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Sunnhordland
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Sunnhordland
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Sunnhordland
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Sunnhordland
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Sunnhordland
+
+```{r sun_industri}
+sun_arb_LQ <- sun_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Sunnhordland for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+### Hardanger 2008-2020
+
+- Eir_Er_Jordbruk = Samlet sysselsetting i region Hardanger
+- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Hardanger
+- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Hardanger
+- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Hardanger
+- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Hardanger
+- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Hardanger
+- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Hardanger
+
+```{r har_industri}
+har_arb_LQ <- har_arb %>% 
+  # Slik finner vi samlet sysselsetting i Industri i Hardanger for år 2008-2020
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+# Nasjonalt?
+
+```{r}
+syssel_arb <- syssel_arb %>% 
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Anleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+```
+
+```{r}
+nasjonalt_arbeidssted <- nasjonalt_arbeidssted %>% 
+  mutate(Ein_En_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Ein_En_Industri = Industri/`Alle Næringer`,
+         Ein_En_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Ein_En_Bygg_og_Anlegg = `Bygge- og Anleggsvirksomhet`/`Alle Næringer`,
+         Ein_En_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+         Ein_En_Undervisning = Undervisning/`Alle Næringer`,
+         Ein_En_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+
+
+LQ_arb_Jordbruk <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Jordbruk) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Jordbruk), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Jordbruk/Ein_En_Jordbruk)
+
+
+LQ_arb_Industri <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Industri) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Industri), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Industri/Ein_En_Industri)
+
+
+LQ_arb_El_Vann_Reno <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_El_Vann_Reno) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_El_Vann_Reno), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_El_Vann_Reno/Ein_En_El_Vann_Reno)
+
+
+LQ_arb_Bygg_Anlegg <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Bygg_og_Anlegg) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Bygg_og_Anlegg), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Bygg_og_Anlegg/Ein_En_Bygg_og_Anlegg)
+
+
+LQ_arb_Finans <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Finans) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Finans), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Finans/Ein_En_Finans)
+
+
+LQ_arb_Undervisning <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Undervisning) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Undervisning), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Undervisning/Ein_En_Undervisning)
+
+
+LQ_arb_Helse <- syssel_arb %>% 
+  select(aar, knavn, Eir_Er_Helse) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_arbeidssted, aar, Ein_En_Helse), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Helse/Ein_En_Helse)
+```
+
+```{r}
+syssel_arb <- syssel_arb %>% 
+  mutate(LQ_arb_Jordbruk = LQ_arb_Jordbruk$andel,
+         LQ_arb_Industri = LQ_arb_Industri$andel,
+         LQ_arb_El_Vann_Reno = LQ_arb_El_Vann_Reno$andel,
+         LQ_arb_Bygg_Anlegg = LQ_arb_Bygg_Anlegg$andel,
+         LQ_arb_Finans = LQ_arb_Finans$andel,
+         LQ_arb_Undervisning = LQ_arb_Undervisning$andel,
+         LQ_arb_Helse = LQ_arb_Helse$andel)
+```
+
+```{r}
+LQ_arb <- syssel_arb %>% 
+  select(aar, knavn, LQ_arb_Jordbruk, LQ_arb_Industri, LQ_arb_El_Vann_Reno, LQ_arb_Bygg_Anlegg, LQ_arb_Finans, LQ_arb_Undervisning, LQ_arb_Helse)
+```
+
+```{r}
+LQ_arb[is.na(LQ_arb)] = 0
+```
+
+
 
 # Oppgave 4
 
