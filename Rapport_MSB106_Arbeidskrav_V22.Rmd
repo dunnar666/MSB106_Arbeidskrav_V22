@@ -1626,25 +1626,74 @@ De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle s
 
 Nedenfor vil vi først ta for oss regionen Haugalandet og Sunnhordland med Ullensvang, og se på disse regionene hver for seg. Så kommer en tabell som tar for seg disse regionene samlet. Vi ønsker først å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. For så å se på pendlingen mellom regionene. 
 
-Alle tabellene viser 
+Tabellene kan forklares på følgende måte:  
+
+I radene sees pendling inn til kommunene. Nederste rad viser totalen av antall pendlere inn til den enkelte kommune. Her kan vi se en andel stillinger som er besatt av arbeidstakere fra andre kommuner i Haugalandsregionen.  
+
+I kolonnene ser man de som pendlere ut av hver enkelt kommune. Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen kommune innenfor Hauglandsregionen.  
+
+De som er markert med gult er arbeidstakere som bor og jobber i samme kommune. 
+
+###Hauglandsregionen:  
+
  
+##TABELL
+
+
+Haugalandsregionen har 44119 arbeidsplasser, hvorav 13170 er pendlere.  
+
+Haugesund, Karmøy og Tysvær er de kommunene i regionen med høyest andel pendlere både når det gjelder inn- og utpendling. La oss se nærmere på Haugesund som har en stor del av arbeidstakerne i regionen. Det gjelder både når vi ser på innpendling, utpendling og de som bor og jobber i samme kommune. Ut ifra tabellen kan vi se at Haugesund har 11714 arbeidstakere som bor og jobber i kommunen. Fra Haugesund er det eksempelvis 1029 arbeidstakere som pendler til Tysvær og 2586 arbeidstakere som pendler til Karmøy. Til Sauda og Utsira er det en betydelig lavere andel som pendler. Grunnen til at det nok at det er mindre kommuner med færre arbeidsplasser. Mange av de som bor i distriktene som eksempelvis Sauda og Utsira jobber og bor i samme kommune. Vi kan se at i Sauda jobber og bor det 1789 arbeidstaker, mens de har 31 stykk som pendler inn til kommunen og 66 stykk som pendler ut av kommunen. Det kan være flere som pendler inn til og ut av kommunen fra andre regioner, men her ser vi tallene på de som pendler i Haugalandsregionen.  
+
+Vi vet at Haugesund er regionsentrum med sykehus og høgskole. Samtidig har Haugesund flere olje og sjøfartsnæringer.  Det er sentralisert som betyr at det er grunnlag for et større jobbmarked. Det er årsaken til at Haugesund har mer innpendling enn de andre kommunene i regionen. Karmøy og Tysvær som ligger nærmest Haugesund har størst andel utpendling, også til Haugesund.  
+
+ 
+
+Sunnhordland 
+
+ 
+
+ 
+
+I Sunnhordlandsregionen er det 28275 arbeidstakere om har sin arbeidsplass, av disse er det 2575 som har sitt arbeid i en annen kommune enn den de bor i.    
+
+Som i tabellen fra Haugalandsregionen finner vi summen av all innpendling i den nederste raden og summen av all utpendling i den siste kolonnen. 
+
+Den gule markeringen i midten er også her de som bor og jobber i samme kommune.  
+
+Som vi kan se er Stord den kommunen med flest arbeidstakere. Dette kan vi se i sammenheng med at Stord er som et sentrum for regionen. En del av de interkommunale samarbeidene har sine kontorer lokalisert på Stord. Stord har 7314 som både bor og arbeider innad i kommunen. Å av Stordabuen som pendler ut av kommunen er det flest som pendler til Bømlo og Fitjar. Dette gjelder også motsatt da Stord får flest innpendlere fra de samme kommunene. Stord og Ullensvang er de eneste kommunene som har flere som pendler inn enn ut.  
+
+I Etne er det ganske likt med inn og utpendlere da de har 66 som pendler ut og 61 som pendler inn til kommunen. Etne er også den kommunen som har minst arbeidere som driver med pendling.  
+
+Vi har valgt å ta med Ullensvang i Sunnhordlandsoversikten. Etne og Kvinnherad er begge nabokommuner til Ullensvang. Ullensvang har lite både inn og utpendling.         
+
+ 
+
+En samlet oversikt over Haugalandsregionen og Sunnhordlandsregionen  
+
+ 
+
+Vi har sett på inndelingene i de forskjellige regionene. Videre ønsker vi å se på regionene i en samlet tabell.  
+
+Vi har tidligere skrevet om at Haugalandsregionen har 13170 pendlere, mens Sunnhordlandsregionen og Ullensvang har 2575 pendlere. Om vi ser begge regionene samlet, øker antall pendlere med totalt 3311 arbeidstakere. Det vil si at det er 3311 stykker som pendler på tvers av regionene.  
+
+Utsira har ikke inn- eller utpendlere til Sunnhordland. Bortsett fra en person som pendler til Sveio har heller ikke Bokn utpendling til Sunnhordland.       
+
+Haugesund er den kommunen som har flest pendlere inn til kommunen. De ligger langt foran de andre kommunene når det er snakk om pendling inn til kommunene. Karmøy er den kommunen som har flest innbyggere som pendler ut av kommunen.  
+
+Videre kan man se på de systematiske forskjellene sett i forhold til sentralitet og tilgjengelighet i det lokale arbeidsmarkedet.  
+
+Haugesund, Karmøy og Stord er sentrale kommuner hvor det finnes en stor andel arbeidsplasser og tilgjengeligheten i arbeidsmarkedet er større enn i eksempelvis Sauda, Utsira, Tysnes eller Ullensvang. De sentraliserte kommunene har en fordel i forhold til å skape klynger, det med tanke på at når flere mennesker bosetter seg i samme område kan en dra nytte av kompetansen de innehar.  Sauda, Utsira, Tysnes og Ullensvang er eksempler på kommuner i utkanten av regionene. De befinner seg såpass langt utenfor at de ikke vil dra nytte av sentralitet.  
+
+I figur 3 og 4 vises det at de siste 10 årene har Haugesund hatt en reduksjon i antall ansatte, men Karmøy, Vindafjord og Tysvær har hatt en markant økning i antall arbeidstakere. Det vi vet er at det har utviklet seg større næringsklynger utenfor Haugesund de siste årene som kan ha en sammenheng med økning i antall ansatte. Samtidig har oljebransjen i samme periode slitt med nedgangstider som påvirker både Haugesund og Stord. Disse kommunene har en del oljebaserte næringer og i de periodene oljemarkedet svinger vil arbeidsmarkedet vise markant nedgang i antall arbeidsplasser. Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgangstider. Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.   
 
 Haugalandsregionen: 
 
 ```{r Pendling på Haugalandet}
 hgl_Pendling
 ```
-I tabellen over har vi sett på Haugalandsregionen og kommunene som er knyttet til denne regionen er Haugesund, Sauda, Bokn, Tysvær, Karmøy, Utsira og Vindafjord. Tabellen kan forklares på følgende måte:  
 
-I radene kan vi se innpendling. Her kan vi se en andel stillinger som er besatt av arbeidstakere fra andre kommuner i Haugalandsregionen.  
 
-I kolonnene ser vi utpendling. Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen kommune innenfor Hauglandsregionen.  
-
-De som er markert med gult er arbeidstakere som bor og jobber i samme kommune. 
-
-Haugesund, Karmøy og Tysvær er de kommunene i regionen med høyest andel pendlere både når det gjelder inn- og utpendling. La oss se nærmere på Haugesund som har en stor del av arbeidstakerne i regionen. Det gjelder både når vi ser på innpendling, utpendling og de som bor og jobber i samme kommune. Ut ifra tabellen kan vi se at Haugesund har 11714 arbeidstakere som bor og jobber i kommunen. Fra Haugesund er det eksempelvis 1029 arbeidstakere som pendler til Tysvær og 2586 arbeidstakere som pendler til Karmøy. Til Sauda og Utsira er det en betydelig lavere andel som pendler. Grunnen til at det nok at det er mindre kommuner med færre arbeidsplasser. Mange av de som bor i distriktene som eksempelvis Sauda og Utsira jobber og bor i samme kommune. Vi kan se at i Sauda jobber og bor det 1789 arbeidstaker, mens de har 31 stykk som pendler inn til kommunen og 66 stykk som pendler ut av kommunen. Det kan være flere som pendler inn til og ut av kommunen fra andre regioner, men her ser vi tallene på de som pendler i Haugalandsregionen.  
-
-Vi vet at Haugesund er regionsentrum med sykehus og høgskole. Samtidig har Haugesund flere olje og sjøfartsnæringer.  Det er sentralisert som betyr at det er grunnlag for et større jobbmarked. Det er årsaken til at Haugesund har mer innpendling enn de andre kommunene i regionen. Karmøy og Tysvær som ligger nærmest Haugesund har størst andel utpendling, også til Haugesund.  
+ 
 
 ```{r Pendling i Sunnhordland}
 sun_Pendling
