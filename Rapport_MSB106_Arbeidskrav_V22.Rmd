@@ -1626,7 +1626,7 @@ De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle s
 
 Nedenfor vil vi først ta for oss regionen Haugalandet og Sunnhordland med Ullensvang, og se på disse regionene hver for seg. Så kommer en tabell som tar for seg disse regionene samlet. Vi ønsker først å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. For så å se på pendlingen mellom regionene. 
 
-Alle tabellene viser 
+Tabellene tar for seg inn og utpendling i regionene. Summen av innpendling finner vi i den siste raden, og summen av utpendling finner vi i den siste kollonen. De gule feltene er antall arbeidere som både bor og arbeider innen samme kommune. 
  
 
 Haugalandsregionen: 
