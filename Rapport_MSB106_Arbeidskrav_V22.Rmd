@@ -35,7 +35,7 @@ knitr::opts_chunk$set(echo=FALSE, include = TRUE)
 
 # Romlige forskjeller i næringsstruktur, virkninger av eksogene sjokk i basissysselsettingen, og lokale forskjeller I sysselsettingsvekst.
 
-I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Hardanger.
+I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Ullensvang.
 
 Problemstillinger og beregninger vi vil se nærmere på
 
@@ -78,6 +78,8 @@ Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitja
 Tilsammen bor det 70721 personer i denne regionen.
 
 Tallene er hentet fra SSB 09.01.21 (<https://www.ssb.no/statbank/table/01223/tableViewLayout1/>) gjelder for 4 kvartal 2020.
+
+"Forklar litt om de forskjellige næringene"..... 
 
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv", show_col_types = FALSE)
@@ -1690,7 +1692,7 @@ Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen 
 
 De som er markert med gult er arbeidstakere som bor og jobber i samme kommune.
 
-\#\#\#Hauglandsregionen:
+Hauglandsregionen:
 
 ![](Bilde/Haugalandet.PNG "Hauglandsregionen")
 
@@ -1765,16 +1767,6 @@ Samtidig har oljebransjen i samme periode slitt med nedgangstider som påvirker 
 Disse kommunene har en del oljebaserte næringer og i de periodene oljemarkedet svinger vil arbeidsmarkedet vise markant nedgang i antall arbeidsplasser.
 Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgangstider.
 Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.
-
-Haugalandsregionen:
-
-```{r Pendling på Haugalandet}
-hgl_Pendling
-```
-
-```{r Pendling i Sunnhordland}
-sun_Pendling
-```
 
 -   
 
