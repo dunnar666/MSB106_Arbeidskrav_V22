@@ -1618,6 +1618,8 @@ LQ_arb <- syssel_arb %>%
 LQ_arb[is.na(LQ_arb)] = 0
 ```
 
+-
+
 # Pendling
 
 Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere. Det vil si at de fleste er avhengige av å pendle til andre kommuner, også kalt utpendling. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4.  
