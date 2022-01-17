@@ -1622,9 +1622,12 @@ LQ_arb[is.na(LQ_arb)] = 0
 
 # Pendling
 
-Pendling er et viktig begrep å bruke når vi snakker om regional utvikling. De ulike kommunene eller regionene kan ha ulike behov. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere. Det vil si at de fleste er avhengige av å pendle til andre kommuner, også kalt utpendling. Det kan være andre kommuner i samme region eller andre regioner. Det finnes også begrepet netto innpendling som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4.  
+De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere, som vil si at de fleste er avhengige av pendlere. Pendling kan være til andre kommuner i samme region eller til andre regioner. Alle kommuner har kanskje ikke arbeidsplasser innen alle fagfelt, arbeidstakere er derfor avhengig av å pendler til andre kommuner for å finne relevant arbeid. Det samme gjelder dersom arbeidstaker har tilhørighet til en kommune, men det ikke finnes relevant arbeid da er han også nødt til å søke jobb i andre kommuner. Her kommer begrepene innpendling og utpendling inn, som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen eller at de ikke har nok arbeidsplasser og innbyggerene er nødt til å søke jobb andre plasser. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4. 
 
-Vi har laget to ulike tabeller som tar for seg regionen Haugalandet og regionen Sunnhordland og Ullensvang, samt en tabell som tar for seg disse regionene samlet. Vi ønsker å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. 
+Nedenfor vil vi først ta for oss regionen Haugalandet og Sunnhordland med Ullensvang, og se på disse regionene hver for seg. Så kommer en tabell som tar for seg disse regionene samlet. Vi ønsker først å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. For så å se på pendlingen mellom regionene. 
+
+Alle tabellene viser 
+ 
 
 Haugalandsregionen: 
 
