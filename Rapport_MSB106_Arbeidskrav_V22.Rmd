@@ -66,12 +66,18 @@ Problemstillinger og beregninger vi vil se nærmere på
 ## Oversikt over befolkningene i regionene
 
 ### Haugalandet
-Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714). tilsammen bor det 104967 personer i denne regionen. i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen. Da ble Ølen og vindafjord slått i sammen til en kommune (hvordan har vi tatt hensyn til dette???)
+
+Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714).
+tilsammen bor det 104967 personer i denne regionen.
+i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen.
+Da ble Ølen og vindafjord slått i sammen til en kommune (hvordan har vi tatt hensyn til dette???)
 
 ### Sunnhordland og Ullensvang
-Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048). Tilsammen bor det 70721 personer i denne regionen.
 
-Tallene er hentet fra SSB 09.01.21 (https://www.ssb.no/statbank/table/01223/tableViewLayout1/) gjelder for 4 kvartal 2020.
+Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048).
+Tilsammen bor det 70721 personer i denne regionen.
+
+Tallene er hentet fra SSB 09.01.21 (<https://www.ssb.no/statbank/table/01223/tableViewLayout1/>) gjelder for 4 kvartal 2020.
 
 ```{r csv_filer}
 syssel_arb <- read_csv("Data/syssel_arb.csv", show_col_types = FALSE)
@@ -91,7 +97,8 @@ sun_Pendling <- read_csv("Data/sun_Pendling.csv", show_col_types = FALSE)
 
 ## Haugalandet
 
-Første regionen vi velger å se på er Haugalandet. Her ønsker vi å se på utviklingen fra 2008 til 2020, av antall ansatte i sin helhet i regionen, samt de 6 mest relevante næringene.
+Første regionen vi velger å se på er Haugalandet.
+Her ønsker vi å se på utviklingen fra 2008 til 2020, av antall ansatte i sin helhet i regionen, samt de 6 mest relevante næringene.
 
 ```{r Arbeidssted_Haugalandet_1}
 hld_arb %>% 
@@ -103,7 +110,10 @@ hld_arb %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-I 2020 er det i underkant av 50 000 ansatte i alle næringer på Haugalandet. Av Fig. 1 ser vi at Haugalandet fikk en nedgang i antall ansatte i 2015 og 2016. I 2017 og 2018 ble det vekst, frem til det snudde i 2019 igjen.
+I 2020 er det i underkant av 50 000 ansatte i alle næringer på Haugalandet.
+Av Fig.
+1 ser vi at Haugalandet fikk en nedgang i antall ansatte i 2015 og 2016.
+I 2017 og 2018 ble det vekst, frem til det snudde i 2019 igjen.
 
 ```{r Arbeidssted_Haugalandet_2}
 syssel_arb %>% 
@@ -118,7 +128,10 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-I Fig. 2 ser vi at flere av kommunene på Haugalandet har hatt liten arbeidsplassvekst, med unntak av Tysvær, Vindafjord og Karmøy i den siste tiårsperioden. Vi ser dette mer tydelig på fig. 3 og 4.
+I Fig.
+2 ser vi at flere av kommunene på Haugalandet har hatt liten arbeidsplassvekst, med unntak av Tysvær, Vindafjord og Karmøy i den siste tiårsperioden.
+Vi ser dette mer tydelig på fig.
+3 og 4.
 
 ```{r hld_arb_long}
 hld_arb_long <- syssel_arb %>%
@@ -158,7 +171,8 @@ hld_arb_long %>%
 
 Figur 3 og 4 viser utviklingen av det totale antall ansatte i alle næringer på kommunalt nivå, innenfor Haugaland-regionen.
 
-I disse figurene, så ser vi tydelig at Haugesund har hatt reduksjon i antall ansatte totalt sett, mens Karmøy, Vindafjord og Tysvær har hatt en markant vekst de siste ti årene. Siden Haugesund har flest arbeidsplasser betyr utviklingen i Haugesund mye for de samlede tallene.
+I disse figurene, så ser vi tydelig at Haugesund har hatt reduksjon i antall ansatte totalt sett, mens Karmøy, Vindafjord og Tysvær har hatt en markant vekst de siste ti årene.
+Siden Haugesund har flest arbeidsplasser betyr utviklingen i Haugesund mye for de samlede tallene.
 
 ```{r Næringsfordeling_og_Utvikling_Haugelandet_3_Største_Arbeidssted}
 hld_arb_long %>% 
@@ -186,16 +200,26 @@ hld_arb_long %>%
 
 Figur 5 og 6 viser utviklingen av de 6 mest relevante næringene i Haugalandsregionen på kommune nivå.
 
-Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største. Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune. I Haugalandet utgjør primærnæringer (jordbruk, Skogbrug og Fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
+Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største.
+Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune.
+I Haugalandet utgjør primærnæringer (jordbruk, Skogbrug og Fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
 
-### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet. 
+### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
 
 Det er relativt store kommunevise forskjeller i næringsstrukturen.
-Rogaland har en forholdsvis ensidig næringsstruktur, olje og gass er dominerende. Fylket er suverent dominerende for fossil energi. De har for øvrig de siste årene satset på et en mer differensiert næringsstruktur og næringsliv ved å satse på helse, IKT og fornybar energi.
+Rogaland har en forholdsvis ensidig næringsstruktur, olje og gass er dominerende.
+Fylket er suverent dominerende for fossil energi.
+De har for øvrig de siste årene satset på et en mer differensiert næringsstruktur og næringsliv ved å satse på helse, IKT og fornybar energi.
 
-I våre modeller, er satsingen på helse den mest tydelige. Av rent tekniske grunner er det vanskelig å se utviklingen i enkelte næringer som utgjør små andeler, på grunn av skalaen som er benyttet. Til tross for dette, kan man se at næringsstrukturen i regionen samlet generelt sett har endret seg lite.
+I våre modeller, er satsingen på helse den mest tydelige.
+Av rent tekniske grunner er det vanskelig å se utviklingen i enkelte næringer som utgjør små andeler, på grunn av skalaen som er benyttet.
+Til tross for dette, kan man se at næringsstrukturen i regionen samlet generelt sett har endret seg lite.
 
-Rogaland har gode jordbruksmuligheter, men i Fig. 2: Haugalandet ser vi en nedgang i sysselsettingen de siste tiårene, mens det er en marginal økning i Sunnhordaland, jf. Fig 9. I Fig. 12: ser vi at Tysnes har hatt en markant økning i primærnæringen, relativt sett.
+Rogaland har gode jordbruksmuligheter, men i Fig.
+2: Haugalandet ser vi en nedgang i sysselsettingen de siste tiårene, mens det er en marginal økning i Sunnhordaland, jf.
+Fig 9.
+I Fig.
+12: ser vi at Tysnes har hatt en markant økning i primærnæringen, relativt sett.
 
 Universitets- og høgskolesektoren er liten i Rogaland, og den består for det første av Universitetet i Stavanger (UiS) og Høgskulen på Vestlandet (HVL) med campus Haugesund.
 
@@ -216,7 +240,10 @@ sun_arb %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020. Sunnhordaland har i 2020 i underkant av 25 500 ansatte. Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang. Fra 2014 har det vært en reduksjon i totalt antall ansatte.
+Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020.
+Sunnhordaland har i 2020 i underkant av 25 500 ansatte.
+Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang.
+Fra 2014 har det vært en reduksjon i totalt antall ansatte.
 
 ```{r Arbeidssted_Sunnhordland_2}
 syssel_arb %>% 
@@ -231,7 +258,10 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020. Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig. Vi lager dermed en mer oversiktlig figur, jf. figur 9 & 10.
+Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020.
+Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig.
+Vi lager dermed en mer oversiktlig figur, jf.
+figur 9 & 10.
 
 ```{r sun_arb_long}
 sun_arb_long <- syssel_arb %>%
@@ -269,7 +299,9 @@ sun_arb_long %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
-Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020. En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst. En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
+Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020.
+En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst.
+En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
 
 For å få et bedre oversikt over utviklingen i kommunen ønsker vi å se på de 6 mest relevante næringene i hver kommune.
 
@@ -301,15 +333,24 @@ sun_arb_long %>%
 
 Figur 11 og 12 viser de 6 mest relevante næringene i hver enkelt kommune i Sunnhordlandsregionen fra 2008 til 2020.
 
-En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester. Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
+En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester.
+Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
 
 ### Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
 
-Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008. Dette stemmer overens med to hendelser. Den første er oljeknekken i 2014 som medførte at bl.a. Aker Stord AS som er avhengig av Olje-industrien måtte permitere.
+Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008.
+Dette stemmer overens med to hendelser.
+Den første er oljeknekken i 2014 som medførte at bl.a.
+Aker Stord AS som er avhengig av Olje-industrien måtte permitere.
 
-Stord er en kommune som har mye offshore industri. I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte. Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt. Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
+Stord er en kommune som har mye offshore industri.
+I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte.
+Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt.
+Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
 
-Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen. Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring. **Kan det vere ein grunn til dette som burde diskuterast??**
+Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen.
+Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring.
+**Kan det vere ein grunn til dette som burde diskuterast??**
 
 # Fortsett Her (OA, KH)
 
@@ -317,7 +358,9 @@ Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig
 
 Til slutt må vi gjere det samme med *Hardanger*
 
-I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner. i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang. Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
+I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner.
+i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang.
+Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
 
 ```{r Arbeidssted_Hardanger_1}
 har_arb %>% 
@@ -372,13 +415,21 @@ har_arb_long %>%
   facet_wrap(facets = ~ knavn, scales = "free_y", ncol = 3) +
   theme(legend.position = 'bottom')
 ```
-Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang. 
+
+Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri.
+Majoriteten av kraftproduksjonen foregår i tidligere Odda.
+Odda er et ensidig industristed, men har også en maritim næring i tillegg.
+I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her.
+Industrinæringen er også omfattet og bygg- og anleggsvirksomhet.
+På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang.
 
 **Generelt om Ullensvang kommune**
 
-Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår. Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt. I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
+Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår.
+Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt.
+I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
 
-# 2 
+# 2
 
 Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen samlet
 
@@ -386,7 +437,6 @@ Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regi
 #ordner etter kommunenavn og år
 tmp <- syssel_bos
 ```
-
 
 ```{r}
 hau20 <- syssel_bos %>% 
@@ -405,7 +455,6 @@ syssel_bos <- syssel_bos %>%
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
          Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
 ```
-
 
 ```{r}
 library(readxl)
@@ -449,7 +498,6 @@ syssel_bos <- syssel_bos %>%
          LQundervisning = LQundervisning,
          LQhelse = LQhelse)
 ```
-
 
 ```{r}
 LQbos <- syssel_bos %>% 
@@ -533,7 +581,6 @@ har_bos_LQ <- har_bos_LQ %>%
          LQhelse = LQhelse_hld$value) %>% 
   select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
-
 
 # 3 Sysselsetting i ulike næringer, etter bosted (Modeller under arbeid)
 
@@ -765,13 +812,13 @@ nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
 
 ### Haugalandet 2008-2020
 
-- Eir_Er_Jordbruk = Samlet sysselsetting i region Haugalandet
-- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Haugalandet
-- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Haugalandet
-- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Haugalandet
-- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Haugalandet
-- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Haugalandet
-- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Haugalandet
+-   Eir_Er_Jordbruk = Samlet sysselsetting i region Haugalandet
+-   Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Haugalandet
+-   Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Haugalandet
+-   Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Haugalandet
+-   Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Haugalandet
+-   Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Haugalandet
+-   Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Haugalandet
 
 ```{r hld_industri}
 hld_arb_LQ <- hld_arb %>% 
@@ -1051,16 +1098,15 @@ kable(Karm_arb_GINI,
   add_header_above(c("Karmøy"=9))
 ```
 
-
 ### Sunnhordland 2008-2020
 
-- Eir_Er_Jordbruk = Samlet sysselsetting i region Sunnhordland
-- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Sunnhordland
-- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Sunnhordland
-- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Sunnhordland
-- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Sunnhordland
-- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Sunnhordland
-- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Sunnhordland
+-   Eir_Er_Jordbruk = Samlet sysselsetting i region Sunnhordland
+-   Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Sunnhordland
+-   Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Sunnhordland
+-   Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Sunnhordland
+-   Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Sunnhordland
+-   Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Sunnhordland
+-   Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Sunnhordland
 
 ```{r sun_industri}
 sun_arb_LQ <- sun_arb %>% 
@@ -1340,13 +1386,13 @@ kable(Sveio_arb_GINI,
 
 ### Hardanger 2008-2020
 
-- Eir_Er_Jordbruk = Samlet sysselsetting i region Hardanger
-- Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Hardanger
-- Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Hardanger
-- Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Hardanger
-- Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Hardanger
-- Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Hardanger
-- Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Hardanger
+-   Eir_Er_Jordbruk = Samlet sysselsetting i region Hardanger
+-   Eir_Er_Industri = Samlet sysselsetting innen Industri-sektoren i region Hardanger
+-   Eir_Er_El_Vann_Reno = Samlet sysselsetting innen Eleketrisitet, Vann og Renovasjon-sektoren i region Hardanger
+-   Eir_Er_Bygg_og_Anlegg = Samlet sysselsetting innen Bygge- og Anleggsvirksomhet-sektoren i region Hardanger
+-   Eir_Er_Finans = Samlet sysselsetting innen Finansiering og Forsikring-sektoren i region Hardanger
+-   Eir_Er_Undervisning = Samlet sysselsetting innen Undervisning-sektoren i region Hardanger
+-   Eir_Er_Helse = Samlet sysselsetting innen Helse- og Sosialtjenester-sektoren i region Hardanger
 
 ```{r har_industri}
 har_arb_LQ <- har_arb %>% 
@@ -1618,81 +1664,113 @@ LQ_arb <- syssel_arb %>%
 LQ_arb[is.na(LQ_arb)] = 0
 ```
 
--
+-   
 
 # Pendling
 
-De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere, som vil si at de fleste er avhengige av pendlere. Pendling kan være til andre kommuner i samme region eller til andre regioner. Alle kommuner har kanskje ikke arbeidsplasser innen alle fagfelt, arbeidstakere er derfor avhengig av å pendler til andre kommuner for å finne relevant arbeid. Det samme gjelder dersom arbeidstaker har tilhørighet til en kommune, men det ikke finnes relevant arbeid da er han også nødt til å søke jobb i andre kommuner. Her kommer begrepene innpendling og utpendling inn, som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen eller at de ikke har nok arbeidsplasser og innbyggerene er nødt til å søke jobb andre plasser. Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked https://regionalanalyse.no/rapport/3004/1/4. 
+De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft.
+Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere, som vil si at de fleste er avhengige av pendlere.
+Pendling kan være til andre kommuner i samme region eller til andre regioner.
+Alle kommuner har kanskje ikke arbeidsplasser innen alle fagfelt, arbeidstakere er derfor avhengig av å pendler til andre kommuner for å finne relevant arbeid.
+Det samme gjelder dersom arbeidstaker har tilhørighet til en kommune, men det ikke finnes relevant arbeid da er han også nødt til å søke jobb i andre kommuner.
+Her kommer begrepene innpendling og utpendling inn, som betyr at noen kommuner eller regioner har flere arbeidsplasser tilgjengelige enn de har innbyggere som kan jobbe innad i kommunen eller at de ikke har nok arbeidsplasser og innbyggerene er nødt til å søke jobb andre plasser.
+Vi skal se på innpendling og utpendling som vil kunne fortelle oss i hvilken grad et sted er integrert i et større arbeidsmarked <https://regionalanalyse.no/rapport/3004/1/4>.
 
-Nedenfor vil vi først ta for oss regionen Haugalandet og Sunnhordland med Ullensvang, og se på disse regionene hver for seg. Så kommer en tabell som tar for seg disse regionene samlet. Vi ønsker først å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst. For så å se på pendlingen mellom regionene. 
+Nedenfor vil vi først ta for oss regionen Haugalandet og Sunnhordland med Ullensvang, og se på disse regionene hver for seg.
+Så kommer en tabell som tar for seg disse regionene samlet.
+Vi ønsker først å skille disse to regionene for å se i hvilken kommune andelen av innpendling og utpendling er størst og minst.
+For så å se på pendlingen mellom regionene.
 
- 
-I radene sees pendling inn til kommunene. Nederste rad viser totalen av antall pendlere inn til den enkelte kommune. Her kan vi se en andel stillinger som er besatt av arbeidstakere fra andre kommuner i Haugalandsregionen.  
+I radene sees pendling inn til kommunene.
+Nederste rad viser totalen av antall pendlere inn til den enkelte kommune.
+Her kan vi se en andel stillinger som er besatt av arbeidstakere fra andre kommuner i Haugalandsregionen.
 
-I kolonnene ser man de som pendlere ut av hver enkelt kommune. Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen kommune innenfor Hauglandsregionen.  
+I kolonnene ser man de som pendlere ut av hver enkelt kommune.
+Det vil si arbeidstakere som bor i en kommune, og som har arbeidsted i en annen kommune innenfor Hauglandsregionen.
 
-De som er markert med gult er arbeidstakere som bor og jobber i samme kommune. 
+De som er markert med gult er arbeidstakere som bor og jobber i samme kommune.
 
-###Hauglandsregionen:  
+\#\#\#Hauglandsregionen:
 
- 
-##TABELL
+![](Bilde/Haugalandet.PNG "Hauglandsregionen")
 
+Haugalandsregionen har 44119 arbeidsplasser, hvorav 13170 er pendlere.
 
-Haugalandsregionen har 44119 arbeidsplasser, hvorav 13170 er pendlere.  
+Haugesund, Karmøy og Tysvær er de kommunene i regionen med høyest andel pendlere både når det gjelder inn- og utpendling.
+La oss se nærmere på Haugesund som har en stor del av arbeidstakerne i regionen.
+Det gjelder både når vi ser på innpendling, utpendling og de som bor og jobber i samme kommune.
+Ut ifra tabellen kan vi se at Haugesund har 11714 arbeidstakere som bor og jobber i kommunen.
+Fra Haugesund er det eksempelvis 1029 arbeidstakere som pendler til Tysvær og 2586 arbeidstakere som pendler til Karmøy.
+Til Sauda og Utsira er det en betydelig lavere andel som pendler.
+Grunnen til at det nok at det er mindre kommuner med færre arbeidsplasser.
+Mange av de som bor i distriktene som eksempelvis Sauda og Utsira jobber og bor i samme kommune.
+Vi kan se at i Sauda jobber og bor det 1789 arbeidstaker, mens de har 31 stykk som pendler inn til kommunen og 66 stykk som pendler ut av kommunen.
+Det kan være flere som pendler inn til og ut av kommunen fra andre regioner, men her ser vi tallene på de som pendler i Haugalandsregionen.
 
-Haugesund, Karmøy og Tysvær er de kommunene i regionen med høyest andel pendlere både når det gjelder inn- og utpendling. La oss se nærmere på Haugesund som har en stor del av arbeidstakerne i regionen. Det gjelder både når vi ser på innpendling, utpendling og de som bor og jobber i samme kommune. Ut ifra tabellen kan vi se at Haugesund har 11714 arbeidstakere som bor og jobber i kommunen. Fra Haugesund er det eksempelvis 1029 arbeidstakere som pendler til Tysvær og 2586 arbeidstakere som pendler til Karmøy. Til Sauda og Utsira er det en betydelig lavere andel som pendler. Grunnen til at det nok at det er mindre kommuner med færre arbeidsplasser. Mange av de som bor i distriktene som eksempelvis Sauda og Utsira jobber og bor i samme kommune. Vi kan se at i Sauda jobber og bor det 1789 arbeidstaker, mens de har 31 stykk som pendler inn til kommunen og 66 stykk som pendler ut av kommunen. Det kan være flere som pendler inn til og ut av kommunen fra andre regioner, men her ser vi tallene på de som pendler i Haugalandsregionen.  
+Vi vet at Haugesund er regionsentrum med sykehus og høgskole.
+Samtidig har Haugesund flere olje og sjøfartsnæringer.
+Det er sentralisert som betyr at det er grunnlag for et større jobbmarked.
+Det er årsaken til at Haugesund har mer innpendling enn de andre kommunene i regionen.
+Karmøy og Tysvær som ligger nærmest Haugesund har størst andel utpendling, også til Haugesund.
 
-Vi vet at Haugesund er regionsentrum med sykehus og høgskole. Samtidig har Haugesund flere olje og sjøfartsnæringer.  Det er sentralisert som betyr at det er grunnlag for et større jobbmarked. Det er årsaken til at Haugesund har mer innpendling enn de andre kommunene i regionen. Karmøy og Tysvær som ligger nærmest Haugesund har størst andel utpendling, også til Haugesund.  
+Sunnhordland
 
- 
+![](Bilde/Sunnhordland.PNG "Sunnhordland og Ullensvang")
 
-Sunnhordland 
+I Sunnhordlandsregionen er det 28275 arbeidstakere om har sin arbeidsplass, av disse er det 2575 som har sitt arbeid i en annen kommune enn den de bor i.
 
- 
+Som vi kan se er Stord den kommunen med flest arbeidstakere.
+Dette kan vi se i sammenheng med at Stord er som et sentrum for regionen.
+En del av de interkommunale samarbeidene har sine kontorer lokalisert på Stord.
+Stord har 7314 som både bor og arbeider innad i kommunen.
+Å av Stordabuen som pendler ut av kommunen er det flest som pendler til Bømlo og Fitjar.
+Dette gjelder også motsatt da Stord får flest innpendlere fra de samme kommunene.
+Stord og Ullensvang er de eneste kommunene som har flere som pendler inn enn ut.
 
- 
+I Etne er det ganske likt med inn og utpendlere da de har 66 som pendler ut og 61 som pendler inn til kommunen.
+Etne er også den kommunen som har minst arbeidere som driver med pendling.
 
-I Sunnhordlandsregionen er det 28275 arbeidstakere om har sin arbeidsplass, av disse er det 2575 som har sitt arbeid i en annen kommune enn den de bor i.    
+Vi har valgt å ta med Ullensvang i Sunnhordlandsoversikten.
+Etne og Kvinnherad er begge nabokommuner til Ullensvang.
+Ullensvang har lite både inn og utpendling.
 
-Som i tabellen fra Haugalandsregionen finner vi summen av all innpendling i den nederste raden og summen av all utpendling i den siste kolonnen. 
+En samlet oversikt over Haugalandsregionen og Sunnhordlandsregionen
 
-Den gule markeringen i midten er også her de som bor og jobber i samme kommune.  
+![](Bilde/Samlet.PNG "Samlet oversikt")
 
-Som vi kan se er Stord den kommunen med flest arbeidstakere. Dette kan vi se i sammenheng med at Stord er som et sentrum for regionen. En del av de interkommunale samarbeidene har sine kontorer lokalisert på Stord. Stord har 7314 som både bor og arbeider innad i kommunen. Å av Stordabuen som pendler ut av kommunen er det flest som pendler til Bømlo og Fitjar. Dette gjelder også motsatt da Stord får flest innpendlere fra de samme kommunene. Stord og Ullensvang er de eneste kommunene som har flere som pendler inn enn ut.  
+Vi har sett på inndelingene i de forskjellige regionene.
+Videre ønsker vi å se på regionene i en samlet tabell.
 
-I Etne er det ganske likt med inn og utpendlere da de har 66 som pendler ut og 61 som pendler inn til kommunen. Etne er også den kommunen som har minst arbeidere som driver med pendling.  
+Vi har tidligere skrevet om at Haugalandsregionen har 13170 pendlere, mens Sunnhordlandsregionen og Ullensvang har 2575 pendlere.
+Om vi ser begge regionene samlet, øker antall pendlere med totalt 3311 arbeidstakere.
+Det vil si at det er 3311 stykker som pendler på tvers av regionene.
 
-Vi har valgt å ta med Ullensvang i Sunnhordlandsoversikten. Etne og Kvinnherad er begge nabokommuner til Ullensvang. Ullensvang har lite både inn og utpendling.         
+Utsira har ikke inn- eller utpendlere til Sunnhordland.
+Bortsett fra en person som pendler til Sveio har heller ikke Bokn utpendling til Sunnhordland.
 
- 
+Haugesund er den kommunen som har flest pendlere inn til kommunen.
+De ligger langt foran de andre kommunene når det er snakk om pendling inn til kommunene.
+Karmøy er den kommunen som har flest innbyggere som pendler ut av kommunen.
 
-En samlet oversikt over Haugalandsregionen og Sunnhordlandsregionen  
+Videre kan man se på de systematiske forskjellene sett i forhold til sentralitet og tilgjengelighet i det lokale arbeidsmarkedet.
 
- 
+Haugesund, Karmøy og Stord er sentrale kommuner hvor det finnes en stor andel arbeidsplasser og tilgjengeligheten i arbeidsmarkedet er større enn i eksempelvis Sauda, Utsira, Tysnes eller Ullensvang.
+De sentraliserte kommunene har en fordel i forhold til å skape klynger, det med tanke på at når flere mennesker bosetter seg i samme område kan en dra nytte av kompetansen de innehar.
+Sauda, Utsira, Tysnes og Ullensvang er eksempler på kommuner i utkanten av regionene.
+De befinner seg såpass langt utenfor at de ikke vil dra nytte av sentralitet.
 
-Vi har sett på inndelingene i de forskjellige regionene. Videre ønsker vi å se på regionene i en samlet tabell.  
+I figur 3 og 4 vises det at de siste 10 årene har Haugesund hatt en reduksjon i antall ansatte, men Karmøy, Vindafjord og Tysvær har hatt en markant økning i antall arbeidstakere.
+Det vi vet er at det har utviklet seg større næringsklynger utenfor Haugesund de siste årene som kan ha en sammenheng med økning i antall ansatte.
+Samtidig har oljebransjen i samme periode slitt med nedgangstider som påvirker både Haugesund og Stord.
+Disse kommunene har en del oljebaserte næringer og i de periodene oljemarkedet svinger vil arbeidsmarkedet vise markant nedgang i antall arbeidsplasser.
+Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgangstider.
+Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.
 
-Vi har tidligere skrevet om at Haugalandsregionen har 13170 pendlere, mens Sunnhordlandsregionen og Ullensvang har 2575 pendlere. Om vi ser begge regionene samlet, øker antall pendlere med totalt 3311 arbeidstakere. Det vil si at det er 3311 stykker som pendler på tvers av regionene.  
-
-Utsira har ikke inn- eller utpendlere til Sunnhordland. Bortsett fra en person som pendler til Sveio har heller ikke Bokn utpendling til Sunnhordland.       
-
-Haugesund er den kommunen som har flest pendlere inn til kommunen. De ligger langt foran de andre kommunene når det er snakk om pendling inn til kommunene. Karmøy er den kommunen som har flest innbyggere som pendler ut av kommunen.  
-
-Videre kan man se på de systematiske forskjellene sett i forhold til sentralitet og tilgjengelighet i det lokale arbeidsmarkedet.  
-
-Haugesund, Karmøy og Stord er sentrale kommuner hvor det finnes en stor andel arbeidsplasser og tilgjengeligheten i arbeidsmarkedet er større enn i eksempelvis Sauda, Utsira, Tysnes eller Ullensvang. De sentraliserte kommunene har en fordel i forhold til å skape klynger, det med tanke på at når flere mennesker bosetter seg i samme område kan en dra nytte av kompetansen de innehar.  Sauda, Utsira, Tysnes og Ullensvang er eksempler på kommuner i utkanten av regionene. De befinner seg såpass langt utenfor at de ikke vil dra nytte av sentralitet.  
-
-I figur 3 og 4 vises det at de siste 10 årene har Haugesund hatt en reduksjon i antall ansatte, men Karmøy, Vindafjord og Tysvær har hatt en markant økning i antall arbeidstakere. Det vi vet er at det har utviklet seg større næringsklynger utenfor Haugesund de siste årene som kan ha en sammenheng med økning i antall ansatte. Samtidig har oljebransjen i samme periode slitt med nedgangstider som påvirker både Haugesund og Stord. Disse kommunene har en del oljebaserte næringer og i de periodene oljemarkedet svinger vil arbeidsmarkedet vise markant nedgang i antall arbeidsplasser. Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgangstider. Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.   
-
-Haugalandsregionen: 
+Haugalandsregionen:
 
 ```{r Pendling på Haugalandet}
 hgl_Pendling
 ```
-
-
- 
 
 ```{r Pendling i Sunnhordland}
 sun_Pendling
