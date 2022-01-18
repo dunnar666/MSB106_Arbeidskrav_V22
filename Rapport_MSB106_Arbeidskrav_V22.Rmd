@@ -86,7 +86,7 @@ syssel_arb <- read_csv("Data/syssel_arb.csv", show_col_types = FALSE)
 hld_arb <- read_csv("Data/hld_arb.csv", show_col_types = FALSE)
 sun_arb <- read_csv("Data/sun_arb.csv", show_col_types = FALSE)
 har_arb <- read_csv("Data/har_arb.csv", show_col_types = FALSE)
-syssel_bos <- read_csv("Data/syssel_bos.csv", show_col_types = FALSE)
+syssel_bos <- read_excel("Data/syssel_bos.xlsx")
 hld_bos <- read_csv("Data/hld_bos.csv", show_col_types = FALSE)
 sun_bos <- read_csv("Data/sun_bos.csv", show_col_types = FALSE)
 har_bos <- read_csv("Data/har_bos.csv", show_col_types = FALSE)
@@ -386,6 +386,27 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
+```{r Arbeidssted_Hardanger_2_test, fig.cap="Hardanger/Ullensvang"}
+library(lubridate)
+syssel_bos <- syssel_bos %>% 
+  mutate(År = make_date(aar))
+
+
+syssel_bos %>% 
+  filter(knr %in% c(4618)) %>% 
+  ggplot(mapping = aes(x = År, y = `Alle Næringer`)) +
+  geom_line(aes(group = knavn, colour = knavn)) +
+  geom_hline(yintercept = 0) +
+   labs(x = "År") +
+  ggtitle("Fig. 14.5: Hardanger -> Ullensvang, sammenslått tidsserie 2008-2020") +
+  theme(legend.position = 'bottom') +
+  scale_color_hue(name = "Kommune")
+
+# Denne gir en bedre fremstilling av Ullensvang kommune, der data for Odda og Ullensvang er plusset sammen for årene 2008-2019.
+# Ved å benytte tall for slik sammenslått tidsserie vil problemer med plutselige hopp ved kommunesammenslåinger unngås.
+# Slike hopp som oppstår i fig. 14, vil bidra til vanskeligheter med å tolke resultater.
+```
+
 ```{r har_arb_long}
 har_arb_long <- syssel_arb %>%
   pivot_longer(
@@ -473,28 +494,28 @@ nasjonalt_bosted <- nasjonalt_bosted %>%
 
 
 ```{r}
-LQ_bos_Jordbruk <- syssel_bos%>% 
+LQ_bos_Jordbruk <- lq_syssel_bos%>% 
   select(aar, knavn, Eir_Er_Jordbruk) %>% 
   mutate(aar = as.character(aar)) %>% 
   left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Jordbruk), by = c("aar")) %>% 
   mutate(andel = Eir_Er_Jordbruk/Ein_En_Jordbruk
   )
 
-LQ_bos_Industri <- syssel_bos %>% 
+LQ_bos_Industri <- lq_syssel_bos %>% 
   select(aar, knavn, Eir_Er_industri) %>% 
   mutate(aar = as.character(aar)) %>% 
   left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Industri), by = c("aar")) %>% 
   mutate(andel = Eir_Er_industri/Ein_En_Industri)
 
 
-LQ_bos_Undervisning <- syssel_bos %>% 
+LQ_bos_Undervisning <- lq_syssel_bos %>% 
   select(aar, knavn, Eir_Er_Undervisning) %>% 
   mutate(aar = as.character(aar)) %>% 
   left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Undervisning), by = c("aar")) %>% 
   mutate(andel = Eir_Er_Undervisning/Ein_En_Undervisning)
 
 
-LQ_bos_Helse <- syssel_bos %>% 
+LQ_bos_Helse <- lq_syssel_bos %>% 
   select(aar, knavn, Eir_Er_Helse) %>% 
   mutate(aar = as.character(aar)) %>% 
   left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Helse), by = c("aar")) %>% 
